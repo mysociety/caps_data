@@ -1,0 +1,2209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xml:lang="en-GB" lang="en-GB" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head"><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /> <meta name="REVISIT-AFTER" content="1 DAYS" /> <meta name="RATING" content="GENERAL" /> <meta name="RESOURCE-TYPE" content="DOCUMENT" /> <meta content="text/javascript" http-equiv="Content-Script-Type" /> <meta content="text/css" http-equiv="Content-Style-Type" /><title>
+	CMIS > Calendar
+</title><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW" /><link href="/milton-keynes/Resources/Shared/stylesheets/dnndefault/7.0.0/default.css?cdv=302" type="text/css" rel="stylesheet"/><link href="/milton-keynes/DesktopModules/CMIS_Meetings/module.css?cdv=302" type="text/css" rel="stylesheet"/><link href="/milton-keynes/Portals/_default/skins/miltonkeynes2020/skin.css?cdv=302" type="text/css" rel="stylesheet"/><link href="/milton-keynes/Portals/_default/Containers/CMIS_5_2_0/container.css?cdv=302" type="text/css" rel="stylesheet"/><link href="/milton-keynes/Portals/_default/Containers/CMIS_5_2_0/Title_Blue.css?cdv=302" type="text/css" rel="stylesheet"/><link href="/milton-keynes/Portals/0/portal.css?cdv=302" type="text/css" rel="stylesheet"/><link href="/milton-keynes/Portals/_default/skins/miltonkeynes2020/Menu/Superfish/superfish.css?cdv=302" type="text/css" rel="stylesheet"/><link href="/milton-keynes/Portals/_default/skins/miltonkeynes2020/Menu/Superfish/superfish-vertical.css?cdv=302" type="text/css" rel="stylesheet"/><script src="/milton-keynes/Resources/libraries/jQuery/03_05_01/jquery.js?cdv=302" type="text/javascript"></script><script src="/milton-keynes/Resources/libraries/jQuery-Migrate/03_02_00/jquery-migrate.js?cdv=302" type="text/javascript"></script><script src="/milton-keynes/Resources/libraries/jQuery-UI/01_12_01/jquery-ui.js?cdv=302" type="text/javascript"></script><link href="/milton-keynes/WebResource.axd?d=urCACUaUZeRRrWjVOv5CzusV8BDCgykMiMkjpWjOJjZDs0Yy0KoyMz_9_whK4BfKzsSt-75wUvEbD-dpqb1Bgbirt24iB9nGfwmRnw2&amp;t=637472490284603007" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/milton-keynes/WebResource.axd?d=GTiBnkzaFvz0zuHMOu296fXTjf-sTkl2Z-VTmki214oMRVFpxjYW70iXZH_ZaC63htx4-0xu4HZzJRsnd3I7pAQ3s4WuCxKxIb2wXKNJtKE6Qn_9dQp35ddcy141&amp;t=637472490288213284" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/milton-keynes/WebResource.axd?d=6d0ORl_GDQ-M7iOueANAqqE7Ftvhj4QHU4_Do49xwgvJOHH0w3NEExvM899Px1Nyw8GXAaNvgyhDLUsy8iV_dtTWYZd1PupW05v8dIDA2EBZBC_lp4c1LZASDBM1&amp;t=637472490284603007" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/milton-keynes/WebResource.axd?d=VdPoLqp1pEVEsiLk3ISKBxV94hocE80gqK1wK39NiUE6m4mjEXhsm0VYaIwqFoJQhRdIudwNgaFUAbBTvnFQcMz4WwUqsb5CWP7glj0_vXncLjCljPIQGaBGJhc1&amp;t=637472490284603007" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/milton-keynes/WebResource.axd?d=scU4zlP5U52teYnD_DawliH4vuAPvKbHANci4xdvtKIAQP6uEtvHHOGNwe3C8HySTDNUCufgEQ7dMQb8KJB3nvJdw-fuuYnENjZP-OmCjsiHJ3vjmG3kkZN0eZQ1&amp;t=637472490284603007" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/milton-keynes/WebResource.axd?d=rymswBCN_gRjUAHaY1_jtiAbgyV832shfQLRq3lJL8FLbFgHgMYU2oACOv-5oYfe7k10qSVoY6i8qQcZl31gYhlY7k07xfPqVvHwrxtHYgJAZDI4XftTnbuX75utZ1gmXeaMi0IesiBXqEYT0&amp;t=637472490288213284" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/milton-keynes/WebResource.axd?d=98cMqM6EPpuescfbp4aSCkle8E9rpYf5MmvdKNTZYZ4326OttDvI266cUn8Q5jBQnY0bq8lpwVtx8g-gSCe4DAhS2SpVQ7rIXmwIIgRsO63DHt_D0&amp;t=637472490284603007" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/milton-keynes/WebResource.axd?d=uw__gBfi7UxF-uUUQCb5Y-YWdrqf9BI3l8H8S_nCMdZ54ADoRCUb638mTwEui73D6hQNWsUdON5y73YCyFJW1UUQjWscUcAMEzDHeuwBgYe2o_pUQcUKnqVW5Orr82tolZGgIA2&amp;t=637472490288213284" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/milton-keynes/WebResource.axd?d=lsHxUYuoKn_XA4eeWCwq_TstR4urnOhnc8ijGyh-ZZzp7CzkEkVg7sjwqIEm6tgssrMZfJnNR75wUgn7iqDP0ot5h0JVtt9-9mTY2zG7KwcUszyH0&amp;t=637472490284603007" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/milton-keynes/WebResource.axd?d=20hJFSY0zhJ_i4_Phs9WbgWlAERhUHsK8IYg7lLOhj310OaPIiz5QRq-uPzAZAFos6AwfN5P0hg2FMzza6OzHUfs2MlMmL8APNhR3zMbVEXMoRY40&amp;t=637472490284603007" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/milton-keynes/WebResource.axd?d=MdXEAQktXF667g42FFIl0U696ryWUnPNmc0wR1J5cHjFAmFQS6923SqhdPv8tuV976NH-uuV6Ozu0k80EpgaSP2LdxNfhZJWo5FeF7SqOLPdn9fh0&amp;t=637472490284603007" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/milton-keynes/WebResource.axd?d=rp5RbN8u-p5SSQbizCm9NMZnq_e4HYa47SSCVtT144frriFzBQHrmUbs6tM3QKtjVaU9_a6W8vCO3NYloEXH6GIckiZvagPd6aitzKHKXs8O3IDc9Vzqw-9PHwPl0LjjJRD7_A2&amp;t=637472490288213284" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body id="Body">
+    <div role="navigation">
+		<a class="skip-main" href="#Panes" aria-label="Skip to content navigation link">Skip to main content</a>
+    </div>
+	<div role="main">
+		<form method="post" action="/milton-keynes/Calendar/tabid/70/ctl/ViewMeetingPublic/mid/397/Meeting/6392/Committee/1257/SelectedTab/Documents/Default.aspx" id="Form" enctype="multipart/form-data">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="vLYPqRj1nonjKeNSV9T2pGYZ7R9XDZXNrT653LcqaJZZ9VnbZr1ZWjA24xsvcNp9JiQlMXqayc+HPLd+5hXsfTyQAED0OW1+/mf3+3nZDfkCOZdrUKJRllWlFgom8DGkOPiOjRBmElacp9Yfncjqafrb1r77lbtklTElX/7nL/ApF1qRkQKEnv8iYydCEstoQD8Kn2S0F9WnVT1wuxNjcwKfcbh4cMDgMj4NftF9ukbNbyAOEsT1PpSeeo0x9EE55Z3V5MpuIxIu2tNmr9gkdYS8y9ULhMG/0WaKJT0Ndri1S7XPikBD8PSKETh5/t4cQfZPrbwjyCMDALleATn/+Mfy4HDdT9HfYiA1sDou1DwKjmchPLW2CPyo2W3UX4t7koUkN+n32oGMVkPBxVZychIEWlY5IWrDg2KBg8eR4iqEORXK20ApXT73IKeFhoijon58Vs4vxQtSZHVnOIgw5qciFtsoVfyqJ1EK7z8WfQO+xFXhelnohZifwN1MEjFkvPV96RFfkTc6AsJOSZf8bnf4Wa8uKymc0JD7ZCuQfIalnG7kyQY/1aJ/j03qa455EZAHjYCisp3n6jGzxMZyUiR38y3IH1SVoBzW83+DYO5ypjRiv90bFfKMSHH/DhH6I3ec9IVZOJQ+8uyB57++91iDzohTnfkECntzy1Z2hiio7aSdh/7ogJ21N6H1awIyasGFJJUYnixbkZKvR6x/s1zkeWBsG7LaP6NubV2dUzAGhyJOz3WMyRclyizIEAAP9E0ntwuGS2B+3FuXFBdIKhjH+zsSo6QhyRmPgWDtFsqdv49ey8Z9NnMGamxwLK4XDM42WHUJv/scxHrga4zAY8biBdHVDYJaIsDexD23ayKw4tml22zaymx6Q9d2DMaTLE4NDjMP/lC3EKUk5zDsVG/2W+sjd1MzF0W7Ums4xQMUNbBwi7HfIlTzEx6TlsGMej9DTe3KbJ222UaQYdL0RNUEs9E3jus0zynlqUkTQqdigc7bwjv3VGIeXsHXGDxxVMFfmreFl2zZFLZTWqijzJf4xn2TeW/BrF4q2zGDZLnQtjpWYOfwA4Uop96t37yRHufJf06inlRhBGpIucxLG7snOH3FXwkf3Atzhg4PnwuGBL7aC4WpNq2aElwBrtKupsBErdS8BHcanu1aY6+WRnhddXxOEm8K31Y0NOO6CYA55DtWWaiESbC6C891XJGTXfACqMjHoBv/kq9cAkDFD2auXoJA3W66XZPQpr3ifNGuYkUP0PjYrEpHSo+Z3x6OZmH86R0TOP7o+MCc5ffpVfovWHWQqg152OIFeKptieqdvMqpvaOUAqYqU6nMqPYtz1jH+GLwKYRkVB8YeMIRL0afFm3CW4bNF8p4KXzdiqeZ0ORoTYzBr1fQtMraTOWj2QCcLZAf+DlxVrmNjfHPrRrg62aW43jM9O1B9WQx9R91okUQyx88osUmWJzWlsM4QRt86WnIfeLXgVhnUXeC9P9yFbS1l717NbIOCSDHAuUyVvb2m9ah6ScYq2FhYP77n/n0JOgm3U0ALfowsCqiMLShd+l1P2n51zONjt5jqyBV1C7hjQNyjxlCWeSybNUItEcivdAFnSg434MhpZwHKUwIoukFUam35ZYerxNFVq/fUKfq3eWoLrJICLecrpJBLXyHGXqdrfUUTs+uT2FaoDdbjHCX2GfgaRmC0Zd7kIfwI3vxCDa/WPt4fmUZvwsdxP/qzSdIUUVN8peL/U1UwsewcwVMGMc+rHKmLE34OiaeuC1/rF0rR9vBLwrdk3mUQrRV3kDGKB0Dv37ctEHNUtHUJjLLmmYIP9/+4gFAhm5WJF/G/GN4L3CNMaQS8gJFs6hQ14QlE/7RhSxUgexNXZZxUgcXZuUsvtI4TqpiNbuOiDNa3dBBxEvZ4V9iC/RJNqVKQSpLGWGrnjV/6ascz0Y5+f9Z+5drMAakDoPcva0eUCyQNooZv4U6uhU2TjYBflrqH/pBq/f5pjLq8EiDdera6rGDcYKqPKCWlXLzxH0kcAO/haaZuTb7Zt071ojdF3i5xp0z/zZwMVln9y15XS7ja9Hqx3DWtrNtcx7vyvrmBVbZXTQY8F7VVjxbXMgs9T4yX+MO4RXew1Omr/ojVCcnTo+fvJSnYGSXg3psaztsJOWSO2E2kRp4Yxm7iE5rPPu9B2qm+gniAFKusNEmLeLb4VH468vrOMqS7eyVdnwe1MK5HvTLJGf3/QN6CgXhArp7gciWUYTB6IS5mnZq9lObxcfBUYQwo5F+lyGDOhIMo8N75qTkPXGIF/ef/I1fuXNbZA==" />
+
+<script type="text/javascript">if (!(window.jQuery && window.jQuery.fn && window.jQuery.fn.hoverIntent)) document.write(unescape('%3Cscript src="/milton-keynes/Portals/_default/skins/miltonkeynes2020/Menu/Superfish/hoverIntent.js" type="text/javascript"%3E%3C/script%3E'));</script><script type="text/javascript">if (!(window.jQuery && window.jQuery.fn && window.jQuery.fn.superfish)) document.write(unescape('%3Cscript src="/milton-keynes/Portals/_default/skins/miltonkeynes2020/Menu/Superfish/superfish.js" type="text/javascript"%3E%3C/script%3E'));</script>
+<script type="text/javascript">
+//<![CDATA[
+var __cultureInfo = {"name":"en-GB","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":".","IsReadOnly":false,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":",","CurrencySymbol":"£","NaNSymbol":"NaN","CurrencyNegativePattern":1,"NumberNegativePattern":1,"PercentPositivePattern":1,"PercentNegativePattern":1,"NegativeInfinitySymbol":"-∞","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":",","CurrencyPositivePattern":0,"PositiveInfinitySymbol":"∞","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":".","PercentGroupSeparator":",","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"AM","Calendar":{"MinSupportedDateTime":"\/Date(-62135596800000)\/","MaxSupportedDateTime":"\/Date(253402300799999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":false},"DateSeparator":"/","FirstDayOfWeek":1,"CalendarWeekRule":2,"FullDateTimePattern":"dd MMMM yyyy HH:mm:ss","LongDatePattern":"dd MMMM yyyy","LongTimePattern":"HH:mm:ss","MonthDayPattern":"d MMMM","PMDesignator":"PM","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"dd/MM/yyyy","ShortTimePattern":"HH:mm","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM yyyy","AbbreviatedDayNames":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"ShortestDayNames":["Su","Mo","Tu","We","Th","Fr","Sa"],"DayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"AbbreviatedMonthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthNames":["January","February","March","April","May","June","July","August","September","October","November","December",""],"IsReadOnly":false,"NativeCalendarName":"Gregorian Calendar","AbbreviatedMonthGenitiveNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthGenitiveNames":["January","February","March","April","May","June","July","August","September","October","November","December",""]},"eras":[1,"A.D.",null,0]};//]]>
+</script>
+
+<script src="/milton-keynes/ScriptResource.axd?d=NJmAwtEo3Ip3cKtmAz3RKL5V48YsbV-jnp_4fqk8P0H5yHGtV151l5ygOEOaBxIX9eFhtJg94_nhYorP7tcE4HJMjALPKCksQk2vI5iZEsSJa2-F4ah_1YX3LUSW4_4CfPDXAA2&amp;t=2fe674eb" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=dwY9oWetJoLe6tQeZaIYtKjxO2U55ezY5iY737mcCoBCrdCrjJQXCG1RefxHcB2LU0uaNz5Ev4U3Pt9TWQxnRvSxHyaBKiT83Uk_emaoAkMBYFtqP8QfP6AXT6lEU_-TICcyAQUIvN4eR3YJ0&amp;t=2fe674eb" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=TDVjdgRbdvP3WqlUEI8Feh0Oy5ujxRT4-AW_wZyLObaVv7tv4Vcc7EVWwxD8aRu3dFNtRpLRjj4tQU9URPS-prZTqqx4lGxYuxv5xw2&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=mbGZm65DzNDEErhmiQN-c6sq23HFrjJCYc09Ph_no8NMpcHH8HVpuo7j-PJA7C6hdHBTNEVeWI_dI0Xk3ImlWT-IdR-M_I3sihOnDjQRvFF8iSKQ0&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=sF8Y0c2qLAfhBBxuf2KiIuY3jMq6xDxUogqPUPhYjvI_vRP1nAIqrFuC_JNPtzJBYjGzk0TMZReFP0AW_qBbQ4H3QAGKkSAhAFCVfA2&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=uZyysmNAhs2DBWBPPJ-GvknfucdA8ZWH0HqkqdwrCPyl8zEmgzRJQPzAzsOOMqXSpLSzAeMpyxxu2Huu5B2xMWzW-o-HvEI6NjucQWuONP6EDxeB7yCMB7kKiaEcfQ6An8e8PA2&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=LxjRs3XOu8BIxva9M1-LxWJPu6_67eqR--Am0q58_76_1ShiYP-AM-aczlOVRlmRwSeXMO9q9nNE9mUOXpTl0BC5O2Jm8JnQkoZdV3X0LHAr4Zcag48sMIN150azMf9StWFrfgh79d3BGkK6iBJjJbVXzeI1&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=86EhAqQjfuPjQgUjmdeeL-BFDAIyR0y2R8D0r-jKi3kNXYmIF245cPB718lsfpIz8WdadoS7YHg5ZXzWCJ4QlLW3Ydxg9nFjqFtQYvqjYPZkCXYYErqU3sBW7PXK1hw91uzHuDiGuF-7o4Nl0&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=iKcFwou5liGcdHcQtevZhscTtCUo3TRz6G70l9GFl55cHPbLBNVSUuyJisknafVKr3WENk3kzZBgs1Y8ybPas9l3tqe_WV2xX2b8AQps34dHJxiYIl2jT63ceuQbvU-fNRMeog2&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=A22-SyJgKhLQb3DKnxjbwZ19xrSVZzjbIcAGKwfkW_v_XKibq5yHXHKEwGHXUxvvmh4gBvKt8kCiA0Bb3GJT2LD1DS1ez1UdhyJfMHiyZ4AYZn6qlR86pDgXMVQ1&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=OMa_nbU0_VThBKAWglVWQN4BszFVDalAdFb2PUmPU1eYky1zr2julr7JNLdkE88Uz7UTmoakKWjQK9skWUgLBTP8P5jYTACeLlmxDILIHyj9cHSyOltnG-H5lavMnUOcce4yMg2&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=cmIcXiVJ__dyo9YQTBU_RcA6z5txS8fWCd57jhwbiyiylvSHd7O_iGLaBPR98gqflW_gj6nRrFtc4cPeIRHSz3ZiRw11QkygmCelCkeJngYWK1fO0&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=eKZhdBAoDXKWDyw6sUs8mnx_xtp7-jFykuSR0_ku7bMUFogjcct-3uIKGcPPEZ6tV0UpaqrLL0UblVDmdtC8NCOER6fFy_25-_jZjEr0LWdUbkUU_QxXfusyNI7xN1YhhLLYZA2&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=J3KXk9aJ0qeiMNguxa2H5gdQxbld8hGXVLJ4Pbz-2WEh4VJE_NQv1T_k5KDj16k95RF2ZUlQfuzZZiv0ucqBJlDk0jSlaQYdM91j8XeeuzVuHA93V4GH21Vtt0U1&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=98YA3ng82RQ2wRpQXzllFnuUby3mhGAywUBV1v624eBmKzmQ540g1cPzFROK-tdg_brshU6AxU3dmqJGnMi3rzR75Woq1K9G_b4khDb8q8J6Q01L3dB0J0PD5Fs1&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=EUgTm_qqqh_8d1clua-U58gk3EDwcWAxpeSH6QKG0JwwmX68VPURQeYJNJzwli2DF8tEF2EH3NTO7OL8i4EXDgAM7gRCnnF603k2Pt09htST058moQuszyvbcCf2-dqfEQFtGuG0q4j9roBq0&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<script src="/milton-keynes/ScriptResource.axd?d=jsREEuQJotsqnROVh7DyMosIsRLUqtIbw19VOafG6pkN9wcMUjPZRrwymFInVz-h8iMZi9U6Rrj5gj5pNkRREtfo_D9Ky0SykGtyMcRijPHcJqXQ0&amp;t=ffffffffbc9408c6" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B537B3A5" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="Oj9ls2e+1tD7NJ9bbj+Vb6BoNzm70wFWwbQfOdwKt44El035vhvPo9FKu/LdRjEQufTfTs6B1PWgZxUlCsmzbjQcDcvldbU/yOeIJP3f4MEQFhxnxLiIo9tElj5dvybVRzJdzqFpiw++eo2b5H9CJWKIa5nJyxTqlpJ2cWj2+WCMPhR+" /><script src="/milton-keynes/js/dnn.js?cdv=302" type="text/javascript"></script><script src="/milton-keynes/Resources/Shared/Scripts/jquery/jquery.hoverIntent.min.js?cdv=302" type="text/javascript"></script><script src="/milton-keynes/js/dnncore.js?cdv=302" type="text/javascript"></script><script src="/milton-keynes/Resources/Shared/Scripts/dnn.jquery.js?cdv=302" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', ['tdnn$ctr397$ViewMeetingPublic$dnn$ctr397$ViewMeetingPublic$gridAttendedAjaxPanelPanel','','tdnn$ctr397$ViewMeetingPublic$dnn$ctr397$ViewMeetingPublic$gridOthersAttendedAjaxPanelPanel','','tdnn$ctr397$ViewMeetingPublic$dnn$ctr397$ViewMeetingPublic$gridApologiesAjaxPanelPanel','','tdnn$ctr397$ViewMeetingPublic$dnn$ctr397$ViewMeetingPublic$gridAbsentAjaxGridPanel',''], [], [], 90, '');
+//]]>
+</script>
+
+			
+			
+			
+<script type="text/javascript">
+   Telerik.Web.UI.RadListBox.prototype.saveClientState = function() {
+       return "{" +
+                   "\"isEnabled\":" + this._enabled +
+                   ",\"logEntries\":" + this._logEntriesJson +
+                  ",\"selectedIndices\":" + this._selectedIndicesJson +
+                  ",\"checkedIndices\":" + this._checkedIndicesJson +
+                  ",\"scrollPosition\":" + Math.round(this._scrollPosition) +
+              "}";
+   }
+</script> 
+
+<script src="/milton-keynes/Portals/_default/skins/miltonkeynes2020/scripts/SkinScript.js"></script>
+<!--[if lt IE 7]>      
+<body class="no-js lt-ie9 lt-ie8 lt-ie7">
+   <![endif]-->
+   <!--[if IE 7]>         
+   <body class="no-js lt-ie9 lt-ie8">
+      <![endif]-->
+      <!--[if IE 8]>         
+      <body class="no-js lt-ie9">
+         <![endif]-->
+         <!--[if IE 9]>	  	   
+         <body class="no-js ie9">
+            <![endif]-->
+            <!--[if gt IE 9]><!--> 
+            <body class="no-js">
+               <!--<![endif]-->
+               <head>
+                  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                  <meta name="apple-mobile-web-app-capable" content="yes">
+                  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+                  <meta name="HandheldFriendly" content="True">
+                  <meta name="MobileOptimized" content="320">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+                  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+                  <link rel="stylesheet" type="text/css" href="/milton-keynes/Portals/_default/skins/miltonkeynes2020/css/normalize.min.css?v=10" media="screen">
+                  <link rel="stylesheet" type="text/css" href="/milton-keynes/Portals/_default/skins/miltonkeynes2020/css/default.css?v=10" media="screen">
+                  <link rel="stylesheet" type="text/css" href="/milton-keynes/Portals/_default/skins/miltonkeynes2020/css/icons.css?v=10" media="screen">
+                  <!-- Responsive Styles -->
+                  <link rel="stylesheet" media="only screen and (max-width: 400px)" href="/milton-keynes/Portals/_default/skins/miltonkeynes2020/css/320.css?v=10">
+                  <link rel="stylesheet" media="only screen and (min-width: 401px) and (max-width: 767px)" href="/milton-keynes/Portals/_default/skins/miltonkeynes2020/css/480.css?v=10">
+                  <link rel="stylesheet" media="only all and (min-width: 768px) and (max-width: 959px)" href="/milton-keynes/Portals/_default/skins/miltonkeynes2020/css/768.css?v=10">
+                  <link rel="stylesheet" media="only screen and (min-width: 960px)" href="/milton-keynes/Portals/_default/skins/miltonkeynes2020/css/960.css?v=10">
+                  <script type="text/javascript">
+                     (function() {
+                       var config = {
+                         kitId: 'jza5prz',
+                         scriptTimeout: 3000
+                       };
+                       var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+                     })();
+                  </script>
+                  <script src="/milton-keynes/Portals/_default/skins/miltonkeynes2020/scripts/libs/modernizr-2.6.2.min.js"></script>
+               </head>
+               <body  onload="onLoad()">
+                  <div class="whiteContainer">
+                  <!-- Display Options -->
+                  <div class="displayOptions"></div>
+                  <!-- Display Options End -->
+                  <!-- Header Start -->
+                  <header class="header noLogin" role="banner">
+                     <div class="wrapper">
+                        <!-- Logo Start -->
+                        <p class="logo left">
+							<a href="/">Milton Keynes Council</a>
+						</p>
+                        <!-- Logo End -->
+                        <div class="right meta">
+                           <div class="left">
+                              <!-- Search Start -->
+                              <!-- Search End -->
+                           </div>
+                        </div>
+                        <div class="clear"></div>
+                     </div>
+                  </header>
+                  <!-- Header End -->
+                  <div id="BreadLogin">
+                     <div class="wrapper">
+                        <div id="Bread" >
+                           <span id="dnn_dnnTEXT_lblText" class="breadcrumb_text"></span>
+
+                           <span id="PreText"> You are here: </span>
+                           <span>
+                              <span id="dnn_dnnBREADCRUMB_lblBreadCrumb" itemprop="breadcrumb" itemscope="" itemtype="https://schema.org/breadcrumb"><span itemscope itemtype="http://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="http://milton-keynes.cmis.uk.com/milton-keynes/Calendar.aspx" class="Breadcrumb" itemprop="item"><span itemprop="name">Calendar</span></a><meta itemprop="position" content="1" /></span></span></span>
+                           </span>
+                        </div>
+                        <div id="Login" >
+                           
+
+                           &nbsp;&nbsp;|&nbsp;&nbsp;
+                           <a id="dnn_dnnLOGIN_loginLink" title="Login" class="user" rel="nofollow" onclick="this.disabled=true;" href="http://milton-keynes.cmis.uk.com/milton-keynes/login.aspx?ReturnUrl=%2fmilton-keynes%2fCalendar%2ftabid%2f70%2fctl%2fViewMeetingPublic%2fmid%2f397%2fMeeting%2f6392%2fCommittee%2f1257%2fSelectedTab%2fDocuments%2fDefault.aspx">Login</a>
+
+                        </div>
+                     </div>
+                     <div class="clear"></div>
+                  </div>
+                  <div class="wrapper" role="main">
+                  <div class="full-width thirdParty" role="article">
+                  <!-- 3rd party content in here -->
+                  <div id="left-col">
+                     <div id="Menu">
+                        <script type="text/javascript">
+			jQuery(function($) {
+				$("#dnn_MENU1").superfish(
+					{MenuStyle:"[SKIN]/Menu/Superfish"}
+				);
+			});
+		</script><ul class="sf-menu sf-vertical" id="dnn_MENU1">
+  <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/Home.aspx">Home</a></li>
+  <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/Committees.aspx">Committees</a></li>
+  <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears.aspx">Archived Council Years</a><ul>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/2020-2021.aspx">2020-2021</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/2019-2020.aspx">2019-2020</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/2018-2019.aspx">2018-2019</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/2017-2018.aspx">2017-2018</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/2016-2017.aspx">2016-2017</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/2015-2016.aspx">2015-2016</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20142015.aspx">2014-2015</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20132014.aspx">2013-2014</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20122013.aspx">2012-2013</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20112012.aspx">2011-2012</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20102011.aspx">2010-2011</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20092010.aspx">2009-2010</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20082009.aspx">2008-2009</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20072008.aspx">2007-2008</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20062007.aspx">2006-2007</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20052006.aspx">2005-2006</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20042005.aspx">2004-2005</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20032004.aspx">2003-2004</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20022003.aspx">2002-2003</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20012002a.aspx">2001-2002a</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20012002b.aspx">2001-2002b</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/20002001.aspx">2000-2001</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/19992000.aspx">1999-2000</a></li>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/ArchivedCouncilYears/19981999.aspx">1998-1999</a></li>
+    </ul>
+  </li>
+  <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/MyCMIS.aspx">MyCMIS</a></li>
+  <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/Councillors.aspx">Councillors</a></li>
+  <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/PublicDocuments.aspx">Public Documents</a></li>
+  <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/OutsideBodies.aspx">Outside Bodies</a></li>
+  <li class="current"><a href="http://milton-keynes.cmis.uk.com/milton-keynes/Calendar.aspx">Calendar</a></li>
+  <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/Search.aspx">Search</a><ul>
+      <li><a href="http://milton-keynes.cmis.uk.com/milton-keynes/Search/FindMyCouncillorWard.aspx">Find My Councillor/Ward</a></li>
+    </ul>
+  </li>
+</ul>
+                        <div class="clear"></div>
+                     </div>
+                  </div>
+                  <div id="right-col">
+                  <div id="Panes">
+                  <div id="dnn_ContentPane" class="ContentPane pane"><div class="DnnModule DnnModule-CMIS_Meetings DnnModule-397 DnnModule-Admin">
+<div class="c_head c_head_blue">
+    <div class="head_title">
+        <div class="c_icon">			
+			
+			<h1>
+				<span id="dnn_ctr397_dnnTITLE_titleLabel" class="TitleHead">Meeting Details</span>
+
+
+				
+			</h1>
+            </div>
+            <div class="title_vis">
+								
+            </div>
+            <div class="clear_float"></div>
+        </div>
+        <div class="c_content">
+            <div id="dnn_ctr397_ContentPane" class="Normal c_contentpane"><div id="dnn_ctr397_ModuleContent" class="DNNModuleContent ModCMISMeetingsC">
+	
+
+
+
+
+
+<script>
+    function OnClientLoad(sender, args) {  
+        if (sender != null) {
+            if (sender.get_masterTableView() != null) {
+                var table = sender.get_masterTableView().get_element();
+                if (table != null) {
+                    var tFooter = table.tFoot;
+                    if (tFooter != null) {
+                        $telerik.$(tFooter).appendTo(tFooter.parentNode);
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('.Minute').hide();
+
+
+        $('.minuteclick').click(function () {
+            jQuery(this).next('.Minute').toggle();
+        });
+
+
+        $('.Minute').click(function () {
+            jQuery(this).toggle();
+        });
+    });
+</script>
+
+<div id="dnn_ctr397_ViewMeetingPublic_LoadingPanel" class="RadAjax RadAjax_Silk" style="display:none;">
+		<div class="raDiv">
+
+		</div><div class="raColor raTransp">
+
+		</div>
+	</div>
+<div id="dnn_ctr397_ViewMeetingPublic_RadFormDecorator1" class="RadFormDecorator" style="display:none;">
+		<!-- 2020.1.219.45 --><script type="text/javascript">
+//<![CDATA[
+
+if (typeof(WebForm_AutoFocus) != 'undefined' && !isWebFormAutoFocusMethodCalled)
+{   
+	var old_WebForm_AutoFocus = WebForm_AutoFocus;
+	WebForm_AutoFocus = function(arg)
+	{
+		Sys.Application.add_load(function()
+		{            
+			old_WebForm_AutoFocus(arg);
+			WebForm_AutoFocus = old_WebForm_AutoFocus;
+		});
+	}
+    var isWebFormAutoFocusMethodCalled = true;
+}
+if (typeof(Telerik) != 'undefined' && Type.isNamespace(Telerik.Web))
+{
+	if (Telerik.Web.UI.RadFormDecorator)
+	{
+		Telerik.Web.UI.RadFormDecorator.initializePage("dnn_ctr397_ViewMeetingPublic_RadFormDecorator1", "ViewMeetingPublic.ascx", "Silk", 64440);
+	}
+}
+//]]>
+</script><input id="dnn_ctr397_ViewMeetingPublic_RadFormDecorator1_ClientState" name="dnn_ctr397_ViewMeetingPublic_RadFormDecorator1_ClientState" type="hidden" />
+	</div>
+<div id="ViewMeetingPublic.ascx">
+    <div class="CMIS_ModuleWrapper CM_ModuleWrapper ViewMeetingPublicWrapper">
+        
+        
+        
+        <div id="dnn_ctr397_ViewMeetingPublic_pnlAuthorised">
+		
+            
+            <div id="dnn_ctr397_ViewMeetingPublic_pnlMeetingSummary" class="SummaryPanel">
+			
+                <div class="holder">
+                    <div class="DNNLabel CommitteeLabel">
+                        
+<div class="dnnLabel">    
+    <label id="dnn_ctr397_ViewMeetingPublic_labelCommittee_label">
+        <span id="dnn_ctr397_ViewMeetingPublic_labelCommittee_lblLabel">Committee:</span>   
+    </label>
+    
+    
+</div>
+
+
+                    </div>
+                    <div class="Value Committee">
+                        Cabinet
+                    </div>
+                </div>
+
+                <div class="holder">
+                    <div class="DNNLabel DateTimeLabel">
+                        
+<div class="dnnLabel">    
+    <label id="dnn_ctr397_ViewMeetingPublic_labelDateTime_label">
+        <span id="dnn_ctr397_ViewMeetingPublic_labelDateTime_lblLabel">Date/Time:</span>   
+    </label>
+    
+    
+</div>
+
+
+                    </div>
+                    <div class="Value DateTime">
+                        10 Mar 2020 - 18:30 to 20:48
+                    </div>
+                </div>
+                <div class="holder">
+                    <div class="DNNLabel VenueLabel">
+                        
+<div class="dnnLabel">    
+    <label id="dnn_ctr397_ViewMeetingPublic_litMeetingStatus_label">
+        <span id="dnn_ctr397_ViewMeetingPublic_litMeetingStatus_lblLabel">Status:</span>   
+    </label>
+    
+    
+</div>
+
+
+                    </div>
+                    <div class="Value Venue">
+                        Occurred
+                    </div>
+
+                    <div class="holder">
+                        <div class="DNNLabel VenueLabel">
+                            
+<div class="dnnLabel">    
+    <label id="dnn_ctr397_ViewMeetingPublic_labelVenue_label">
+        <span id="dnn_ctr397_ViewMeetingPublic_labelVenue_lblLabel">Venue:</span>   
+    </label>
+    
+    
+</div>
+
+
+                        </div>
+                        
+                        <div class="Value Venue">
+                            <a id="dnn_ctr397_ViewMeetingPublic_lnkVenue" href="/milton-keynes/Calendar/tabid/70/ctl/MeetingVenueDetails/mid/397/VenueID/1/Default.aspx">Council Chamber</a>
+                        </div>
+                        
+                    </div>
+
+                    
+
+                    
+                    <div class="holder">
+                        <div class="DNNLabel PublicLabel">
+                            
+                        </div>
+                        <div class="Value Public">
+                            
+                            
+                        </div>
+                    </div>
+                    
+
+                    <div class="holder">
+                        <div class="CalendarDownload">
+                            <a id="dnn_ctr397_ViewMeetingPublic_xxxdownloadVCalendar" title="Download a VCalendar for this event" href="javascript:__doPostBack(&#39;dnn$ctr397$ViewMeetingPublic$xxxdownloadVCalendar&#39;,&#39;&#39;)">Add to my Calendar</a>
+                        </div>
+                    </div>
+                </div>
+            
+		</div>
+            
+
+            
+            <div class="RadTabStripWrapper">
+                <div id="dnn_ctr397_ViewMeetingPublic_rtsMeetingTabs" class="RadTabStrip RadTabStrip_Silk rtsHorizontal rtsTop">
+			<div class="rtsLevel rtsLevel1">
+				<ul class="rtsUL"><li class="rtsLI rtsSelected"><span class="rtsLink"><span class="rtsTxt">Documents</span></span></li><li class="rtsLI"><span class="rtsLink"><span class="rtsTxt">Attendance</span></span></li><li class="rtsLI"><span class="rtsLink"><span class="rtsTxt">Officers in Attendance</span></span></li><li class="rtsLI"><span class="rtsLink"><span class="rtsTxt">Declarations of Interests</span></span></li></ul>
+			</div><input id="dnn_ctr397_ViewMeetingPublic_rtsMeetingTabs_ClientState" name="dnn_ctr397_ViewMeetingPublic_rtsMeetingTabs_ClientState" type="hidden" />
+		</div>
+            </div>
+            <div class="RadMultiPageWrapper">
+                <div id="dnn_ctr397_ViewMeetingPublic_rmpMeetingTabViews" class="RadMultiPage RadMultiPage_Silk">
+			<div id="dnn_ctr397_ViewMeetingPublic_pvDocuments" class="rmpView DocumentsTab">
+				
+                        <h2>
+                            Documents</h2>
+                        
+
+                        <div id="dnn_ctr397_ViewMeetingPublic_pnlAdditionalDocuments" class="AdditionalDocuments">
+					
+                            
+
+                            
+                            <div id="dnn_ctr397_ViewMeetingPublic_pnlMeetingDocuments" class="MeetingDocumentsList">
+						
+                                <div id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_pnlDocuments" class="CmisDocumentList">
+							    
+    <ol class="DocumentList">
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_0" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_0" title="Click to view &#39;Agenda and Reports&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=Qpc75823TdbJIOkJIyVGTCyMCxfBkYnUqcEfU1hyOU40YP25Qc7A8A%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Agenda and Reports</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (12738Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_1" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_1" title="Click to view &#39;Agenda - Front Sheet&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=rppliKHLTo1pYXqXwt%2b952kH07YhngE3%2bdjxPdVjNzYjluKFMH%2bR8w%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Agenda - Front Sheet</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (191Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_2" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_2" title="Click to view &#39;Agenda - Health and Safety&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=zsUGp7Yao5tsPj6kODQUIkOuQ4r0Dx%2frF%2faQDpStT2YHc94Lm971Qg%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Agenda - Health and Safety</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (273Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_3" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_3" title="Click to view &#39;Agenda - List of Items&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=8sI3LjL80K%2b20G%2bcdL%2ft1%2fNBaTBm6ubb8gzC05zqtmni4ChyjRWNTg%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Agenda - List of Items</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (265Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_4" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_4" title="Click to view &#39;Draft Minutes - 4 February 2020&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=7tk2chqur%2bITqri9uvRWkYxpt%2fJgdRE20r5%2fUYGQXdezCePrtCFOKQ%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Draft Minutes - 4 February 2020</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (370Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_5" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_5" title="Click to view &#39;Councillors Items&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=OzNfOt1QE7Mg3jn4I%2bV45Wq7T4w67HDuquUlVXqkanp8lPv9LeJI1Q%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Councillors Items</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (239Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_6" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_6" title="Click to view &#39;Milton Keynes East Development Framework SPD – Amendments following Strategic Placemaking Scrutiny Sub Committee&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=o61xrzEQYvvYr%2bRAdC5As07Kj%2bjeNPiWYa0E9PW2L2r7pKOLJrSI4w%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Milton Keynes East Development Framework SPD – Amendments following Strategic Placemaking Scrutiny Sub Committee</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (302Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                <div id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_6_pnlAppendicies_6" class="CmisDocumentAppendiciesList">
+								    
+    <ol class="Appendicies">
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_6_rptAppendicies_6_imgFileType_0" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_6_rptAppendicies_6_linkTitle_0" title="Click to view &#39;Milton Keynes East Development Framework SPD – Amendments following Strategic Placemaking Scrutiny Committee_Annex&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=2lwcrX%2fp36od4Yi19w%2fEUlNyQQxYdyAG8OJR%2faHclUhwXfqbNjzpjg%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Milton Keynes East Development Framework SPD – Amendments following Strategic Placemaking Scrutiny Committee_Annex</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (19657Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        </ol>    
+
+							</div>
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_7" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_7" title="Click to view &#39;Referral from Scrutiny Management Committee&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=YPwzk3y%2fZDBdBBo%2bYIrsk%2bLAYEIQxNa25qC3dVd2St69K2qMQZya8A%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Referral from Scrutiny Management Committee</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (157Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_8" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_8" title="Click to view &#39;Referral from the Climate Change Task and Finish Group 20 February 2020&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=K5o%2fcLGIOho%2bqtDAd%2bPJMeAekrW68gZNPGGBlIDLBxnQyu9b0YRPyQ%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Referral from the Climate Change Task and Finish Group 20 February 2020</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (517Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                <div id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_8_pnlAppendicies_8" class="CmisDocumentAppendiciesList">
+								    
+    <ol class="Appendicies">
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_8_rptAppendicies_8_imgFileType_0" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_8_rptAppendicies_8_linkTitle_0" title="Click to view &#39;Full Version Referral from the Climate Change Task and Finish Group 20 February 2020&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=2V5MbG3ICmiIIBZlOteCRYyJXuGbemZLYr9jHQoUT9RdEHJcWYWpHQ%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Full Version Referral from the Climate Change Task and Finish Group 20 February 2020</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (843Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        </ol>    
+
+							</div>
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_9" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_9" title="Click to view &#39;Making the Lavendon Neighbourhood Plan&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=ToKCrxF4bsiNokOJz9zs2xmyfxfwvPYDd3RPw65wZS4edayHC%2fL%2fnw%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Making the Lavendon Neighbourhood Plan</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (374Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                <div id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_9_pnlAppendicies_9" class="CmisDocumentAppendiciesList">
+								    
+    <ol class="Appendicies">
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_9_rptAppendicies_9_imgFileType_0" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_9_rptAppendicies_9_linkTitle_0" title="Click to view &#39;Making the Lavendon Neighbourhood Plan_Annex&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=uif3vPWKnd6KU%2bh%2bLzRra3YS6XFAL2H%2fjXRSF9PH7xoO4Emrlki%2bzQ%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Making the Lavendon Neighbourhood Plan_Annex</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (188Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        </ol>    
+
+							</div>
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_10" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_10" title="Click to view &#39;Child Poverty Commission Interim Report&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=XAO8qZ9RYx0Y%2f9hwH%2bP11Rj3BbpG29FIAJB4vMrYc%2bcCG0GRpGTZIw%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Child Poverty Commission Interim Report</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (200Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                <div id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_10_pnlAppendicies_10" class="CmisDocumentAppendiciesList">
+								    
+    <ol class="Appendicies">
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_10_rptAppendicies_10_imgFileType_0" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_10_rptAppendicies_10_linkTitle_0" title="Click to view &#39;Child Poverty Commission Interim Report_Annex A&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=cQ7zSjDXhEW7HZ3DuDwf55lI9TVjym0DmZ1JzzgtQ8L%2beHgiUH9sOw%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Child Poverty Commission Interim Report_Annex A</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (239Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_10_rptAppendicies_10_imgFileType_1" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_10_rptAppendicies_10_linkTitle_1" title="Click to view &#39;Child Poverty Commission Interim Report_Annex B&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=5ZuLpwpmo7cm4LxbPVqvECxm31nsXWa%2bQrD7cpGtgn15%2fCKWRmEr7Q%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Child Poverty Commission Interim Report_Annex B</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (941Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        </ol>    
+
+							</div>
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_11" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_11" title="Click to view &#39;Sustainability Strategy Action Plan 2019 - 2050&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=7K8z%2fwl0GXZ%2fO4e00kwj5yaEc0frM6fr%2b0%2bSSAr%2bKgbK7NDVVKejew%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Sustainability Strategy Action Plan 2019 - 2050</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (203Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                <div id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_11_pnlAppendicies_11" class="CmisDocumentAppendiciesList">
+								    
+    <ol class="Appendicies">
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_11_rptAppendicies_11_imgFileType_0" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_11_rptAppendicies_11_linkTitle_0" title="Click to view &#39;Sustainability Strategy Action Plan 2019 - 2050_Annex A&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=kIBVgAZx7JpZWoABZM1JKannzF3bdyq5Scy%2bpS7PsxhRdVQnad1XIQ%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Sustainability Strategy Action Plan 2019 - 2050_Annex A</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (687Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_11_rptAppendicies_11_imgFileType_1" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_11_rptAppendicies_11_linkTitle_1" title="Click to view &#39;Sustainability Strategy Action Plan 2019 - 2050_Annex B&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=Y0%2b24Oo9UcGawCa75rYPRpuPj2QYfAh%2f7Qr00QTCp4WjIKKeCP97hA%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Sustainability Strategy Action Plan 2019 - 2050_Annex B</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (383Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        </ol>    
+
+							</div>
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_12" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_12" title="Click to view &#39;Environmental Policy Core Outcomes  Action Plan Greeenest City Physical and Natural Environment Vision&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=Ir5xNKh4h2fuNZ3ZltbCvR0t1HRjSrg3C9rDijrcwm8uyZakOm0Rwg%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Environmental Policy Core Outcomes  Action Plan Greeenest City Physical and Natural Environment Vision</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (309Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                <div id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_12_pnlAppendicies_12" class="CmisDocumentAppendiciesList">
+								    
+    <ol class="Appendicies">
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_12_rptAppendicies_12_imgFileType_0" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_12_rptAppendicies_12_linkTitle_0" title="Click to view &#39;Environmental Policy Core Outcomes  Action Plan Greeenest City Physical and Natural Environment Vision_Annex A&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=47lTE12dvX1%2fVhV%2bByQUWchbAfl%2fcopmQu9TBMOaFuWfMvP3xmdPSw%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Environmental Policy Core Outcomes  Action Plan Greeenest City Physical and Natural Environment Vision_Annex A</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (1036Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_12_rptAppendicies_12_imgFileType_1" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_12_rptAppendicies_12_linkTitle_1" title="Click to view &#39;Environmental Policy Core Outcomes  Action Plan Greeenest City Physical and Natural Environment Vision_Annex B&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=jrMun%2fKd3BWcU4%2bTBAvb6jA6B5quA8tmTtPIWnekQsVD4yOzi5TaeA%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Environmental Policy Core Outcomes  Action Plan Greeenest City Physical and Natural Environment Vision_Annex B</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (237Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        </ol>    
+
+							</div>
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_13" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_13" title="Click to view &#39;Establishment Of A Local Housing Company&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=mvNgmIlBdwDz4uPpW10bl38C%2fUZMfAw7WBxTghoLQYGiTVQCL1hiJQ%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Establishment Of A Local Housing Company</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (310Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_14" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_14" title="Click to view &#39;Milton Keynes Skills Strategy 2020&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=exYqA6DZOiS8thj0xOLocVKwnpOIms9jsMIJHG59Fyi%2boWYGpubXjQ%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Milton Keynes Skills Strategy 2020</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (376Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                <div id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_14_pnlAppendicies_14" class="CmisDocumentAppendiciesList">
+								    
+    <ol class="Appendicies">
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_14_rptAppendicies_14_imgFileType_0" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_14_rptAppendicies_14_linkTitle_0" title="Click to view &#39;Milton Keynes Skills Strategy 2020_Annex A&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=rdyI5LwGIzwAlHe59GkWZJgDecfSbkV3kRU3GpsO4QYpKP0oouMkzg%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Milton Keynes Skills Strategy 2020_Annex A</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (849Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        </ol>    
+
+							</div>
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_15" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_15" title="Click to view &#39;Fraud Policy Review 2019-20&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=B3wZ7DvYWH3OLEaPPhIW0TpPufpk3Zk5vQrUYR4Xr6Th8DMGauM3bw%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Fraud Policy Review 2019-20</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (350Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                <div id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_15_pnlAppendicies_15" class="CmisDocumentAppendiciesList">
+								    
+    <ol class="Appendicies">
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_15_rptAppendicies_15_imgFileType_0" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_15_rptAppendicies_15_linkTitle_0" title="Click to view &#39;Fraud Policy Review 2019-20_Annex A&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=z3T2XU1JDKHhXq76iU8f8KBRPSzJ8gdyPv9s2Knx3EmYk%2bcCoWfrmg%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Fraud Policy Review 2019-20_Annex A</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (481Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_15_rptAppendicies_15_imgFileType_1" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_15_rptAppendicies_15_linkTitle_1" title="Click to view &#39;Fraud Policy Review 2019-20_Annex B&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=CK4VhWN7qeGoxrVKx0eSloGC7HjhJHQUwkfRrT3E0za4tsReucT0aQ%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Fraud Policy Review 2019-20_Annex B</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (288Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_15_rptAppendicies_15_imgFileType_2" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_15_rptAppendicies_15_linkTitle_2" title="Click to view &#39;Fraud Policy Review 2019-20_Annex C&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=g2baqeMlZl6KvOLD6MvY7c60%2byJOzopnCsUk8xsWzTU0fR4cdbgyvA%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Fraud Policy Review 2019-20_Annex C</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (311Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        </ol>    
+
+							</div>
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_16" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_16" title="Click to view &#39;Progress Report for the Council Plan&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=w6%2fQjssQv7%2biDEfWtLw5VYB8T8Qwnq1Fv1%2fRCRWPA9E6n3jwjUhuzA%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Progress Report for the Council Plan</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (190Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                <div id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_16_pnlAppendicies_16" class="CmisDocumentAppendiciesList">
+								    
+    <ol class="Appendicies">
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_16_rptAppendicies_16_imgFileType_0" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_16_rptAppendicies_16_linkTitle_0" title="Click to view &#39;Progress Report for the Council Plan_Annex&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=42%2bX0%2bZxrfVjB7SRg9x35by9xupLUkBi1Zn%2bQhFaFyvj70yhmVNYGg%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Progress Report for the Council Plan_Annex</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (449Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        </ol>    
+
+							</div>
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_17" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_17" title="Click to view &#39;Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=Ra2z%2bArQxncwpuJkbsQiV55DkRpQkZCf9bbUIYwKp5IziydglV%2fJ6A%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (493Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                <div id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_pnlAppendicies_17" class="CmisDocumentAppendiciesList">
+								    
+    <ol class="Appendicies">
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_imgFileType_0" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_linkTitle_0" title="Click to view &#39;Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex A&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=WnfgLppB6t3q8dqRU%2bn9p2BRsKeBeM3ogYREIOT2UbI%2bksdHminmPg%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex A</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (273Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_imgFileType_1" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_linkTitle_1" title="Click to view &#39;Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex B&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=equYfKCQDHARD3qllSbqgaVGWBXpABMl%2fIiNKpcBc2f1oxM0mkVQYw%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex B</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (248Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_imgFileType_2" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_linkTitle_2" title="Click to view &#39;Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex C&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=W%2bG58dPAGXdzJxDxD5bnDSiLLMFXNOgXTopbL8tNUX5wRbusDyQWmg%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex C</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (221Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_imgFileType_3" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_linkTitle_3" title="Click to view &#39;Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex D&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=GgNZOzx3bBrVnMDNjcgFArmVbi2kWIWDQZIWNcUF0jI0RXSlZsuxvA%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex D</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (237Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_imgFileType_4" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_linkTitle_4" title="Click to view &#39;Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex E&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=BD7Lck2kwZys2pJsWrWzF%2bOUfTvBbYTpzUtUMdhGXx8Olsl8tAuIGA%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex E</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (252Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_imgFileType_5" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_linkTitle_5" title="Click to view &#39;Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex J&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=oXyJ0pa10yfsfR2zWoyrcfyBn7IPnmDiaXAQtuqeKgVFI21N3Tm%2bDw%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex J</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (373Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_imgFileType_6" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_linkTitle_6" title="Click to view &#39;Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex K&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=kuNQv%2fg912ZMmnyr2Uqv55qImJA7SQ4uZXnrZxFa0NXIgJl4FH2Hug%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex K</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (322Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_imgFileType_7" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_linkTitle_7" title="Click to view &#39;Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex L&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=wKQ6goSTcXUhrszhynKFOt8OM8JBBdT%2bW9QYiLMAyhzF4gyrhLegPA%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex L</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (90Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_imgFileType_8" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_linkTitle_8" title="Click to view &#39;Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex M&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=jt2IH8ca1mAl6QzIVHy%2fgzKjdsIG4HyB5xNbDWUOu0QEYhkjBE4Vaw%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex M</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (280Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_imgFileType_9" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_linkTitle_9" title="Click to view &#39;Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex N&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=MGHi%2fbwBigz6D8GHMYLT87nrmNTO6q7fcjomib5z3%2fWszhLiqWKB1w%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Forecast Outturn For Quarter 3 2019 to 2020 GF Revenue HRA DSG and Capital Programme_Annex N</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (189Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        
+            <li class="Appendix">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_imgFileType_10" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" align="absmiddle" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_cmisAppendicies_17_rptAppendicies_17_linkTitle_10" title="Click to view &#39;Forecast Outturn For Quarter 3 2019 to 2020_Annex F to I&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=HaQNZQFdSlO78RisO1RdVCDknDmGbwWGPPkpRbZeqQOUmOjZ3fu6wg%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Forecast Outturn For Quarter 3 2019 to 2020_Annex F to I</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (472Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+            </li>
+        </ol>    
+
+							</div>
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_18" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_18" title="Click to view &#39;Decision Sheet- Cabinet Meeting 10 March 2020&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=AT8C5WUjACrjq%2fA58ij82%2f2NzRw8carO%2fdfOxzOW6TiDe3wL8DuM6w%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">Decision Sheet- Cabinet Meeting 10 March 2020</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (391Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                
+
+            </li>
+        
+            <li class="DocumentListItem">
+                
+                                
+                <img id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_imgFileType_19" class="FileTypeImage" src="/milton-keynes/images/FileManager/Icons/pdf.gif" alt="pdf" />
+                <a id="dnn_ctr397_ViewMeetingPublic_cmisDocuments_rptDocuments_linkTitle_19" title="Click to view &#39;04-02-20 Minutes&#39;" class="TitleLink" href="/milton-keynes/Document.ashx?czJKcaeAi5tUFL1DTL2UE4zNRBcoShgo=wXfUt3ExUpjVDmu7anI76Lkd2oMjJr7hIFdOg0tZKWhts1Q5lwTqCg%3d%3d&amp;rUzwRPf%2bZ3zd4E7Ikn8Lyw%3d%3d=pwRE6AGJFLDNlh225F5QMaQWCtPHwdhUfCZ%2fLUQzgA2uL5jNRG4jdQ%3d%3d&amp;mCTIbCubSFfXsDGW9IXnlg%3d%3d=hFflUdN3100%3d&amp;kCx1AnS9%2fpWZQ40DXFvdEw%3d%3d=hFflUdN3100%3d&amp;uJovDxwdjMPoYv%2bAJvYtyA%3d%3d=ctNJFf55vVA%3d&amp;FgPlIEJYlotS%2bYGoBi5olA%3d%3d=NHdURQburHA%3d&amp;d9Qjj0ag1Pd993jsyOJqFvmyB7X0CSQK=ctNJFf55vVA%3d&amp;WGewmoAfeNR9xqBux0r1Q8Za60lavYmz=ctNJFf55vVA%3d&amp;WGewmoAfeNQ16B2MHuCpMRKZMwaG1PaO=ctNJFf55vVA%3d" target="_blank">04-02-20 Minutes</a>
+                <span class="TitleText">
+                    
+                </span>                
+                <span class="FileSize">
+                    (328Kb)  
+                </span>
+                <span class="SoonFlag">
+                     
+                </span>
+                
+                   
+                <span class="PrivateFlag">
+                    
+                </span>
+                
+                 
+                <span class="ExemptFlag">
+                    
+                </span>                                                            
+                
+                
+                
+                
+
+            </li>
+        </ol>    
+
+						</div>
+
+                            
+					</div>
+
+                        
+				</div>
+                    
+			</div><div id="dnn_ctr397_ViewMeetingPublic_pvAttendance" class="rmpView rmpHidden AttendanceTab">
+				
+                        
+                        <h2>
+                            Attendance
+                        </h2>
+                        <div id="dnn_ctr397_ViewMeetingPublic_pnlAttended" class="Attended">
+					
+                            <div class="RadAjaxPanel" id="dnn_ctr397_ViewMeetingPublic_dnn_ctr397_ViewMeetingPublic_gridAttendedAjaxPanelPanel">
+						<div id="dnn_ctr397_ViewMeetingPublic_gridAttendedAjaxPanel">
+							
+                                <div class="RadGridWrapper AttendedGrid">
+                                    <div id="dnn_ctr397_ViewMeetingPublic_gridAttended" class="RadGrid RadGrid_Silk" aria-label="Table containing a list of members that attended this meeting">
+
+							<table class="rgMasterTable" summary="Grid table view level . Contains flat or hierarchical data represented in a tabular manner." id="dnn_ctr397_ViewMeetingPublic_gridAttended_ctl00" width="100%" style="table-layout:auto;empty-cells:show;">
+								<colgroup>
+		<col  />
+	</colgroup>
+<thead>
+									<tr>
+										<th scope="col" class="rgHeader">Name</th>
+									</tr>
+								</thead><tbody>
+								<tr class="rgRow" id="dnn_ctr397_ViewMeetingPublic_gridAttended_ctl00__0">
+									<td><a title="View Details of Councillor Emily Darlington" href="http://milton-keynes.cmis.uk.com/milton-keynes/Councillors/tabid/63/ctl/ViewCMIS_Person/mid/383/id/780/Default.aspx">Councillor Emily Darlington</a></td>
+								</tr><tr class="rgAltRow" id="dnn_ctr397_ViewMeetingPublic_gridAttended_ctl00__1">
+									<td><a title="View Details of Councillor Martin Gowans" href="http://milton-keynes.cmis.uk.com/milton-keynes/Councillors/tabid/63/ctl/ViewCMIS_Person/mid/383/id/355/Default.aspx">Councillor Martin Gowans</a></td>
+								</tr><tr class="rgRow" id="dnn_ctr397_ViewMeetingPublic_gridAttended_ctl00__2">
+									<td><a title="View Details of Councillor Nigel Long" href="http://milton-keynes.cmis.uk.com/milton-keynes/Councillors/tabid/63/ctl/ViewCMIS_Person/mid/383/id/58/Default.aspx">Councillor Nigel Long</a></td>
+								</tr><tr class="rgAltRow" id="dnn_ctr397_ViewMeetingPublic_gridAttended_ctl00__3">
+									<td><a title="View Details of Councillor Peter Marland" href="http://milton-keynes.cmis.uk.com/milton-keynes/Councillors/tabid/63/ctl/ViewCMIS_Person/mid/383/id/380/Default.aspx">Councillor Peter Marland</a></td>
+								</tr><tr class="rgRow" id="dnn_ctr397_ViewMeetingPublic_gridAttended_ctl00__4">
+									<td><a title="View Details of Councillor Robert Middleton" href="http://milton-keynes.cmis.uk.com/milton-keynes/Councillors/tabid/63/ctl/ViewCMIS_Person/mid/383/id/392/Default.aspx">Councillor Robert Middleton</a></td>
+								</tr><tr class="rgAltRow" id="dnn_ctr397_ViewMeetingPublic_gridAttended_ctl00__5">
+									<td><a title="View Details of Councillor Zoe Nolan" href="http://milton-keynes.cmis.uk.com/milton-keynes/Councillors/tabid/63/ctl/ViewCMIS_Person/mid/383/id/419/Default.aspx">Councillor Zoe Nolan</a></td>
+								</tr><tr class="rgRow" id="dnn_ctr397_ViewMeetingPublic_gridAttended_ctl00__6">
+									<td><a title="View Details of Councillor Hannah O&#39;Neill" href="http://milton-keynes.cmis.uk.com/milton-keynes/Councillors/tabid/63/ctl/ViewCMIS_Person/mid/383/id/220/Default.aspx">Councillor Hannah O'Neill</a></td>
+								</tr><tr class="rgAltRow" id="dnn_ctr397_ViewMeetingPublic_gridAttended_ctl00__7">
+									<td><a title="View Details of Councillor Moriah Priestley" href="http://milton-keynes.cmis.uk.com/milton-keynes/Councillors/tabid/63/ctl/ViewCMIS_Person/mid/383/id/754/Default.aspx">Councillor Moriah Priestley</a></td>
+								</tr><tr class="rgRow" id="dnn_ctr397_ViewMeetingPublic_gridAttended_ctl00__8">
+									<td><a title="View Details of Councillor Jennifer Wilson-Marklew" href="http://milton-keynes.cmis.uk.com/milton-keynes/Councillors/tabid/63/ctl/ViewCMIS_Person/mid/383/id/759/Default.aspx">Councillor Jennifer Wilson-Marklew</a></td>
+								</tr>
+								</tbody>
+
+							</table><div id="dnn_ctr397_ViewMeetingPublic_gridAttended_SharedCalendarContainer" style="display:none;">
+
+							</div><input id="dnn_ctr397_ViewMeetingPublic_gridAttended_ClientState" name="dnn_ctr397_ViewMeetingPublic_gridAttended_ClientState" type="hidden" />	</div>
+							
+                                </div>
+                            
+						</div>
+					</div>
+                        
+				</div>
+                        <div id="dnn_ctr397_ViewMeetingPublic_pnlOthersAttended" class="OthersAttended Attended">
+					
+                            <div class="RadAjaxPanel" id="dnn_ctr397_ViewMeetingPublic_dnn_ctr397_ViewMeetingPublic_gridOthersAttendedAjaxPanelPanel">
+						<div id="dnn_ctr397_ViewMeetingPublic_gridOthersAttendedAjaxPanel">
+							
+                                <div class="RadGridWrapper OthersAttendedGrid">
+                                    <div id="dnn_ctr397_ViewMeetingPublic_gridOthersAttended" class="RadGrid RadGrid_Silk" aria-label="Table containing a list of other people that attended this meeting">
+
+							<table class="rgMasterTable" summary="Grid table view level . Contains flat or hierarchical data represented in a tabular manner." id="dnn_ctr397_ViewMeetingPublic_gridOthersAttended_ctl00" width="100%" style="table-layout:auto;empty-cells:show;">
+								<colgroup>
+		<col  />
+	</colgroup>
+<thead>
+									<tr>
+										<th scope="col" class="rgHeader">Name</th>
+									</tr>
+								</thead><tbody>
+								<tr class="rgNoRecords">
+									<td colspan="1" style="text-align:left;">
+                                                    <div class="NoItems">No other member attendance information has been recorded for the meeting.</div>
+                                                 </td>
+								</tr>
+								</tbody>
+
+							</table><div id="dnn_ctr397_ViewMeetingPublic_gridOthersAttended_SharedCalendarContainer" style="display:none;">
+
+							</div><input id="dnn_ctr397_ViewMeetingPublic_gridOthersAttended_ClientState" name="dnn_ctr397_ViewMeetingPublic_gridOthersAttended_ClientState" type="hidden" />	</div>
+							
+                                </div>
+                            
+						</div>
+					</div>
+                        
+				</div>
+
+                        <div id="dnn_ctr397_ViewMeetingPublic_pnlApologies" class="Apology">
+					
+                            <div class="RadAjaxPanel" id="dnn_ctr397_ViewMeetingPublic_dnn_ctr397_ViewMeetingPublic_gridApologiesAjaxPanelPanel">
+						<div id="dnn_ctr397_ViewMeetingPublic_gridApologiesAjaxPanel">
+							
+                                <div class="RadGridWrapper ApologyGrid">
+                                    <div id="dnn_ctr397_ViewMeetingPublic_gridApology" class="RadGrid RadGrid_Silk" aria-label="Table containing a list of apologies received for people that did not attend this meeting">
+
+							<table class="rgMasterTable" summary="Grid table view level . Contains flat or hierarchical data represented in a tabular manner." id="dnn_ctr397_ViewMeetingPublic_gridApology_ctl00" width="100%" style="table-layout:auto;empty-cells:show;">
+								<colgroup>
+		<col  />
+		<col  />
+	</colgroup>
+<thead>
+									<tr>
+										<th scope="col" class="rgHeader">Name</th><th scope="col" class="rgHeader">Reason for Sending Apology</th>
+									</tr>
+								</thead><tbody>
+								<tr class="rgNoRecords">
+									<td colspan="2" style="text-align:left;">
+                                                    <div class="NoItems">No apology information has been recorded for the meeting.</div>
+                                                 </td>
+								</tr>
+								</tbody>
+
+							</table><div id="dnn_ctr397_ViewMeetingPublic_gridApology_SharedCalendarContainer" style="display:none;">
+
+							</div><input id="dnn_ctr397_ViewMeetingPublic_gridApology_ClientState" name="dnn_ctr397_ViewMeetingPublic_gridApology_ClientState" type="hidden" />	</div>
+							
+                                </div>
+                            
+						</div>
+					</div>
+                        
+				</div>
+                        <div id="dnn_ctr397_ViewMeetingPublic_pnlAbsent" class="Absent">
+					
+                            <div class="RadAjaxPanel" id="dnn_ctr397_ViewMeetingPublic_dnn_ctr397_ViewMeetingPublic_gridAbsentAjaxGridPanel">
+						<div id="dnn_ctr397_ViewMeetingPublic_gridAbsentAjaxGrid">
+							
+                                <div class="RadGridWrapper AbsentGrid">
+                                    <div id="dnn_ctr397_ViewMeetingPublic_gridAbsent" class="RadGrid RadGrid_Silk" aria-label="Table containing a list of absentees for this meeting">
+
+							<table class="rgMasterTable" summary="Grid table view level . Contains flat or hierarchical data represented in a tabular manner." id="dnn_ctr397_ViewMeetingPublic_gridAbsent_ctl00" width="100%" style="table-layout:auto;empty-cells:show;">
+								<colgroup>
+		<col  />
+		<col  />
+	</colgroup>
+<thead>
+									<tr>
+										<th scope="col" class="rgHeader">Name</th><th scope="col" class="rgHeader">Reason for Absence</th>
+									</tr>
+								</thead><tbody>
+								<tr class="rgNoRecords">
+									<td colspan="2" style="text-align:left;">
+                                                    <div class="NoItems">No absentee information has been recorded for the meeting.</div>
+                                                 </td>
+								</tr>
+								</tbody>
+
+							</table><div id="dnn_ctr397_ViewMeetingPublic_gridAbsent_SharedCalendarContainer" style="display:none;">
+
+							</div><input id="dnn_ctr397_ViewMeetingPublic_gridAbsent_ClientState" name="dnn_ctr397_ViewMeetingPublic_gridAbsent_ClientState" type="hidden" />	</div>
+							
+                                </div>
+                            
+						</div>
+					</div>
+                        
+				</div>
+                    
+			</div><div id="dnn_ctr397_ViewMeetingPublic_pvDOI" class="rmpView rmpHidden DOITab">
+				
+                        
+                        <h2>
+                            Declarations of Interests</h2>
+                        <div class="RadGridWrapper DOIGrid">
+                            <div id="dnn_ctr397_ViewMeetingPublic_gridDOI" class="RadGrid RadGrid_Silk" aria-label="Table containing a list of declarations of interest for this meeting">
+
+				<table class="rgMasterTable" summary="Grid table view level . Contains flat or hierarchical data represented in a tabular manner." id="dnn_ctr397_ViewMeetingPublic_gridDOI_ctl00" width="100%" style="table-layout:auto;empty-cells:show;">
+					<colgroup>
+		<col  />
+		<col  />
+		<col  />
+		<col  />
+		<col  />
+	</colgroup>
+<thead>
+						<tr>
+							<th scope="col" class="rgHeader">Member Name</th><th scope="col" class="rgHeader">Item Ref.</th><th scope="col" class="rgHeader">Details</th><th scope="col" class="rgHeader">Nature of Declaration</th><th scope="col" class="rgHeader">Action</th>
+						</tr>
+					</thead><tbody>
+					<tr class="rgNoRecords">
+						<td colspan="5" style="text-align:left;">
+                                        <div class="NoItems">No declarations of interest have been entered for this meeting.</div>
+                                    </td>
+					</tr>
+					</tbody>
+
+				</table><div id="dnn_ctr397_ViewMeetingPublic_gridDOI_SharedCalendarContainer" style="display:none;">
+
+				</div><input id="dnn_ctr397_ViewMeetingPublic_gridDOI_ClientState" name="dnn_ctr397_ViewMeetingPublic_gridDOI_ClientState" type="hidden" />	</div>
+				
+                        </div>
+                    
+			</div><div id="dnn_ctr397_ViewMeetingPublic_pvVisitors" class="rmpView rmpHidden VisitorsTab">
+				
+                        
+                        <h2>
+                            Officers in Attendance</h2>
+                        
+                        
+                        <div id="dnn_ctr397_ViewMeetingPublic_pnlVisitorInformationUnpublished" class="VisitorInformationEmpty">
+					
+                            Visitor Information is not yet available for this meeting
+                        
+				</div>
+                    
+			</div><div id="dnn_ctr397_ViewMeetingPublic_pvCommitteeLinkDocTab1" class="rmpView rmpHidden">
+				
+                        <div id="dnn_ctr397_ViewMeetingPublic_linkedDocuments1_pnlDocuments" class="CmisDocumentList">
+					    
+        
+
+				</div>
+
+                    
+			</div><div id="dnn_ctr397_ViewMeetingPublic_pvCommitteeLinkDocTab2" class="rmpView rmpHidden">
+				
+                        <div id="dnn_ctr397_ViewMeetingPublic_linkedDocuments2_pnlDocuments" class="CmisDocumentList">
+					    
+        
+
+				</div>
+
+                    
+			</div><div id="dnn_ctr397_ViewMeetingPublic_pvCommitteeLinkDocTab3" class="rmpView rmpHidden">
+				
+                        <div id="dnn_ctr397_ViewMeetingPublic_linkedDocuments3_pnlDocuments" class="CmisDocumentList">
+					    
+        
+
+				</div>
+
+                    
+			</div><input id="dnn_ctr397_ViewMeetingPublic_rmpMeetingTabViews_ClientState" name="dnn_ctr397_ViewMeetingPublic_rmpMeetingTabViews_ClientState" type="hidden" />
+		</div>
+            </div>
+
+            
+        
+	</div>
+
+        <div id="dnn_ctr397_ViewMeetingPublic_pnlViewActions">
+		
+            <div class="UserEditActions">
+                <input type="submit" name="dnn$ctr397$ViewMeetingPublic$btnViewCommittee" value="View Committee" id="dnn_ctr397_ViewMeetingPublic_btnViewCommittee" />
+                <input type="submit" name="dnn$ctr397$ViewMeetingPublic$btnViewCalendar" value="View Meetings Calendar" id="dnn_ctr397_ViewMeetingPublic_btnViewCalendar" />
+            </div>
+        
+	</div>
+        
+    </div>
+</div>
+
+</div></div>
+        </div>
+        <div class="c_footer">
+				
+				
+								
+								
+        </div>        </div>
+    
+
+</div></div>
+                     <div id="dnn_LeftPane" class="LeftPane pane DNNEmptyPane"></div>
+                        <div id="dnn_CenterPane" class="CenterPane pane DNNEmptyPane"></div>
+                           <div id="dnn_RightPane" class="RightPane pane DNNEmptyPane"></div>
+                              <div id="dnn_BottomPane" class="BottomPane pane DNNEmptyPane"></div>
+                                 <div class="clear"></div>
+                              </div>
+                           </div>
+                           <!-- 3rd party content in here ends -->
+                        </div>
+                        <div class="clear"></div>
+                     </div>
+                     <!-- A to Z -->
+                     <div class="az footerStyle">
+                        <div class="wrapper">
+                           <h2 class="alt">A to Z of <em>Services</em></h2>
+                           <ul class="grid">
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/A">A</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/B">B</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/C">C</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/D">D</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/E">E</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/F">F</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/G">G</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/H">H</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/I">I</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/J">J</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/K">K</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/L">L</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/M">M</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/N">N</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/O">O</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/P">P</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/Q">Q</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/R">R</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/S">S</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/T">T</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/U">U</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/V">V</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/W">W</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/X">X</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/Y">Y</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/Z">Z</a></li>
+                              <li><a href="http://www.milton-keynes.gov.uk/a-to-z/site/0">#</a></li>
+                           </ul>
+                           <div class="clear"></div>
+                        </div>
+                     </div>
+                     
+                  </div>
+				  <!-- Footer -->
+                     <footer class="footer" role="contentinfo">
+                        <div class="wrapper">
+                           <div class="column left">
+                              <p class="h3">The <em>Basics</em></p>
+                              <ul>
+                                 <li>
+                                    <a href="http://www.milton-keynes.gov.uk/a-to-z">A to Z of Services</a>
+                                 </li>
+                                 <li>
+                                    <a href="http://www.milton-keynes.gov.uk/your-council-and-elections/council-information-and-accounts/equalities/accessibility">Accessibility</a>
+                                 </li>
+                                 <li>
+                                    <a href="http://www.milton-keynes.gov.uk/your-council-and-elections/contact-us">Contact us</a>
+                                 </li>
+                                 <li>
+                                    <a href="http://www.milton-keynes.gov.uk/your-council-and-elections/council-information-and-accounts/privacy-statement">Privacy Statement</a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="column left">
+                              <p class="h3">The <em>Partners</em></p>
+                              <ul>
+                                 <li>
+                                    <a href="http://www.amazing-mk.co.uk/" rel="external">AmazingMK</a>
+                                 </li>
+                                 <li>
+                                    <a href="http://www.destinationmiltonkeynes.co.uk/" rel="external">DestinationMK</a>
+                                 </li>
+                                 <li>
+                                    <a href="http://www.gov.uk/" rel="external">GOV.UK</a>
+                                 </li>
+                                 <li>
+                                    <a href="https://www.milton-keynes.gov.uk/community-safety" rel="external">SaferMK</a>
+                                 </li>
+                                 <li>
+                                    <a href="http://www.investmiltonkeynes.com/" rel="external">InvestMK</a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="column left last">
+                              <p class="h3">Get <em>Social</em></p>
+                              <p class="socialBadges">
+                                 <a href="https://twitter.com/mkcouncil" rel="external"><img src="/milton-keynes/Portals/_default/skins/miltonkeynes2020/graphics/twitter.png" alt="twitter logo"></a>
+                                 <a href="https://www.youtube.com/user/MiltonKeynesCouncil" rel="external"><img src="/milton-keynes/Portals/_default/skins/miltonkeynes2020/graphics/youtube.png" alt="youtube"></a>
+                              </p>
+                           </div>
+                           <div class="clear"></div>
+                           <div class="footerMeta clearfix">
+                              <ul class="grid clearfix">
+                                 <li><a href="http://www.web-labs.co.uk/" rel="external">CMS by Weblabs</a></li>
+                                 <li><a href="#">Disclaimer</a></li>
+                                 <li class="last"><a href="#">&copy; Milton Keynes Council 2014</a></li>
+                              </ul>
+                           </div>
+                           <div class="clear"></div>
+                        </div>
+                     </footer>
+                  <script src="scripts/libs/jquery-1.9.1.min.js"></script>
+                  <!-- page specific jquery calls -->       
+                  <script type="text/javascript">
+                     //<![CDATA[ 
+                     $(document).ready(function() {
+                     	
+                     
+                     
+                     });
+                     //]]>   
+                  </script>
+</body>
+			<input name="ScrollTop" type="hidden" id="ScrollTop" />
+			<input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off" value="`{`__scdoff`:`1`}" />
+			
+		
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxLoadingPanel, {"initialDelayTime":0,"isSticky":false,"minDisplayTime":0,"skin":"Silk","uniqueID":"dnn$ctr397$ViewMeetingPublic$LoadingPanel","zIndex":90000}, null, null, $get("dnn_ctr397_ViewMeetingPublic_LoadingPanel"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadFormDecorator, {"_renderMode":2,"clientStateFieldID":"dnn_ctr397_ViewMeetingPublic_RadFormDecorator1_ClientState","decoratedControls":64440,"decorationZoneID":"ViewMeetingPublic.ascx","enabled":true,"skin":"Silk"}, null, null, $get("dnn_ctr397_ViewMeetingPublic_RadFormDecorator1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadTabStrip, {"_navigationSettings":"{\"focusKey\":84,\"commandKey\":4}","_renderMode":2,"_selectedIndex":0,"_skin":"Silk","clientStateFieldID":"dnn_ctr397_ViewMeetingPublic_rtsMeetingTabs_ClientState","multiPageID":"dnn_ctr397_ViewMeetingPublic_rmpMeetingTabViews","selectedIndexes":["0"],"tabData":[{"value":"Documents","pageViewID":"dnn_ctr397_ViewMeetingPublic_pvDocuments"},{"value":"Attendance","pageViewID":"dnn_ctr397_ViewMeetingPublic_pvAttendance"},{"value":"Visitors","pageViewID":"dnn_ctr397_ViewMeetingPublic_pvVisitors"},{"value":"DOI","pageViewID":"dnn_ctr397_ViewMeetingPublic_pvDOI"}]}, null, null, $get("dnn_ctr397_ViewMeetingPublic_rtsMeetingTabs"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadGrid, {"ClientID":"dnn_ctr397_ViewMeetingPublic_gridAttended","ClientSettings":{"AllowAutoScrollOnDragDrop":true,"ShouldCreateRows":true,"DataBinding":{},"Selecting":{"CellSelectionMode":0},"Scrolling":{},"Resizing":{},"ClientMessages":{},"KeyboardNavigationSettings":{"AllowActiveRowCycle":false,"EnableKeyboardShortcuts":true,"FocusKey":89,"InitInsertKey":73,"RebindKey":82,"ExitEditInsertModeKey":27,"UpdateInsertItemKey":13,"DeleteActiveRow":127,"ExpandDetailTableKey":39,"CollapseDetailTableKey":37,"MoveDownKey":40,"MoveUpKey":38,"SaveChangesKey":85,"CancelChangesKey":81},"Animation":{},"Virtualization":{}},"Skin":"Silk","UniqueID":"dnn$ctr397$ViewMeetingPublic$gridAttended","_activeRowIndex":"","_controlToFocus":"","_currentPageIndex":0,"_defaultDateTimeFormat":"dd/MM/yyyy HH:mm:ss","_editIndexes":"[]","_embeddedSkin":true,"_enableAriaSupport":true,"_freezeText":"Freeze","_gridTableViewsData":"[{\"ClientID\":\"dnn_ctr397_ViewMeetingPublic_gridAttended_ctl00\",\"UniqueID\":\"dnn$ctr397$ViewMeetingPublic$gridAttended$ctl00\",\"PageSize\":25,\"PageCount\":1,\"EditMode\":\"EditForms\",\"AllowPaging\":true,\"CurrentPageIndex\":0,\"VirtualItemCount\":0,\"AllowMultiColumnSorting\":false,\"AllowNaturalSort\":true,\"AllowFilteringByColumn\":false,\"PageButtonCount\":10,\"HasDetailTables\":false,\"HasMultiHeaders\":false,\"CheckListWebServicePath\":\"\",\"GroupLoadMode\":\"Server\",\"PagerAlwaysVisible\":false,\"Name\":\"Attended\",\"IsItemInserted\":false,\"clientDataKeyNames\":[],\"hasDetailItemTemplate\":false,\"_dataBindTemplates\":false,\"_selectedItemStyle\":\"\",\"_selectedItemStyleClass\":\"rgSelectedRow\",\"_columnsData\":[{\"UniqueName\":\"AttendedMemberName\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridHyperLinkColumn\",\"ColumnGroupName\":\"\",\"Editable\":false,\"DataTypeName\":\"System.String\",\"DataTextField\":\"FullName\",\"DataTextFormatString\":\"\",\"DataNavigateUrlFields\":[],\"DataNavigateUrlFormatString\":\"\",\"Display\":true}]}]","_masterClientID":"dnn_ctr397_ViewMeetingPublic_gridAttended_ctl00","_shouldFocusOnPage":false,"_unfreezeText":"Unfreeze","allowMultiRowSelection":false,"clientStateFieldID":"dnn_ctr397_ViewMeetingPublic_gridAttended_ClientState","expandItems":{},"renderMode":2}, {"gridCreated":OnClientLoad}, null, $get("dnn_ctr397_ViewMeetingPublic_gridAttended"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxPanel, {"clientEvents":{OnRequestStart:"",OnResponseEnd:""},"enableAJAX":true,"enableHistory":false,"links":[],"loadingPanelID":"dnn_ctr397_ViewMeetingPublic_LoadingPanel","styles":[],"uniqueID":"dnn$ctr397$ViewMeetingPublic$gridAttendedAjaxPanel"}, null, null, $get("dnn_ctr397_ViewMeetingPublic_gridAttendedAjaxPanel"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadGrid, {"ClientID":"dnn_ctr397_ViewMeetingPublic_gridOthersAttended","ClientSettings":{"AllowAutoScrollOnDragDrop":true,"ShouldCreateRows":true,"DataBinding":{},"Selecting":{"CellSelectionMode":0},"Scrolling":{},"Resizing":{},"ClientMessages":{},"KeyboardNavigationSettings":{"AllowActiveRowCycle":false,"EnableKeyboardShortcuts":true,"FocusKey":89,"InitInsertKey":73,"RebindKey":82,"ExitEditInsertModeKey":27,"UpdateInsertItemKey":13,"DeleteActiveRow":127,"ExpandDetailTableKey":39,"CollapseDetailTableKey":37,"MoveDownKey":40,"MoveUpKey":38,"SaveChangesKey":85,"CancelChangesKey":81},"Animation":{},"Virtualization":{}},"Skin":"Silk","UniqueID":"dnn$ctr397$ViewMeetingPublic$gridOthersAttended","_activeRowIndex":"","_controlToFocus":"","_currentPageIndex":0,"_defaultDateTimeFormat":"dd/MM/yyyy HH:mm:ss","_editIndexes":"[]","_embeddedSkin":true,"_enableAriaSupport":true,"_freezeText":"Freeze","_gridTableViewsData":"[{\"ClientID\":\"dnn_ctr397_ViewMeetingPublic_gridOthersAttended_ctl00\",\"UniqueID\":\"dnn$ctr397$ViewMeetingPublic$gridOthersAttended$ctl00\",\"PageSize\":25,\"PageCount\":1,\"EditMode\":\"EditForms\",\"AllowPaging\":true,\"CurrentPageIndex\":0,\"VirtualItemCount\":0,\"AllowMultiColumnSorting\":false,\"AllowNaturalSort\":true,\"AllowFilteringByColumn\":false,\"PageButtonCount\":10,\"HasDetailTables\":false,\"HasMultiHeaders\":false,\"CheckListWebServicePath\":\"\",\"GroupLoadMode\":\"Server\",\"PagerAlwaysVisible\":false,\"Name\":\"Attended\",\"IsItemInserted\":false,\"clientDataKeyNames\":[],\"hasDetailItemTemplate\":false,\"_dataBindTemplates\":false,\"_selectedItemStyle\":\"\",\"_selectedItemStyleClass\":\"rgSelectedRow\",\"_columnsData\":[{\"UniqueName\":\"AttendedMemberName\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridHyperLinkColumn\",\"ColumnGroupName\":\"\",\"Editable\":false,\"DataTypeName\":\"System.String\",\"DataTextField\":\"FullName\",\"DataTextFormatString\":\"\",\"DataNavigateUrlFields\":[],\"DataNavigateUrlFormatString\":\"\",\"Display\":true}]}]","_masterClientID":"dnn_ctr397_ViewMeetingPublic_gridOthersAttended_ctl00","_shouldFocusOnPage":false,"_unfreezeText":"Unfreeze","allowMultiRowSelection":false,"clientStateFieldID":"dnn_ctr397_ViewMeetingPublic_gridOthersAttended_ClientState","renderMode":2}, {"gridCreated":OnClientLoad}, null, $get("dnn_ctr397_ViewMeetingPublic_gridOthersAttended"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxPanel, {"clientEvents":{OnRequestStart:"",OnResponseEnd:""},"enableAJAX":true,"enableHistory":false,"links":[],"loadingPanelID":"dnn_ctr397_ViewMeetingPublic_LoadingPanel","styles":[],"uniqueID":"dnn$ctr397$ViewMeetingPublic$gridOthersAttendedAjaxPanel"}, null, null, $get("dnn_ctr397_ViewMeetingPublic_gridOthersAttendedAjaxPanel"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadGrid, {"ClientID":"dnn_ctr397_ViewMeetingPublic_gridApology","ClientSettings":{"AllowAutoScrollOnDragDrop":true,"ShouldCreateRows":true,"DataBinding":{},"Selecting":{"CellSelectionMode":0},"Scrolling":{},"Resizing":{},"ClientMessages":{},"KeyboardNavigationSettings":{"AllowActiveRowCycle":false,"EnableKeyboardShortcuts":true,"FocusKey":89,"InitInsertKey":73,"RebindKey":82,"ExitEditInsertModeKey":27,"UpdateInsertItemKey":13,"DeleteActiveRow":127,"ExpandDetailTableKey":39,"CollapseDetailTableKey":37,"MoveDownKey":40,"MoveUpKey":38,"SaveChangesKey":85,"CancelChangesKey":81},"Animation":{},"Virtualization":{}},"Skin":"Silk","UniqueID":"dnn$ctr397$ViewMeetingPublic$gridApology","_activeRowIndex":"","_controlToFocus":"","_currentPageIndex":0,"_defaultDateTimeFormat":"dd/MM/yyyy HH:mm:ss","_editIndexes":"[]","_embeddedSkin":true,"_enableAriaSupport":true,"_freezeText":"Freeze","_gridTableViewsData":"[{\"ClientID\":\"dnn_ctr397_ViewMeetingPublic_gridApology_ctl00\",\"UniqueID\":\"dnn$ctr397$ViewMeetingPublic$gridApology$ctl00\",\"PageSize\":25,\"PageCount\":1,\"EditMode\":\"EditForms\",\"AllowPaging\":true,\"CurrentPageIndex\":0,\"VirtualItemCount\":0,\"AllowMultiColumnSorting\":false,\"AllowNaturalSort\":true,\"AllowFilteringByColumn\":false,\"PageButtonCount\":10,\"HasDetailTables\":false,\"HasMultiHeaders\":false,\"CheckListWebServicePath\":\"\",\"GroupLoadMode\":\"Server\",\"PagerAlwaysVisible\":false,\"Name\":\"Apology\",\"IsItemInserted\":false,\"clientDataKeyNames\":[],\"hasDetailItemTemplate\":false,\"_dataBindTemplates\":false,\"_selectedItemStyle\":\"\",\"_selectedItemStyleClass\":\"rgSelectedRow\",\"_columnsData\":[{\"UniqueName\":\"ApologyMemberName\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridHyperLinkColumn\",\"ColumnGroupName\":\"\",\"Editable\":false,\"DataTypeName\":\"System.String\",\"DataTextField\":\"sName\",\"DataTextFormatString\":\"\",\"DataNavigateUrlFields\":[],\"DataNavigateUrlFormatString\":\"\",\"Display\":true},{\"UniqueName\":\"ApologyReason\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.String\",\"DataField\":\"sReason\",\"Display\":true}]}]","_masterClientID":"dnn_ctr397_ViewMeetingPublic_gridApology_ctl00","_shouldFocusOnPage":false,"_unfreezeText":"Unfreeze","allowMultiRowSelection":false,"clientStateFieldID":"dnn_ctr397_ViewMeetingPublic_gridApology_ClientState","renderMode":2}, {"gridCreated":OnClientLoad}, null, $get("dnn_ctr397_ViewMeetingPublic_gridApology"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxPanel, {"clientEvents":{OnRequestStart:"",OnResponseEnd:""},"enableAJAX":true,"enableHistory":false,"links":[],"loadingPanelID":"dnn_ctr397_ViewMeetingPublic_LoadingPanel","styles":[],"uniqueID":"dnn$ctr397$ViewMeetingPublic$gridApologiesAjaxPanel"}, null, null, $get("dnn_ctr397_ViewMeetingPublic_gridApologiesAjaxPanel"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadGrid, {"ClientID":"dnn_ctr397_ViewMeetingPublic_gridAbsent","ClientSettings":{"AllowAutoScrollOnDragDrop":true,"ShouldCreateRows":true,"DataBinding":{},"Selecting":{"CellSelectionMode":0},"Scrolling":{},"Resizing":{},"ClientMessages":{},"KeyboardNavigationSettings":{"AllowActiveRowCycle":false,"EnableKeyboardShortcuts":true,"FocusKey":89,"InitInsertKey":73,"RebindKey":82,"ExitEditInsertModeKey":27,"UpdateInsertItemKey":13,"DeleteActiveRow":127,"ExpandDetailTableKey":39,"CollapseDetailTableKey":37,"MoveDownKey":40,"MoveUpKey":38,"SaveChangesKey":85,"CancelChangesKey":81},"Animation":{},"Virtualization":{}},"Skin":"Silk","UniqueID":"dnn$ctr397$ViewMeetingPublic$gridAbsent","_activeRowIndex":"","_controlToFocus":"","_currentPageIndex":0,"_defaultDateTimeFormat":"dd/MM/yyyy HH:mm:ss","_editIndexes":"[]","_embeddedSkin":true,"_enableAriaSupport":true,"_freezeText":"Freeze","_gridTableViewsData":"[{\"ClientID\":\"dnn_ctr397_ViewMeetingPublic_gridAbsent_ctl00\",\"UniqueID\":\"dnn$ctr397$ViewMeetingPublic$gridAbsent$ctl00\",\"PageSize\":25,\"PageCount\":1,\"EditMode\":\"EditForms\",\"AllowPaging\":true,\"CurrentPageIndex\":0,\"VirtualItemCount\":0,\"AllowMultiColumnSorting\":false,\"AllowNaturalSort\":true,\"AllowFilteringByColumn\":false,\"PageButtonCount\":10,\"HasDetailTables\":false,\"HasMultiHeaders\":false,\"CheckListWebServicePath\":\"\",\"GroupLoadMode\":\"Server\",\"PagerAlwaysVisible\":false,\"Name\":\"Absent\",\"IsItemInserted\":false,\"clientDataKeyNames\":[],\"hasDetailItemTemplate\":false,\"_dataBindTemplates\":false,\"_selectedItemStyle\":\"\",\"_selectedItemStyleClass\":\"rgSelectedRow\",\"_columnsData\":[{\"UniqueName\":\"AbsentMemberName\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridHyperLinkColumn\",\"ColumnGroupName\":\"\",\"Editable\":false,\"DataTypeName\":\"System.String\",\"DataTextField\":\"sName\",\"DataTextFormatString\":\"\",\"DataNavigateUrlFields\":[],\"DataNavigateUrlFormatString\":\"\",\"Display\":true},{\"UniqueName\":\"AbsentReason\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.String\",\"DataField\":\"sReason\",\"Display\":true}]}]","_masterClientID":"dnn_ctr397_ViewMeetingPublic_gridAbsent_ctl00","_shouldFocusOnPage":false,"_unfreezeText":"Unfreeze","allowMultiRowSelection":false,"clientStateFieldID":"dnn_ctr397_ViewMeetingPublic_gridAbsent_ClientState","renderMode":2}, {"gridCreated":OnClientLoad}, null, $get("dnn_ctr397_ViewMeetingPublic_gridAbsent"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxPanel, {"clientEvents":{OnRequestStart:"",OnResponseEnd:""},"enableAJAX":true,"enableHistory":false,"links":[],"loadingPanelID":"dnn_ctr397_ViewMeetingPublic_LoadingPanel","styles":[],"uniqueID":"dnn$ctr397$ViewMeetingPublic$gridAbsentAjaxGrid"}, null, null, $get("dnn_ctr397_ViewMeetingPublic_gridAbsentAjaxGrid"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadGrid, {"ClientID":"dnn_ctr397_ViewMeetingPublic_gridDOI","ClientSettings":{"AllowAutoScrollOnDragDrop":true,"ShouldCreateRows":true,"DataBinding":{},"Selecting":{"CellSelectionMode":0},"Scrolling":{},"Resizing":{},"ClientMessages":{},"KeyboardNavigationSettings":{"AllowActiveRowCycle":false,"EnableKeyboardShortcuts":true,"FocusKey":89,"InitInsertKey":73,"RebindKey":82,"ExitEditInsertModeKey":27,"UpdateInsertItemKey":13,"DeleteActiveRow":127,"ExpandDetailTableKey":39,"CollapseDetailTableKey":37,"MoveDownKey":40,"MoveUpKey":38,"SaveChangesKey":85,"CancelChangesKey":81},"Animation":{},"Virtualization":{}},"Skin":"Silk","UniqueID":"dnn$ctr397$ViewMeetingPublic$gridDOI","_activeRowIndex":"","_controlToFocus":"","_currentPageIndex":0,"_defaultDateTimeFormat":"dd/MM/yyyy HH:mm:ss","_editIndexes":"[]","_embeddedSkin":true,"_enableAriaSupport":true,"_freezeText":"Freeze","_gridTableViewsData":"[{\"ClientID\":\"dnn_ctr397_ViewMeetingPublic_gridDOI_ctl00\",\"UniqueID\":\"dnn$ctr397$ViewMeetingPublic$gridDOI$ctl00\",\"PageSize\":10,\"PageCount\":1,\"EditMode\":\"EditForms\",\"AllowPaging\":false,\"CurrentPageIndex\":0,\"VirtualItemCount\":0,\"AllowMultiColumnSorting\":false,\"AllowNaturalSort\":true,\"AllowFilteringByColumn\":false,\"PageButtonCount\":10,\"HasDetailTables\":false,\"HasMultiHeaders\":false,\"CheckListWebServicePath\":\"\",\"GroupLoadMode\":\"Server\",\"PagerAlwaysVisible\":false,\"Name\":\"DeclaratiosnOfInterest\",\"IsItemInserted\":false,\"clientDataKeyNames\":[],\"hasDetailItemTemplate\":false,\"_dataBindTemplates\":false,\"_selectedItemStyle\":\"\",\"_selectedItemStyleClass\":\"rgSelectedRow\",\"_columnsData\":[{\"UniqueName\":\"DOIMemberName\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridHyperLinkColumn\",\"ColumnGroupName\":\"\",\"Editable\":false,\"DataTypeName\":\"System.String\",\"DataTextField\":\"sName\",\"DataTextFormatString\":\"\",\"DataNavigateUrlFields\":[],\"DataNavigateUrlFormatString\":\"\",\"Display\":true},{\"UniqueName\":\"DOIItemNumberAlpha\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.String\",\"DataField\":\"iItemNumberAlpha\",\"Display\":true},{\"UniqueName\":\"DOIDetails\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.String\",\"DataField\":\"sItemDetails\",\"Display\":true},{\"UniqueName\":\"DOINature\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.String\",\"DataField\":\"sNature\",\"Display\":true},{\"UniqueName\":\"DOIAction\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.String\",\"DataField\":\"sCons\",\"Display\":true}]}]","_masterClientID":"dnn_ctr397_ViewMeetingPublic_gridDOI_ctl00","_shouldFocusOnPage":false,"_unfreezeText":"Unfreeze","allowMultiRowSelection":false,"clientStateFieldID":"dnn_ctr397_ViewMeetingPublic_gridDOI_ClientState","renderMode":2}, {"gridCreated":OnClientLoad}, null, $get("dnn_ctr397_ViewMeetingPublic_gridDOI"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMultiPage, {"clientStateFieldID":"dnn_ctr397_ViewMeetingPublic_rmpMeetingTabViews_ClientState","pageViewData":[{"id":"dnn_ctr397_ViewMeetingPublic_pvDocuments"},{"id":"dnn_ctr397_ViewMeetingPublic_pvAttendance"},{"id":"dnn_ctr397_ViewMeetingPublic_pvDOI"},{"id":"dnn_ctr397_ViewMeetingPublic_pvVisitors"},{"id":"dnn_ctr397_ViewMeetingPublic_pvWebcast"},{"id":"dnn_ctr397_ViewMeetingPublic_pvCommitteeLinkDocTab1"},{"id":"dnn_ctr397_ViewMeetingPublic_pvCommitteeLinkDocTab2"},{"id":"dnn_ctr397_ViewMeetingPublic_pvCommitteeLinkDocTab3"}],"selectedIndex":0}, null, null, $get("dnn_ctr397_ViewMeetingPublic_rmpMeetingTabViews"));
+});
+//]]>
+</script>
+</form>
+	
+		<!--CDF(Javascript|/milton-keynes/js/dnncore.js?cdv=302|DnnBodyProvider|100)--><!--CDF(Css|/milton-keynes/Resources/Shared/stylesheets/dnndefault/7.0.0/default.css?cdv=302|DnnPageHeaderProvider|5)--><!--CDF(Css|/milton-keynes/Portals/_default/skins/miltonkeynes2020/skin.css?cdv=302|DnnPageHeaderProvider|15)--><!--CDF(Css|/milton-keynes/Portals/_default/Containers/CMIS_5_2_0/container.css?cdv=302|DnnPageHeaderProvider|25)--><!--CDF(Css|/milton-keynes/Portals/_default/Containers/CMIS_5_2_0/Title_Blue.css?cdv=302|DnnPageHeaderProvider|30)--><!--CDF(Css|/milton-keynes/DesktopModules/CMIS_Meetings/module.css?cdv=302|DnnPageHeaderProvider|10)--><!--CDF(Css|/milton-keynes/DesktopModules/CMIS_Meetings/module.css?cdv=302|DnnPageHeaderProvider|10)--><!--CDF(Css|/milton-keynes/Portals/0/portal.css?cdv=302|DnnPageHeaderProvider|35)--><!--CDF(Javascript|/milton-keynes/js/dnn.js?cdv=302|DnnBodyProvider|12)--><!--CDF(Css|/milton-keynes/Portals/_default/skins/miltonkeynes2020/Menu/Superfish/superfish.css?cdv=302|DnnPageHeaderProvider|100)--><!--CDF(Css|/milton-keynes/Portals/_default/skins/miltonkeynes2020/Menu/Superfish/superfish-vertical.css?cdv=302|DnnPageHeaderProvider|100)--><!--CDF(Javascript|/milton-keynes/Resources/Shared/Scripts/jquery/jquery.hoverIntent.min.js?cdv=302|DnnBodyProvider|55)--><!--CDF(Javascript|/milton-keynes/Resources/Shared/Scripts/dnn.jquery.js?cdv=302|DnnBodyProvider|100)--><!--CDF(Javascript|/milton-keynes/Resources/Shared/Scripts/jquery/jquery.hoverIntent.min.js?cdv=302|DnnBodyProvider|55)--><!--CDF(Javascript|/milton-keynes/Resources/libraries/jQuery-UI/01_12_01/jquery-ui.js?cdv=302|DnnPageHeaderProvider|10)--><!--CDF(Javascript|/milton-keynes/Resources/libraries/jQuery/03_05_01/jquery.js?cdv=302|DnnPageHeaderProvider|5)--><!--CDF(Javascript|/milton-keynes/Resources/libraries/jQuery-Migrate/03_02_00/jquery-migrate.js?cdv=302|DnnPageHeaderProvider|6)-->
+		
+	</div>
+</body>
+</html>

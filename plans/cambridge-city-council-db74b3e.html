@@ -1,0 +1,590 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <link rel="shortcut icon" href="/Content/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="description" content="Our strategy sets out five key objectives for how we will address the causes and consequences of climate change." />
+    <meta property="og:site_name" content="Cambridge City Council" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.cambridge.gov.uk/climate-change-strategy" />
+    <meta property="og:title" content="Climate change strategy" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:description" content="Our strategy sets out five key objectives for how we will address the causes and consequences of climate change." />
+    <meta property="og:image" content="https://www.cambridge.gov.uk/media/6830/ccc-logo-600.png" />
+    <meta property="og:image:alt" content="Climate change strategy" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@camcitco" />
+    <meta name="google-site-verification" content="-J7NTwwVJVNMh6xWegNVC6op9fTQJ4FJLNpIR5ZmA3o" />
+
+
+    <title>
+                Climate change strategy - Cambridge City Council
+
+    </title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/font-awesome.min.css" rel="stylesheet" />
+
+
+</head>
+<body class="container-fluid px-0">
+    <div class="d-flex w-100 position-absolute content-skip">
+        <a href="#contentSkip" class="sr-only sr-only-focusable mx-auto bg-white p-2 px-3" tabindex="1">Skip To Main Content</a>
+    </div>
+    <!-- hidden h1 for accessibility -->
+    <h1 class="hidden">Cambridge City Council</h1>
+    <header>
+        <div class="bg-primary">
+            <div class="container">
+                <nav class="navbar navbar-dark bg-primary d-flex px-lg-0 px-sm-2">
+                    <div class="navbar-left flex-grow-1">
+                        
+                            <a href="/" alt="" class="no-underline">
+                                <div class="d-flex">
+                                    <div>
+                                        <img class="logo" alt="" src="/css/ccc-logo-white.png" />
+                                    </div>
+                                    <div class="navbar-container p-0 col d-flex justify-content-lg-start">
+                                        <div class="navbar-brand p-0 my-auto d-flex flex-column flex-lg-column pt-0">
+                                            <div class="mr-2">Cambridge</div>
+                                            <div class="mr-2">City</div>
+                                            <div>Council</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                    </div>
+                    <div class="navbar-right row w-100 m-0 p-0 d-flex flex-grow-1 col-12 col-lg-6 search-form justify-content-end">
+                        <form class="form-inline w-100 justify-content-end mt-2 mt-lg-0" role="search" method="get" action="/search/">
+                            <div class="input-group col-12 px-0 justify-content-end">
+                                <input class="form-control col" type="search" placeholder="Search" aria-label="Search" id="query" name="q" autocomplete="on">
+                                <div class="input-group-append">
+                                    <button class="btn input-group-text text" id="search-icon">
+                                        <img src="/css/search.svg" alt="Search" />
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="container text-right">
+                                    <a href="https://my.cambridge.gov.uk/" class="text-white my-account-link">My Cambridge: Log in or sign up</a>
+                                    <a href="/menu" class="text-white menu-link" data-toggle="modal" data-target="#menuModal">Menu</a>
+                                <a href="#" class="text-white menu-link text-nowrap" id="reciteMe">Accessibility tools</a>
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+        <div class="bg-secondary">
+            <div class="container breadcrumb-container">
+                    
+
+
+
+
+            <span class="ccc-breadcrumb-item"><a href="/">Home</a></span>
+                <span>></span>
+            <span class="ccc-breadcrumb-item"><a href="/climate-change-and-sustainability">Climate change and sustainability</a></span>
+        <span>></span>
+    <span class="ccc-breadcrumb-item">Climate change strategy</span>
+
+            </div>
+        </div>
+
+    <div id="notification-banner-15676" class="notification-banner" style="background-color: #ffbf00">
+        <div class="container justify-content-between">
+            <div class="notification-button-container pl-custom ml-auto text-center text-md-right">
+                    <a href="http://www.thevaccinators.co.uk/" class="btn btn-primary no-underline">Cambridge walk-in vaccinations</a>
+
+                <button class="dismiss-notification cursor-pointer" onclick="dismissNotification('15676')" style="color: #000000">Dismiss</button>
+            </div>
+            <div class="notification-content-container">   
+
+                <span class="" style="color: #000000">Get your coronavirus vaccination at walk-in clinics in and around Cambridge – no appointment needed, but wear a face mask</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            // check if there are any dismissed notification ids in the cookie, hide its notification banner
+            var getCookieSettings = ReadCookie();
+            if (getCookieSettings['settings'] == 'true') {
+
+                var existingCookie = Cookies.get('ccc-dismissed-notifications');
+
+                if (typeof existingCookie != 'undefined') {
+                    var notificationIds = existingCookie.split("-");
+
+                    notificationIds.forEach(function (id) {
+                        var notificationBanner = document.getElementById("notification-banner-" + id);
+                        notificationBanner.style.display = 'none';
+                    });
+                }
+            }
+        });
+
+        function dismissNotification(bannerId) {
+            var notificationBanner = document.getElementById("notification-banner-" + bannerId);
+            notificationBanner.style.display = 'none';
+
+            var existingCookie = Cookies.get('ccc-dismissed-notifications');
+
+            if (typeof existingCookie != 'undefined') {
+                Cookies.set('ccc-dismissed-notifications', existingCookie + '-' + bannerId, { expires: 90 })
+            } else {
+                Cookies.set('ccc-dismissed-notifications', bannerId, { expires: 90 })
+            }
+        }
+    </script>
+
+
+
+
+
+    <div class="container" id="contentSkip">
+        <div class="notifications mt-2">
+            
+
+        </div>
+        
+
+
+
+<h1>Climate change strategy</h1>
+
+
+
+
+
+
+
+
+<div class="row desktop-width">
+    <div class="col-md-12 main-content mt-3">
+        <h2>Climate Change Strategy 2021 to 2026</h2>
+<p>Our <a data-udi="umb://media/6e737c33ec47434e8f38496ded81b247" href="/media/9581/climate-change-strategy-2021-2026.pdf">Climate Change Strategy (2021-2026)<span> [PDF, 4MB]</span></a> shares a vision for Cambridge to be net zero carbon by 2030, subject to Government, industry and regulators implementing the necessary changes to enable the city and the rest of the UK to achieve this.</p>
+<p>It sets out six key objectives for how we will address the causes and consequences of climate change:</p>
+<ol>
+<li>Reducing carbon emissions from city council buildings, land, vehicles and services</li>
+<li>Reducing energy consumption and carbon emissions from homes and buildings in Cambridge</li>
+<li>Reducing carbon emissions from transport in Cambridge</li>
+<li>Reducing consumption of resources, reducing waste, and increasing recycling in Cambridge</li>
+<li>Promoting sustainable food</li>
+<li>Supporting Council services, residents and businesses to adapt to the impacts of climate change</li>
+</ol>
+<p>We have set an ambitious target in our new <a data-udi="umb://document/5bac866b61254dd5a31a066856cb4f38" href="/carbon-management-plan">Carbon Management Plan</a> to deliver Objective 1 of the strategy and reduce direct carbon emissions from our corporate buildings (including swimming pools, office buildings, car parks, sheltered housing schemes, community centres, arts venues and the crematorium), fleet vehicles (including vans, trucks and refuse vehicles), and business travel, to net zero by 2030.</p>
+<p>We will be taking a range of steps to help deliver the vision for Cambridge to be net zero carbon by 2030 which are detailed in the <a data-udi="umb://media/8ce45c0e8ae24d01a48844ffd5976387" href="/media/9583/action-plan-climate-change-strategy-2021-2026.pdf">Action Plan<span> [PDF, 4.5MB]</span></a>.</p>
+<div class="accordion-group">
+<h3 class="accordion-header">Progress reports</h3>
+<div class="accordion-content">
+<ul>
+<li><a data-udi="umb://media/ad004cff7aff4a5b80c9b1eeeec74419" href="/media/8856/climate-change-strategy-progress-report-2019-20.pdf">2019/20 progress report<span> [PDF, 0.7MB]</span></a></li>
+<li><a data-udi="umb://media/ca81e83c7dba45acb01ae6955ba0e2e9" href="/media/7731/climate-change-strategy-progress-report-2018-19.pdf">2018/19 progress report<span> [PDF, 1MB]</span></a>
+<ul>
+<li><a data-udi="umb://media/1d23cb04f7c540ce8f59b7cd037e41c7" href="/media/7732/climate-change-strategy-actions-delivered-2018-19.pdf">Actions delivered in 2018/19<span> [PDF, 0.3MB]</span></a></li>
+</ul>
+</li>
+<li><a data-udi="umb://media/eaf8fb70a22b4920b475a6caad5b7ca5" href="/media/6891/climate-change-strategy-progress-report-2017-18.pdf">2017/18 progress report<span> [PDF, 0.4MB]</span></a></li>
+<li><a data-udi="umb://media/2e52cc4a73df48dd84e54fd03591486c" href="/media/3229/climate-change-strategy-annual-progress-report.pdf">2016/17 progress report<span> [PDF, 0.6MB]</span></a>
+<ul>
+<li><a data-udi="umb://media/a02ff03dbf994298bc26da1de0031784" href="/media/3231/climate_change_strategy_actions_delivered_in_2016-17_3.pdf">Actions delivered in 2016-17<span> [PDF, 0.2MB]</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+    </div>
+
+    
+
+
+
+</div>
+
+
+    <div class="main-content umb-grid">
+                <div class="grid-section">
+                </div>
+    </div>
+
+
+
+
+
+
+
+<div class="row desktop-width">
+    
+            <div class="col-md-12 contact-details bg-gray">
+                <h2 class="pb-3">Contact us</h2>
+                <div class="mb-1">
+                    <ul class="ccc-bullet-dark">
+                                <li>
+                                    <a href="mailto:sustainablecity@cambridge.gov.uk">
+                                        <span>sustainablecity@cambridge.gov.uk</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <span><a href="tel:01223 457176">01223 457176</a></span>
+                                </li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+
+</div>
+
+
+<div id="feedbackForm">
+</div>
+
+<script>
+    var markup = "<div class=\"gm_sidebar gm_inpage text-center margin-bottom-custom\">\n <div class=\"gm_intro\"><h2 class=\"subsubheading\">How would you rate your online experience?</h2></div>\n                <div class=\"gm_smileys\">\n                    <a rel=\"nofollow\" href=\"https://websurveys2.govmetric.com/theme/gm/1778?Q_RATINGID=3\" title=\"Rate this page as 'Good'\" class=\"gm_sidebar_anchor\" target=\"_blank\">\n                        <img src=\"https://websurveys2.govmetric.com/imgs/smileys/trans/good.png\" class=\"gm_smiley_img\" alt=\"Rate this page as 'Good'\" />\n                    </a>\n                    <a rel=\"nofollow\" href=\"https://websurveys2.govmetric.com/theme/gm/1778?Q_RATINGID=2\" title=\"Rate this page as 'Average'\" class=\"gm_sidebar_anchor\" target=\"_blank\">\n                        <img src=\"https://websurveys2.govmetric.com/imgs/smileys/trans/average.png\" class=\"gm_smiley_img\" alt=\"Rate this page as 'Average'\" />\n                    </a>\n                    <a rel=\"nofollow\" href=\"https://websurveys2.govmetric.com/theme/gm/1778?Q_RATINGID=4\" title=\"Rate this page as 'Poor'\" class=\"gm_sidebar_anchor\" target=\"_blank\">\n                        <img src=\"https://websurveys2.govmetric.com/imgs/smileys/trans/poor.png\" class=\"gm_smiley_img\" alt=\"Rate this page as 'Poor'\" />\n                    </a>\n                </div>\n            </div>\n            <link rel=\"stylesheet\" type=\"text/css\" href=\"https://websurveys2.govmetric.com/css/client/gm_inpage.css\" />";
+</script>
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        var cookiesSettings  = ReadCookie();
+        if (cookiesSettings  != null) {
+            if (cookiesSettings ['measure'] === 'true') {
+                loadExternalScriptFile("https://websurveys2.govmetric.com/js/client/gm_sidebar.js");
+                loadExternalScriptFile("https://hitcounter.govmetric.com/1057");
+                document.getElementById("feedbackForm").innerHTML = markup;
+            }
+        }
+    });
+</script>
+
+    </div>
+
+    <div class="container-fluid footer-menu border border-bottom-0 border-right-0 border-left-0 pr-0 pl-0 bg-light">
+        
+
+
+<div class="container promotions">
+    <div class="row">
+        <h2 class="hidden">Promotional content</h2>
+                    <div class="col col-md-4 col-12">
+                        <div class="card border-0">
+                            <a href="https://www.cambridge.gov.uk/coronavirus" class="no-underline hide-external-icon" title="Coronavirus guidance and advice">
+                                <img class="promotion-image mb-0" src="/media/10060/women-01-300.jpg" alt="Coronavirus guidance and advice">
+                                <div class="card-body promotion-item">
+                                    <h3 class="no-underline card-title mb-0">Coronavirus guidance and advice</h3>
+                                    <p class="card-text mb-0 no-underline">Find information about vaccinations and testing, local help, financial support and more</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col col-md-4 col-12">
+                        <div class="card border-0">
+                            <a href="/christmas-gifts-for-vulnerable-families" class="no-underline hide-external-icon" title="Christmas gifts for vulnerable families">
+                                <img class="promotion-image mb-0" src="/media/8876/christmas-presents-01-300.jpg" alt="Christmas gifts for vulnerable families">
+                                <div class="card-body promotion-item">
+                                    <h3 class="no-underline card-title mb-0">Christmas gifts for vulnerable families</h3>
+                                    <p class="card-text mb-0 no-underline">Help us provide food and gifts to local families experiencing hardship</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col col-md-4 col-12">
+                        <div class="card border-0">
+                            <a href="https://www.cambridgeshire.gov.uk/residents/children-and-families/fostering-and-adoption" class="no-underline hide-external-icon" title="Fostering in Cambridgeshire">
+                                <img class="promotion-image mb-0" src="/media/10041/fostering-in-cambridgeshire-300.jpg" alt="Fostering in Cambridgeshire">
+                                <div class="card-body promotion-item">
+                                    <h3 class="no-underline card-title mb-0">Fostering in Cambridgeshire</h3>
+                                    <p class="card-text mb-0 no-underline">Do something incredible and change your profession</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+    </div>
+</div> 
+
+
+
+        <nav class="border border-bottom-0 border-right-0 border-left-0 py-2">
+            <div class="container">
+                <div class="col-12">
+                    <div class="row">
+                            <div class="col-12 col-md-6 col-lg py-2 ">
+                                <a href="/menu" class="btn btn-secondary no-underline btn-block mx-auto footer-buttons" data-toggle="modal" data-target="#menuModal">Menu</a>
+                            </div>
+                        <div class="col-12 col-md-6 col-lg py-2">
+                            <a href="/news" class="btn btn-secondary no-underline btn-block mx-auto footer-buttons">News</a>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg py-2">
+                            <a href="/updates" class="btn btn-secondary no-underline btn-block mx-auto footer-buttons">Updates</a>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg py-2">
+                            <a href="/consultations" class="btn btn-secondary no-underline btn-block mx-auto footer-buttons">Consultations</a>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg py-2 footer-buttons">
+                            <a href="https://democracy.cambridge.gov.uk/uuCoverPage.aspx?bcr=1" target="_blank" class="btn btn-secondary no-underline btn-block mx-auto  footer-buttons">Committee meetings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="bg-dark border border-secondary">
+        
+
+
+
+<footer class="container footer">
+
+
+
+    <div class="row">
+
+        <div class="col-md-4 py-3">
+            <h2 class="h5 text-light">Follow us</h2>
+            <ul class="ccc-bullet pl-3 ml-1 mb-1">
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="https://www.facebook.com/camcitco" class="text-light py-1" target="">Facebook</a></p>
+                    </li>
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="https://twitter.com/camcitco" class="text-light py-1" target="">Twitter</a></p>
+                    </li>
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="https://www.youtube.com/user/camcitco" class="text-light py-1" target="">YouTube</a></p>
+                    </li>
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="/social-media" class="text-light py-1" target="">All our social media accounts</a></p>
+                    </li>
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="/subscribe-for-email-alerts" class="text-light py-1" target="">Subscribe to email alerts</a></p>
+                    </li>
+            </ul>
+        </div>
+        <div class="col-md-4 py-3">
+            <h2 class="h5 text-light">Find out more</h2>
+            <ul class="ccc-bullet pl-3 ml-1 mb-1">
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="/accessible-information" class="text-light py-1" target="">Accessibility</a></p>
+                    </li>
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="/contact-us" class="text-light py-1" target="">Contact us</a></p>
+                    </li>
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="/cookies" class="text-light py-1" target="">Cookies</a></p>
+                    </li>
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="/data-protection" class="text-light py-1" target="">Data Protection</a></p>
+                    </li>
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="/job-vacancies" class="text-light py-1" target="">Job vacancies</a></p>
+                    </li>
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="/terms-of-use" class="text-light py-1" target="">Terms of use</a></p>
+                    </li>
+            </ul>
+        </div>
+        <div class="col-md-4 py-3">
+            <h2 class="h5 text-light">Other useful sites</h2>
+            <ul class="ccc-bullet pl-3 ml-1 mb-1">
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="https://www.cambridgelivetrust.co.uk/cornex" class="text-light py-1" target="">Cambridge Corn Exchange</a></p>
+                    </li>
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="https://www.cambridgelivetrust.co.uk/city-events" class="text-light py-1" target="">Cambridge Live Trust city events</a></p>
+                    </li>
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="https://www.greatercambridge.org.uk/" class="text-light py-1" target="">Greater Cambridge Partnership</a></p>
+                    </li>
+                    <li>
+                        <p class="my-0 footer-link one-rem"><a href="https://www.visitcambridge.org/" class="text-light py-1" target="">Visit Cambridge</a></p>
+                    </li>
+            </ul>
+        </div>
+
+    </div>
+
+</footer>
+    </div>
+
+        <div class="modal fade" id="menuModal" tabindex="-1" role="dialog" aria-labelledby="menuModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="menuModalLabel">Menu</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+    <div class="col-12">
+        <ul class="ccc-bullet ccc-link-on-hover d-flex flex-row flex-wrap">
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/allotments-and-community-gardens" title="Allotments and community gardens">Allotments and community gardens</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/arts-and-culture" title="Arts and culture">Arts and culture</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/benefits" title="Benefits">Benefits</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/bereavement-services" title="Bereavement services">Bereavement services</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/bins-recycling-and-rubbish" title="Bins, rubbish and recycling">Bins, rubbish and recycling</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/boat-mooring-and-punting" title="Boat mooring and punting">Boat mooring and punting</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/building-control" title="Building control">Building control</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/business-property" title="Business property">Business property</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/business-rates" title="Business rates">Business rates</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/climate-change-and-sustainability" title="Climate change and sustainability">Climate change and sustainability</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/communities-and-people" title="Communities and people">Communities and people</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/coronavirus" title="Coronavirus">Coronavirus</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/council-tax" title="Council tax">Council tax</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/customer-services" title="Customer services">Customer services</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/cycling-and-walking" title="Cycling and walking">Cycling and walking</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/food-safety" title="Food safety">Food safety</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/grants-and-funding" title="Grants and funding">Grants and funding</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/home-energy-and-water-use" title="Home energy and water use">Home energy and water use</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/housing" title="Housing">Housing</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/job-vacancies" title="Job vacancies">Job vacancies</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/licences-and-permits" title="Licences and permits">Licences and permits</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/markets" title="Markets">Markets</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/parking" title="Parking">Parking</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/parks-and-playgrounds" title="Parks and playgrounds">Parks and playgrounds</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="https://ip.e-paycapita.com/AIP/itemSelectionPage.do?link=showItemSelectionPage&amp;siteId=85&amp;languageCode=EN&amp;source=AIP" title="Pay">Pay</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/pest-control" title="Pest control">Pest control</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/planning" title="Planning">Planning</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/pollution-noise-and-nuisance" title="Pollution, noise and nuisance">Pollution, noise and nuisance</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/procurement-and-contracts" title="Procurement and contracts">Procurement and contracts</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/public-art" title="Public art">Public art</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/sport-and-fitness" title="Sport and fitness">Sport and fitness</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/street-and-park-maintenance" title="Street and park maintenance">Street and park maintenance</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/training" title="Training">Training</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/transport-schemes" title="Transport schemes">Transport schemes</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/trees" title="Trees">Trees</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/urban-growth" title="Urban growth">Urban growth</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/vehicle-services-mots-and-repairs" title="Vehicle services, MOTs and repairs">Vehicle services, MOTs and repairs</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/volunteering" title="Volunteering">Volunteering</a>
+                    </li>
+                    <li class="col-12 col-md-4 py-3">
+                        <a href="/your-council" title="Your council">Your council</a>
+                    </li>
+
+        </ul>
+    </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="alert text-center cookiealert bg-secondary" role="alert">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 flex-md-column  text-left cookies-fontsize">
+
+                    <small><p>This website needs to set some cookies to work properly. Other optional cookies allow you to control some settings and us to monitor use of the site. We do not store personal information in cookies.</p></small>
+                </div>
+                <div class="d-flex flex-column justify-content-center">
+                    <button type="button" class="btn btn-primary btn-sm acceptcookies mx-2" data-dismiss="alert" aria-label="Close">
+                        Accept all cookies
+                    </button>
+                    <small>
+                            <a href="/cookies" class="text-dark">
+                                Choose which cookies to accept
+                            </a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script src="/Scripts/jquery-3.5.1.min.js"></script>
+        <script src="/Scripts/bootstrap.min.js"></script>
+        <script src="/Scripts/js.cookie-2.2.0.min.js"></script>
+        <script src="/Scripts/jquery.cookie.js"></script>
+        <script src="/Scripts/ccc.js"></script>
+<!-- CDF: No JS dependencies were declared //-->        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9wbPhAAcirp0tSFFZ_FfTzi1srxb6qtA&callback=initEachGoogleMap" async defer></script>
+        <script type="text/javascript">
+            alertBox();
+            getCookieAlert();
+            getReciteMe();
+        </script>
+
+</body>
+</html>

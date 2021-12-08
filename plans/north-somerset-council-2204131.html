@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"83237ce389",applicationID:"282271752"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-745223-8"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-745223-8", {"groups":"default","anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<link rel="canonical" href="https://www.n-somerset.gov.uk/council-democracy/priorities-strategies/climate-emergency/our-plans-tackle-climate-change" />
+<meta http-equiv="content-language" content="en" />
+<meta name="robots" content="index, follow" />
+<link rel="image_src" href="https://www.n-somerset.gov.uk/sites/default/files/2020-09/nsc-logo_0.png" />
+<meta name="description" content="An overview of the strategies and actions North Somerset Council is taking to tackle climate change" />
+<meta property="og:site_name" content="North Somerset Council" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.n-somerset.gov.uk/council-democracy/priorities-strategies/climate-emergency/our-plans-tackle-climate-change" />
+<meta property="og:title" content="Our plans to tackle climate change" />
+<meta property="og:image" content="https://www.n-somerset.gov.uk/sites/default/files/2020-09/nsc-logo_0.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Our plans to tackle climate change" />
+<meta name="twitter:url" content="https://www.n-somerset.gov.uk/council-democracy/priorities-strategies/climate-emergency/our-plans-tackle-climate-change" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="/themes/north_somerset/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" hreflang="en" href="https://www.n-somerset.gov.uk/council-democracy/priorities-strategies/climate-emergency/our-plans-tackle-climate-change" />
+<link rel="revision" href="https://www.n-somerset.gov.uk/council-democracy/priorities-strategies/climate-emergency/our-plans-tackle-climate-change" />
+
+    <title>Our plans to tackle climate change | North Somerset Council</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_JQyZ9StD4-4I5jikYtL8icbvn1b-f6xMTWUzpXDhKlc.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_I4z9y_k4IPgsyeGnOUl7hr1ISCTfo8JPF6k5jOFbZ_8.css" />
+
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2884","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ace_analytics":{"analytics_nid":"2884"},"google_analytics":{"account":"UA-745223-8","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"micro_sso":{"master":"https:\/\/n-somerset.gov.uk\/sso\/check"},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"user":{"uid":0,"permissionsHash":"496944165b1059d3edfa9e1145754441ebef77f23b3cf002159ee3fc12b9df33"}}</script>
+
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="/sites/default/files/js/js_NfXfdJ7xtUHuOpCDrp1B_zDitZaU2XjgWR9Y3tOOnMg.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-P6NLFGM');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Hotjar Tracking Code for www.n-somerset.gov.uk -->
+    <script>
+      (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:449922,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+      <!-- End Hotjar Tracking Code for www.n-somerset.gov.uk -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript aria-hidden="true">
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6NLFGM"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div role="complementary" aria-labelledby="skip-to-content">
+  <a id="skip-to-content" href="#main-content" class="visually-hidden focusable">
+      Skip to main content
+  </a>
+</div>
+<div id="cookie-disclaimer" role="region" aria-label="cookie banner"></div>
+
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+    <div role="banner" class="ace-notification-banner">
+          <div>
+    
+  </div>
+
+    </div>
+
+<header aria-label="Site header" class="ace-header" id="ace-header">
+     <div class="ace-container">
+   <a href="/"  class="ace-header-logo">
+  <?xml version="1.0" encoding="utf-8"?>
+  <!-- Generator: Adobe Illustrator 24.1.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 208.8 77.4" style="enable-background:new 0 0 208.8 77.4;" xml:space="preserve">
+<style type="text/css">
+  .st0{fill:#39393B;}
+  .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#39393B;}
+</style>
+    <g>
+          <path class="st0" d="M49.2,38.3c17.3,19.1,17.1,35.1,17.1,35.1c-2.1-1.2-4.1-1.8-5.8-1.6c0,0,2-15.1-11.9-32.7
+		C48.6,39,49.1,38.5,49.2,38.3"/>
+      <path class="st0" d="M62.5,34c0,0,0.1,1.6-1.8,2.9c-1.5-0.7-0.1-0.1-1.7-0.9c-3.7,4-9,3-13.5-1.6c0.1,0,1.4-0.4,1.4-0.4
+		c8.8,6.8,10.7-0.1,10.7-0.1s0.9,0.5,2.3,1.3c0.8-0.2,0.8-0.9,0.8-0.9s-0.6-1.2-4.3-1.8C56.4,32.6,59.5,31.8,62.5,34"/>
+      <path class="st0" d="M71.8,30.4c-4.8,0.1-4.9,2.2-7.4,2.4C61.3,33,62,31,56,31.9c4.1-2.6,4.7-0.4,7.8-0.6
+		C67,31.1,68.8,28.9,71.8,30.4"/>
+      <path class="st0" d="M0.5,31.8c1.6,4.6,3.9,8.9,6.3,10.9C13.7,48.1,20,49.5,24.5,53c1.6,1.2,5.5,4.5,5.4,11c-2-4.1-3.3-6-7.3-8.1
+		c-3.7-2-8.8-2.4-13.1-4.7c-3.8-2-6.5-5.2-8.1-8.8C0.1,39.5-0.5,35.8,0.5,31.8"/>
+      <path class="st0" d="M7.1,57.1c0.2,0.1,12-2,19.4,12.2l0.2,0.7c-5.5-7.3-13.1-7.7-15-6c-0.5-1.5-0.7-1.9-1.8-3.8
+		C9,58.8,7.1,57.1,7.1,57.1"/>
+      <path class="st0" d="M41.6,11.5c-1.2,5.5,1.1,5.2,2.8,5.3c1.8,0.2,1.8,1.1,2.8,3c2.4,0,3.1-0.1,4.6,0.6c1.3,0.6,1.6,1.5,2.7,2.8
+		c0.8,0.9,4.9-0.6,10.4,2.9c0,0-0.7,2.9-2.4,4.4c-0.2,0.2-2-0.8-4.9-0.2c-1.8,0.4-5,2.5-5,2.5l1.4-3c1.4-0.4,2.1-0.8,3.6-0.9
+		c1.4-0.2,2.6-0.2,4,0.1c0.9-1.1,0.9-1.2,1.4-2.5c-3.6-1.6-3.7-0.6-7.1-0.4c-1.5,0.1-2.7-2-2.7-2c0.2,1.7-2.8,2.9-3.2-0.1
+		c0,0-0.9,0.5-1.6-0.6c1.5,0.3,1.8-0.3,2.8-0.7c0.9-0.3,1.5,0.1,1.5,0.1c-1-1.4-3.4-0.1-4.9-0.5c-1-0.3-1.6-1.3-2.1-2.5
+		c0,0-4.7,0.3-5.6-4.5c-0.8,0.9-2.1,4.8,2,7.6c-2.8,3.1-6,4.4-3.9,16.3c0.7,3.9,1,6.7,2.3,14.1c-4.1-12-4.1-10.1-6.1-20.1
+		c-0.8-4,0.1-7.6,3.6-11C33.9,17.4,41.6,11.3,41.6,11.5"/>
+      <path class="st0" d="M8.2,13.8c-0.7,8.5,2.6,13.9,4.9,16.9c2.5,3.2,4.3,4.1,7.1,7.1c1.3,1.4,5.7,4.9,7.9,8.7
+		c2.8,4.8,3.1,9.3,3.1,9.3c-6-16-22.6-8.8-28.1-32.6C6.9,21.4,8.2,13.8,8.2,13.8"/>
+      <path class="st0" d="M20.4,0c-0.9,1-4.3,3-4.1,9.3C16.7,21.2,35,34.6,37.6,52.5c0.9,6.5,0.4,14-3.2,18.7c-8,10.4-16.3,6.2-21.5-1.1
+		l0.8-0.4c11,13.4,20.8,1.8,20.7-9.9c0-13.9-12.5-27-17.2-35.1c-4-6.8-5.5-11.5-4.4-16.7C13.6,5.1,16.5,1.8,20.4,0"/>
+      <path class="st0" d="M49.2,38.3c17.3,19.1,17.1,35.1,17.1,35.1c-2.1-1.2-4.1-1.8-5.8-1.6c0,0,2-15.1-11.9-32.7
+		C48.6,39,49.1,38.5,49.2,38.3z"/>
+      <path class="st0" d="M62.5,34c0,0,0.1,1.6-1.8,2.9c-1.5-0.7-0.1-0.1-1.7-0.9c-3.7,4-9,3-13.5-1.6c0.1,0,1.4-0.4,1.4-0.4
+		c8.8,6.8,10.7-0.1,10.7-0.1s0.9,0.5,2.3,1.3c0.8-0.2,0.8-0.9,0.8-0.9s-0.6-1.2-4.3-1.8C56.4,32.6,59.5,31.8,62.5,34z"/>
+      <path class="st0" d="M71.8,30.4c-4.8,0.1-4.9,2.2-7.4,2.4C61.3,33,62,31,56,31.9c4.1-2.6,4.7-0.4,7.8-0.6
+		C67,31.1,68.8,28.9,71.8,30.4z"/>
+      <path class="st0" d="M0.5,31.8c1.6,4.6,3.9,8.9,6.3,10.9C13.7,48.1,20,49.5,24.5,53c1.6,1.2,5.5,4.5,5.4,11c-2-4.1-3.3-6-7.3-8.1
+		c-3.7-2-8.8-2.4-13.1-4.7c-3.8-2-6.5-5.2-8.1-8.8C0.1,39.5-0.5,35.8,0.5,31.8z"/>
+      <path class="st0" d="M7.1,57.1c0.2,0.1,12-2,19.4,12.2l0.2,0.7c-5.5-7.3-13.1-7.7-15-6c-0.5-1.5-0.7-1.9-1.8-3.8
+		C9,58.8,7.1,57.1,7.1,57.1z"/>
+      <path class="st0" d="M41.6,11.5c-1.2,5.5,1.1,5.2,2.8,5.3c1.8,0.2,1.8,1.1,2.8,3c2.4,0,3.1-0.1,4.6,0.6c1.3,0.6,1.6,1.5,2.7,2.8
+		c0.8,0.9,4.9-0.6,10.4,2.9c0,0-0.7,2.9-2.4,4.4c-0.2,0.2-2-0.8-4.9-0.2c-1.8,0.4-5,2.5-5,2.5l1.4-3c1.4-0.4,2.1-0.8,3.6-0.9
+		c1.4-0.2,2.6-0.2,4,0.1c0.9-1.1,0.9-1.2,1.4-2.5c-3.6-1.6-3.7-0.6-7.1-0.4c-1.5,0.1-2.7-2-2.7-2c0.2,1.7-2.8,2.9-3.2-0.1
+		c0,0-0.9,0.5-1.6-0.6c1.5,0.3,1.8-0.3,2.8-0.7c0.9-0.3,1.5,0.1,1.5,0.1c-1-1.4-3.4-0.1-4.9-0.5c-1-0.3-1.6-1.3-2.1-2.5
+		c0,0-4.7,0.3-5.6-4.5c-0.8,0.9-2.1,4.8,2,7.6c-2.8,3.1-6,4.4-3.9,16.3c0.7,3.9,1,6.7,2.3,14.1c-4.1-12-4.1-10.1-6.1-20.1
+		c-0.8-4,0.1-7.6,3.6-11C33.9,17.4,41.6,11.3,41.6,11.5z"/>
+      <path class="st0" d="M8.2,13.8c-0.7,8.5,2.6,13.9,4.9,16.9c2.5,3.2,4.3,4.1,7.1,7.1c1.3,1.4,5.7,4.9,7.9,8.7
+		c2.8,4.8,3.1,9.3,3.1,9.3c-6-16-22.6-8.8-28.1-32.6C6.9,21.4,8.2,13.8,8.2,13.8z"/>
+      <path class="st0" d="M20.4,0c-0.9,1-4.3,3-4.1,9.3C16.7,21.2,35,34.6,37.6,52.5c0.9,6.5,0.4,14-3.2,18.7c-8,10.4-16.3,6.2-21.5-1.1
+		l0.8-0.4c11,13.4,20.8,1.8,20.7-9.9c0-13.9-12.5-27-17.2-35.1c-4-6.8-5.5-11.5-4.4-16.7C13.6,5.1,16.5,1.8,20.4,0z"/>
+      <path class="st1" d="M138.1,67.4v2.5h-0.2c-0.1-0.6-0.4-1-0.8-1.4c-0.4-0.4-0.9-0.6-1.5-0.6c-0.7,0-1.3,0.3-1.7,0.9
+		c-0.4,0.6-0.6,1.3-0.6,2.3c0,1.2,0.2,2,0.6,2.5c0.4,0.5,1,0.8,1.7,0.8c0.5,0,1-0.1,1.3-0.4c0.4-0.2,0.7-0.5,1-0.9v0.6
+		c-0.4,0.4-0.8,0.7-1.3,0.9c-0.4,0.2-1,0.3-1.5,0.3c-0.8,0-1.5-0.2-2-0.5c-0.6-0.3-1-0.7-1.3-1.3c-0.3-0.5-0.5-1.2-0.5-1.8
+		c0-0.7,0.2-1.4,0.5-1.9c0.3-0.6,0.8-1,1.4-1.4c0.6-0.3,1.2-0.5,1.9-0.5c0.3,0,0.6,0,0.8,0.1c0.3,0.1,0.5,0.1,0.8,0.2
+		c0.1,0,0.2,0.1,0.3,0.1c0.1,0,0.2,0.1,0.3,0.1c0.1,0,0.2-0.1,0.3-0.2c0.1-0.1,0.1-0.2,0.1-0.4"/>
+      <path class="st1" d="M147.3,74.5c0.4,0,0.7-0.1,1-0.3c0.3-0.2,0.4-0.5,0.6-0.8c0.1-0.3,0.2-0.7,0.3-1.1c0-0.4,0.1-0.7,0.1-1
+		c0-0.3,0-0.7-0.1-1c0-0.4-0.1-0.7-0.3-1.1c-0.1-0.3-0.3-0.6-0.6-0.8c-0.3-0.2-0.6-0.3-1-0.3c-0.4,0-0.7,0.1-1,0.3
+		c-0.3,0.2-0.4,0.5-0.6,0.8c-0.1,0.3-0.2,0.7-0.3,1.1c0,0.4-0.1,0.7-0.1,1c0,0.3,0,0.7,0.1,1c0,0.4,0.1,0.7,0.3,1.1
+		c0.1,0.3,0.3,0.6,0.6,0.8C146.6,74.3,146.9,74.4,147.3,74.5 M147.3,74.9c-0.7,0-1.4-0.2-1.9-0.5c-0.6-0.3-1-0.7-1.3-1.3
+		c-0.3-0.6-0.5-1.2-0.5-1.9c0-0.7,0.2-1.4,0.5-1.9c0.3-0.6,0.8-1,1.3-1.3c0.6-0.3,1.2-0.5,1.9-0.5c0.7,0,1.4,0.2,1.9,0.5
+		c0.6,0.3,1,0.7,1.3,1.3c0.3,0.6,0.5,1.2,0.5,1.9c0,0.7-0.2,1.4-0.5,1.9c-0.3,0.6-0.8,1-1.3,1.3C148.7,74.7,148.1,74.9,147.3,74.9z"
+      />
+      <path class="st0" d="M161.2,67.8v-0.2h2.4v0.2c-0.3,0-0.5,0-0.7,0.1c-0.1,0.1-0.2,0.2-0.3,0.4c0,0.2-0.1,0.4,0,0.7v3.1
+		c0,0.3,0,0.5-0.1,0.9c-0.1,0.3-0.2,0.6-0.4,0.9c-0.2,0.3-0.5,0.5-0.8,0.7s-0.9,0.3-1.5,0.3c-0.9,0-1.5-0.2-2-0.6
+		c-0.4-0.4-0.6-1-0.6-1.8v-3.5c0-0.3,0-0.5,0-0.7c0-0.2-0.1-0.3-0.3-0.4c-0.1-0.1-0.4-0.1-0.7-0.1v-0.2h3.7v0.2
+		c-0.3,0-0.6,0-0.7,0.1c-0.1,0.1-0.2,0.2-0.3,0.4c0,0.2,0,0.4,0,0.7v3.9c0,0.3,0,0.5,0.1,0.8c0.1,0.2,0.2,0.4,0.4,0.6
+		c0.2,0.1,0.5,0.2,0.9,0.2c0.4,0,0.8-0.1,1.1-0.3c0.3-0.2,0.4-0.5,0.5-0.8s0.2-0.6,0.2-1V69c0-0.3,0-0.5,0-0.7
+		c0-0.2-0.1-0.3-0.3-0.4C161.7,67.8,161.5,67.8,161.2,67.8"/>
+      <path class="st0" d="M170.9,67.6l3.5,4.4h0v-3.3c0-0.3-0.1-0.5-0.2-0.7c-0.2-0.1-0.4-0.2-0.8-0.2v-0.2h2.4v0.2
+		c-0.4,0-0.6,0.1-0.8,0.2c-0.2,0.1-0.2,0.4-0.2,0.7v6.2h-0.2l-4.8-5.9h0v4.7c0,0.3,0.1,0.5,0.2,0.7c0.2,0.1,0.4,0.2,0.8,0.2v0.2
+		h-2.4v-0.2c0.4,0,0.6-0.1,0.8-0.2c0.2-0.1,0.2-0.4,0.2-0.7v-5.2c-0.2-0.2-0.3-0.4-0.5-0.5c-0.1-0.1-0.3-0.2-0.6-0.2v-0.2"/>
+      <path class="st1" d="M187.7,67.4v2.5h-0.2c-0.1-0.6-0.4-1-0.8-1.4c-0.4-0.4-0.9-0.6-1.5-0.6c-0.7,0-1.3,0.3-1.7,0.9
+		c-0.4,0.6-0.6,1.3-0.6,2.3c0,1.2,0.2,2,0.6,2.5c0.4,0.5,1,0.8,1.7,0.8c0.5,0,1-0.1,1.3-0.4c0.4-0.2,0.7-0.5,1-0.9v0.6
+		c-0.4,0.4-0.8,0.7-1.3,0.9c-0.4,0.2-1,0.3-1.5,0.3c-0.8,0-1.5-0.2-2-0.5c-0.6-0.3-1-0.7-1.3-1.3c-0.3-0.5-0.5-1.2-0.5-1.8
+		c0-0.7,0.2-1.4,0.5-1.9c0.3-0.6,0.8-1,1.4-1.4c0.6-0.3,1.2-0.5,1.9-0.5c0.3,0,0.6,0,0.8,0.1c0.3,0.1,0.5,0.1,0.8,0.2
+		c0.1,0,0.2,0.1,0.3,0.1c0.1,0,0.2,0.1,0.3,0.1c0.1,0,0.2-0.1,0.3-0.2c0.1-0.1,0.1-0.2,0.1-0.4"/>
+      <path class="st0" d="M195.7,68.9v4.4c0,0.3,0,0.5,0,0.7c0,0.2,0.1,0.3,0.3,0.4c0.1,0.1,0.4,0.1,0.7,0.1v0.2H193v-0.2
+		c0.3,0,0.6,0,0.7-0.1c0.1-0.1,0.2-0.2,0.3-0.4c0-0.2,0-0.4,0-0.7v-4.4c0-0.3,0-0.5,0-0.7c0-0.2-0.1-0.3-0.3-0.4
+		c-0.1-0.1-0.4-0.1-0.7-0.1v-0.2h3.7v0.2c-0.3,0-0.6,0-0.7,0.1c-0.1,0.1-0.2,0.2-0.3,0.4C195.7,68.4,195.7,68.7,195.7,68.9"/>
+      <path class="st0" d="M208.2,72.2l-0.3,2.5h-6.3v-0.2c0.3,0,0.6,0,0.7-0.1c0.1-0.1,0.2-0.2,0.3-0.4c0-0.2,0-0.4,0-0.7v-4.4
+		c0-0.3,0-0.5,0-0.7c0-0.2-0.1-0.3-0.3-0.4c-0.1-0.1-0.4-0.1-0.7-0.1v-0.2h3.8v0.2c-0.4,0-0.6,0-0.8,0.1c-0.2,0.1-0.2,0.2-0.3,0.4
+		c0,0.2,0,0.4,0,0.7v4.3c0,0.4,0,0.6,0.1,0.8c0,0.2,0.2,0.2,0.3,0.3c0.2,0,0.4,0,0.8,0c0.5,0,0.8,0,1.1-0.1c0.3-0.1,0.5-0.3,0.7-0.6
+		c0.2-0.3,0.4-0.8,0.6-1.4"/>
+      <path class="st0" d="M138.1,67.4v2.5h-0.2c-0.1-0.6-0.4-1-0.8-1.4c-0.4-0.4-0.9-0.6-1.5-0.6c-0.7,0-1.3,0.3-1.7,0.9
+		c-0.4,0.6-0.6,1.3-0.6,2.3c0,1.2,0.2,2,0.6,2.5c0.4,0.5,1,0.8,1.7,0.8c0.5,0,1-0.1,1.3-0.4c0.4-0.2,0.7-0.5,1-0.9v0.6
+		c-0.4,0.4-0.8,0.7-1.3,0.9c-0.4,0.2-1,0.3-1.5,0.3c-0.8,0-1.5-0.2-2-0.5c-0.6-0.3-1-0.7-1.3-1.3c-0.3-0.5-0.5-1.2-0.5-1.8
+		c0-0.7,0.2-1.4,0.5-1.9c0.3-0.6,0.8-1,1.4-1.4c0.6-0.3,1.2-0.5,1.9-0.5c0.3,0,0.6,0,0.8,0.1c0.3,0.1,0.5,0.1,0.8,0.2l0.3,0.1
+		c0.1,0,0.2,0.1,0.3,0.1c0.1,0,0.2-0.1,0.3-0.2c0.1-0.1,0.1-0.2,0.1-0.4H138.1z"/>
+      <path class="st0" d="M150.6,69.2c-0.3-0.6-0.8-1-1.3-1.3c-0.6-0.3-1.2-0.5-1.9-0.5c-0.7,0-1.4,0.2-1.9,0.5c-0.6,0.3-1,0.7-1.3,1.3
+		c-0.3,0.6-0.5,1.2-0.5,1.9c0,0.7,0.2,1.4,0.5,1.9c0.3,0.6,0.8,1,1.3,1.3c0.6,0.3,1.2,0.5,1.9,0.5c0.7,0,1.4-0.2,1.9-0.5
+		c0.6-0.3,1-0.7,1.3-1.3c0.3-0.6,0.5-1.2,0.5-1.9C151.1,70.4,151,69.8,150.6,69.2z M149.2,72.2c0,0.4-0.1,0.7-0.3,1.1
+		c-0.1,0.3-0.3,0.6-0.6,0.8c-0.3,0.2-0.6,0.3-1,0.3c-0.4,0-0.7-0.1-1-0.3c-0.3-0.2-0.4-0.5-0.6-0.8c-0.1-0.3-0.2-0.7-0.3-1.1
+		c0-0.4-0.1-0.7-0.1-1c0-0.3,0-0.7,0.1-1c0-0.4,0.1-0.7,0.3-1.1c0.1-0.3,0.3-0.6,0.6-0.8c0.3-0.2,0.6-0.3,1-0.3c0.4,0,0.7,0.1,1,0.3
+		c0.3,0.2,0.4,0.5,0.6,0.8c0.1,0.3,0.2,0.7,0.3,1.1c0,0.4,0.1,0.7,0.1,1C149.2,71.5,149.2,71.8,149.2,72.2z"/>
+      <path class="st0" d="M161.2,67.8v-0.2h2.4v0.2c-0.3,0-0.5,0-0.7,0.1c-0.1,0.1-0.2,0.2-0.3,0.4c0,0.2-0.1,0.4,0,0.7v3.1
+		c0,0.3,0,0.5-0.1,0.9c-0.1,0.3-0.2,0.6-0.4,0.9c-0.2,0.3-0.5,0.5-0.8,0.7s-0.9,0.3-1.5,0.3c-0.9,0-1.5-0.2-2-0.6
+		c-0.4-0.4-0.6-1-0.6-1.8v-3.5c0-0.3,0-0.5,0-0.7c0-0.2-0.1-0.3-0.3-0.4c-0.1-0.1-0.4-0.1-0.7-0.1v-0.2h3.7v0.2
+		c-0.3,0-0.6,0-0.7,0.1c-0.1,0.1-0.2,0.2-0.3,0.4c0,0.2,0,0.4,0,0.7v3.9c0,0.3,0,0.5,0.1,0.8c0.1,0.2,0.2,0.4,0.4,0.6
+		c0.2,0.1,0.5,0.2,0.9,0.2c0.4,0,0.8-0.1,1.1-0.3c0.3-0.2,0.4-0.5,0.5-0.8s0.2-0.6,0.2-1V69c0-0.3,0-0.5,0-0.7
+		c0-0.2-0.1-0.3-0.3-0.4C161.7,67.8,161.5,67.8,161.2,67.8z"/>
+      <path class="st0" d="M170.9,67.6l3.5,4.4l0-3.3c0-0.3-0.1-0.5-0.2-0.7c-0.2-0.1-0.4-0.2-0.8-0.2v-0.2h2.4v0.2
+		c-0.4,0-0.6,0.1-0.8,0.2c-0.2,0.1-0.2,0.4-0.2,0.7v6.2h-0.2l-4.8-5.9l0,4.7c0,0.3,0.1,0.5,0.2,0.7c0.2,0.1,0.4,0.2,0.8,0.2v0.2
+		h-2.4v-0.2c0.4,0,0.6-0.1,0.8-0.2c0.2-0.1,0.2-0.4,0.2-0.7v-5.2c-0.2-0.2-0.3-0.4-0.5-0.5c-0.1-0.1-0.3-0.2-0.6-0.2v-0.2H170.9z"/>
+      <path class="st0" d="M187.7,67.4v2.5h-0.2c-0.1-0.6-0.4-1-0.8-1.4c-0.4-0.4-0.9-0.6-1.5-0.6c-0.7,0-1.3,0.3-1.7,0.9
+		c-0.4,0.6-0.6,1.3-0.6,2.3c0,1.2,0.2,2,0.6,2.5c0.4,0.5,1,0.8,1.7,0.8c0.5,0,1-0.1,1.3-0.4c0.4-0.2,0.7-0.5,1-0.9v0.6
+		c-0.4,0.4-0.8,0.7-1.3,0.9c-0.4,0.2-1,0.3-1.5,0.3c-0.8,0-1.5-0.2-2-0.5c-0.6-0.3-1-0.7-1.3-1.3c-0.3-0.5-0.5-1.2-0.5-1.8
+		c0-0.7,0.2-1.4,0.5-1.9c0.3-0.6,0.8-1,1.4-1.4c0.6-0.3,1.2-0.5,1.9-0.5c0.3,0,0.6,0,0.8,0.1c0.3,0.1,0.5,0.1,0.8,0.2l0.3,0.1
+		c0.1,0,0.2,0.1,0.3,0.1c0.1,0,0.2-0.1,0.3-0.2c0.1-0.1,0.1-0.2,0.1-0.4H187.7z"/>
+      <path class="st0" d="M195.7,68.9v4.4c0,0.3,0,0.5,0,0.7c0,0.2,0.1,0.3,0.3,0.4c0.1,0.1,0.4,0.1,0.7,0.1v0.2H193v-0.2
+		c0.3,0,0.6,0,0.7-0.1c0.1-0.1,0.2-0.2,0.3-0.4c0-0.2,0-0.4,0-0.7v-4.4c0-0.3,0-0.5,0-0.7c0-0.2-0.1-0.3-0.3-0.4
+		c-0.1-0.1-0.4-0.1-0.7-0.1v-0.2h3.7v0.2c-0.3,0-0.6,0-0.7,0.1c-0.1,0.1-0.2,0.2-0.3,0.4C195.7,68.4,195.7,68.7,195.7,68.9z"/>
+      <path class="st0" d="M208.2,72.2l-0.3,2.5h-6.3v-0.2c0.3,0,0.6,0,0.7-0.1c0.1-0.1,0.2-0.2,0.3-0.4c0-0.2,0-0.4,0-0.7v-4.4
+		c0-0.3,0-0.5,0-0.7c0-0.2-0.1-0.3-0.3-0.4c-0.1-0.1-0.4-0.1-0.7-0.1v-0.2h3.8v0.2c-0.4,0-0.6,0-0.8,0.1c-0.2,0.1-0.2,0.2-0.3,0.4
+		c0,0.2,0,0.4,0,0.7v4.3c0,0.4,0,0.6,0.1,0.8c0,0.2,0.2,0.2,0.3,0.3c0.2,0,0.4,0,0.8,0c0.5,0,0.8,0,1.1-0.1c0.3-0.1,0.5-0.3,0.7-0.6
+		c0.2-0.3,0.4-0.8,0.6-1.4H208.2z"/>
+      <path class="st0" d="M93.6,40.6l1,10.2h-1.2c-0.3-1.3-0.8-2.6-1.5-3.9c-0.8-1.2-1.8-2.3-3-3.1c-1.2-0.8-2.7-1.2-4.3-1.3
+		c-1.2,0-2.3,0.4-3.3,1.1c-1,0.7-1.5,1.8-1.5,3.3c0,1.4,0.6,2.6,1.7,3.7c1.1,1,2.4,2,3.9,2.9c1.6,0.9,3.1,1.9,4.7,2.9
+		c1.6,1,2.9,2.2,3.9,3.5c1.1,1.3,1.6,3,1.7,4.9c0,1.4-0.4,2.7-1.1,4c-0.7,1.3-1.8,2.4-3.3,3.3c-1.5,0.9-3.4,1.3-5.6,1.3
+		c-1.2,0-2.3-0.2-3.2-0.4c-0.9-0.3-1.7-0.5-2.4-0.8c-0.7-0.3-1.3-0.4-1.7-0.4c-0.5,0-0.9,0.2-1.1,0.5c-0.2,0.3-0.4,0.7-0.4,1.1h-1
+		l-1.4-10.1h1.1c0.3,0.8,0.8,1.9,1.5,3.2c0.7,1.3,1.7,2.5,3.1,3.6c1.3,1.1,3.1,1.6,5.2,1.7c1.9-0.1,3.3-0.6,4.3-1.7
+		c1-1.1,1.4-2.3,1.4-3.6c0-0.9-0.1-1.7-0.5-2.5c-0.3-0.8-1.1-1.6-2.2-2.5c-1.1-0.9-2.8-2.1-5.1-3.4c-2.2-1.2-4-2.5-5.4-3.8
+		c-1.3-1.4-2-3.2-2.1-5.5c0-1.8,0.5-3.3,1.3-4.5c0.8-1.2,1.9-2.1,3.2-2.7c1.3-0.6,2.7-0.9,4.1-0.9c1,0,1.9,0.2,2.7,0.4
+		c0.9,0.3,1.6,0.5,2.3,0.8c0.7,0.3,1.2,0.4,1.6,0.4c0.6,0,1.1-0.2,1.3-0.6c0.2-0.4,0.3-0.7,0.4-1"/>
+      <path class="st0" d="M93.6,40.6l1,10.2h-1.2c-0.3-1.3-0.8-2.6-1.5-3.9c-0.8-1.2-1.8-2.3-3-3.1c-1.2-0.8-2.7-1.2-4.3-1.3
+		c-1.2,0-2.3,0.4-3.3,1.1c-1,0.7-1.5,1.8-1.5,3.3c0,1.4,0.6,2.6,1.7,3.7c1.1,1,2.4,2,3.9,2.9c1.6,0.9,3.1,1.9,4.7,2.9
+		c1.6,1,2.9,2.2,3.9,3.5c1.1,1.3,1.6,3,1.7,4.9c0,1.4-0.4,2.7-1.1,4c-0.7,1.3-1.8,2.4-3.3,3.3c-1.5,0.9-3.4,1.3-5.6,1.3
+		c-1.2,0-2.3-0.2-3.2-0.4c-0.9-0.3-1.7-0.5-2.4-0.8c-0.7-0.3-1.3-0.4-1.7-0.4c-0.5,0-0.9,0.2-1.1,0.5c-0.2,0.3-0.4,0.7-0.4,1.1h-1
+		l-1.4-10.1h1.1c0.3,0.8,0.8,1.9,1.5,3.2c0.7,1.3,1.7,2.5,3.1,3.6c1.3,1.1,3.1,1.6,5.2,1.7c1.9-0.1,3.3-0.6,4.3-1.7
+		c1-1.1,1.4-2.3,1.4-3.6c0-0.9-0.1-1.7-0.5-2.5c-0.3-0.8-1.1-1.6-2.2-2.5c-1.1-0.9-2.8-2.1-5.1-3.4c-2.2-1.2-4-2.5-5.4-3.8
+		c-1.3-1.4-2-3.2-2.1-5.5c0-1.8,0.5-3.3,1.3-4.5c0.8-1.2,1.9-2.1,3.2-2.7c1.3-0.6,2.7-0.9,4.1-0.9c1,0,1.9,0.2,2.7,0.4
+		c0.9,0.3,1.6,0.5,2.3,0.8c0.7,0.3,1.2,0.4,1.6,0.4c0.6,0,1.1-0.2,1.3-0.6c0.2-0.4,0.3-0.7,0.4-1H93.6z"/>
+      <path class="st1" d="M105.1,61.3c0.6,0,1.3-0.2,1.9-0.5c0.6-0.4,1.2-1,1.6-2c0.4-0.9,0.7-2.3,0.7-3.9c0-1.5-0.2-2.9-0.6-4.1
+		c-0.4-1.3-1-2.3-1.7-3c-0.8-0.8-1.7-1.2-2.8-1.2c-1.2,0-2.1,0.5-3,1.4c-0.8,0.9-1.2,2.3-1.3,4.2c0,0.7,0.1,1.5,0.2,2.6
+		c0.1,1,0.4,2,0.8,3c0.4,1,0.9,1.9,1.6,2.5C103.1,60.9,104,61.2,105.1,61.3 M104.5,45.5c2.4,0,4.3,0.8,5.8,2.2
+		c1.5,1.4,2.2,3.5,2.3,6.1c0,1.2-0.3,2.5-0.8,3.8c-0.6,1.3-1.4,2.4-2.6,3.3c-1.2,0.9-2.7,1.4-4.5,1.4c-1.5,0-2.9-0.4-4.1-1.1
+		c-1.2-0.7-2.1-1.7-2.7-3c-0.7-1.3-1-2.7-1-4.4c0-1.5,0.3-2.9,0.9-4.1c0.6-1.3,1.5-2.3,2.7-3C101.5,45.9,102.9,45.5,104.5,45.5z"/>
+      <path class="st0" d="M110.3,47.7c-1.5-1.4-3.4-2.2-5.8-2.2c-1.6,0-3,0.4-4.1,1.2c-1.1,0.8-2,1.8-2.7,3c-0.6,1.2-0.9,2.6-0.9,4.1
+		c0,1.6,0.3,3.1,1,4.4c0.7,1.3,1.6,2.3,2.7,3c1.2,0.7,2.5,1.1,4.1,1.1c1.8,0,3.3-0.5,4.5-1.4c1.2-0.9,2-2,2.6-3.3
+		c0.6-1.3,0.9-2.6,0.8-3.8C112.5,51.1,111.7,49.1,110.3,47.7z M108.6,58.7c-0.4,0.9-1,1.6-1.6,2c-0.6,0.4-1.3,0.6-1.9,0.5
+		c-1.1,0-1.9-0.4-2.6-1.1c-0.7-0.7-1.2-1.5-1.6-2.6c-0.4-1-0.6-2-0.8-3c-0.1-1-0.2-1.9-0.2-2.6c0-1.9,0.5-3.3,1.3-4.2
+		c0.8-0.9,1.8-1.4,3-1.4c1.1,0,2,0.4,2.8,1.2c0.8,0.8,1.3,1.8,1.7,3c0.4,1.3,0.6,2.6,0.6,4.1C109.3,56.5,109.1,57.8,108.6,58.7z"/>
+      <path class="st0" d="M116.5,58.9v-9c0-1.1-0.2-1.7-0.4-2c-0.3-0.2-0.5-0.3-0.8-0.3c-0.5,0-0.9,0.1-1.1,0.1v-0.6
+		c1.7-0.5,3.4-1,5-1.6l0.2,0.1v2.7c1-0.8,2-1.5,2.8-2c0.8-0.5,1.7-0.8,2.7-0.8c1.2,0,2,0.3,2.6,0.9c0.6,0.6,1,1.3,1.2,2.1
+		c0.3-0.3,0.7-0.7,1.2-1.2c0.5-0.5,1.2-0.9,2-1.3c0.8-0.4,1.6-0.6,2.6-0.6c1.2,0,2.1,0.4,2.7,1.1c0.6,0.7,1,1.5,1.2,2.5
+		c0.2,1,0.3,1.9,0.3,2.8v7.4c0,0.4,0,0.8,0.2,1.3c0.2,0.4,0.6,0.7,1.4,0.9l0.9,0.1v0.5h-7.8v-0.5c0.6-0.1,1.1-0.1,1.4-0.3
+		c0.3-0.1,0.6-0.3,0.7-0.7c0.1-0.3,0.2-0.9,0.2-1.6v-7.5c0-0.6,0-1.2-0.1-1.8c-0.1-0.6-0.3-1.1-0.7-1.5c-0.4-0.4-1-0.6-1.8-0.6
+		c-1,0-1.8,0.2-2.4,0.6c-0.6,0.4-1.2,0.9-1.5,1.5v9c0,0.9,0.1,1.5,0.3,1.9c0.2,0.4,0.5,0.7,0.9,0.8c0.4,0.1,0.8,0.2,1.3,0.2v0.5h-8
+		v-0.5c0.8,0,1.4-0.2,1.8-0.4s0.6-1,0.6-2.1v-7.8c0-1.2-0.2-2.1-0.5-2.8c-0.4-0.7-1-1-1.9-1c-0.8,0-1.5,0.2-2.2,0.5
+		c-0.6,0.3-1.1,0.6-1.4,1c-0.3,0.3-0.5,0.5-0.5,0.6v10.1c0,0.8,0.3,1.4,0.7,1.6c0.5,0.2,1,0.3,1.7,0.3v0.5h-7.9v-0.5
+		c0.7,0,1.3-0.1,1.8-0.4C116.2,60.7,116.4,60,116.5,58.9"/>
+      <path class="st0" d="M116.5,58.9v-9c0-1.1-0.2-1.7-0.4-2c-0.3-0.2-0.5-0.3-0.8-0.3c-0.5,0-0.9,0.1-1.1,0.1v-0.6
+		c1.7-0.5,3.4-1,5-1.6l0.2,0.1v2.7c1-0.8,2-1.5,2.8-2c0.8-0.5,1.7-0.8,2.7-0.8c1.2,0,2,0.3,2.6,0.9c0.6,0.6,1,1.3,1.2,2.1
+		c0.3-0.3,0.7-0.7,1.2-1.2c0.5-0.5,1.2-0.9,2-1.3c0.8-0.4,1.6-0.6,2.6-0.6c1.2,0,2.1,0.4,2.7,1.1c0.6,0.7,1,1.5,1.2,2.5
+		c0.2,1,0.3,1.9,0.3,2.8v7.4c0,0.4,0,0.8,0.2,1.3c0.2,0.4,0.6,0.7,1.4,0.9l0.9,0.1v0.5h-7.8v-0.5c0.6-0.1,1.1-0.1,1.4-0.3
+		c0.3-0.1,0.6-0.3,0.7-0.7c0.1-0.3,0.2-0.9,0.2-1.6v-7.5c0-0.6,0-1.2-0.1-1.8c-0.1-0.6-0.3-1.1-0.7-1.5c-0.4-0.4-1-0.6-1.8-0.6
+		c-1,0-1.8,0.2-2.4,0.6c-0.6,0.4-1.2,0.9-1.5,1.5v9c0,0.9,0.1,1.5,0.3,1.9c0.2,0.4,0.5,0.7,0.9,0.8c0.4,0.1,0.8,0.2,1.3,0.2v0.5h-8
+		v-0.5c0.8,0,1.4-0.2,1.8-0.4s0.6-1,0.6-2.1v-7.8c0-1.2-0.2-2.1-0.5-2.8c-0.4-0.7-1-1-1.9-1c-0.8,0-1.5,0.2-2.2,0.5
+		c-0.6,0.3-1.1,0.6-1.4,1c-0.3,0.3-0.5,0.5-0.5,0.6v10.1c0,0.8,0.3,1.4,0.7,1.6c0.5,0.2,1,0.3,1.7,0.3v0.5h-7.9v-0.5
+		c0.7,0,1.3-0.1,1.8-0.4C116.2,60.7,116.4,60,116.5,58.9z"/>
+      <path class="st1" d="M144.5,50.8h7.4c-0.1-0.6-0.2-1.2-0.4-1.8c-0.2-0.6-0.5-1.2-1-1.6s-1.2-0.7-2.1-0.7c-1,0-1.8,0.3-2.5,0.9
+		C145.3,48.2,144.8,49.3,144.5,50.8 M155.6,56l0.6,0.3c-0.1,0.3-0.3,0.8-0.6,1.4c-0.3,0.6-0.8,1.3-1.4,2c-0.6,0.7-1.4,1.3-2.3,1.8
+		c-0.9,0.5-2,0.8-3.3,0.8c-2,0-3.6-0.7-4.8-2.1c-1.2-1.4-1.8-3.4-1.9-5.9c0-2.2,0.5-3.9,1.3-5.2c0.8-1.3,1.8-2.2,2.9-2.8
+		c1.1-0.6,2.2-0.8,3.2-0.8c1.7,0,3.1,0.5,4.3,1.5c1.1,1,1.8,2.7,2,5h-11.1c0.2,2.1,0.5,3.7,1.1,4.8c0.6,1.1,1.3,1.9,2.1,2.3
+		c0.8,0.4,1.6,0.6,2.4,0.6c1.1,0,1.9-0.2,2.7-0.7c0.7-0.4,1.3-0.9,1.8-1.5C155,57,155.4,56.5,155.6,56z"/>
+      <path class="st0" d="M155.6,56c-0.3,0.5-0.6,1-1.1,1.6c-0.5,0.6-1.1,1.1-1.8,1.5c-0.7,0.4-1.6,0.7-2.7,0.7c-0.8,0-1.6-0.2-2.4-0.6
+		c-0.8-0.4-1.5-1.2-2.1-2.3c-0.6-1.1-1-2.7-1.1-4.8h11.1c-0.2-2.3-0.9-4-2-5c-1.1-1-2.6-1.5-4.3-1.5c-1,0-2,0.3-3.2,0.8
+		c-1.1,0.6-2.1,1.5-2.9,2.8c-0.8,1.3-1.2,3-1.3,5.2c0,2.6,0.6,4.5,1.9,5.9c1.2,1.4,2.8,2.1,4.8,2.1c1.3,0,2.4-0.3,3.3-0.8
+		c0.9-0.5,1.7-1.1,2.3-1.8c0.6-0.7,1.1-1.4,1.4-2c0.3-0.6,0.5-1.1,0.6-1.4L155.6,56z M146,47.6c0.7-0.6,1.5-0.9,2.5-0.9
+		c0.9,0,1.6,0.2,2.1,0.7c0.5,0.4,0.8,1,1,1.6c0.2,0.6,0.3,1.2,0.4,1.8h-7.4C144.8,49.3,145.3,48.2,146,47.6z"/>
+      <path class="st0" d="M159.8,58.9v-8.9c0-1-0.2-1.6-0.4-1.9c-0.3-0.2-0.5-0.3-0.8-0.3c-0.5,0-0.9,0.1-1.2,0.1v-0.6
+		c1.8-0.6,3.5-1.2,5.3-1.9l0.2,0.1v3.2h0.1c0.8-1.2,1.6-2.1,2.2-2.6c0.7-0.5,1.3-0.7,2-0.7c0.6,0,1.1,0.2,1.4,0.5
+		c0.3,0.3,0.5,0.8,0.5,1.4c0,0.5-0.1,0.8-0.4,1.1c-0.2,0.3-0.6,0.4-1,0.5c-0.4,0-0.7-0.1-1-0.3c-0.3-0.2-0.5-0.4-0.7-0.6
+		c-0.2-0.2-0.5-0.3-0.7-0.3c-0.3,0-0.6,0.2-1,0.5c-0.4,0.3-0.7,0.7-1,1.2c-0.3,0.4-0.4,0.9-0.4,1.3v8c0,1.2,0.3,1.9,0.8,2.2
+		c0.5,0.3,1.3,0.5,2.2,0.4v0.5h-8.6v-0.5c1-0.1,1.6-0.3,2-0.6C159.6,60.4,159.8,59.8,159.8,58.9"/>
+      <path class="st0" d="M159.8,58.9v-8.9c0-1-0.2-1.6-0.4-1.9c-0.3-0.2-0.5-0.3-0.8-0.3c-0.5,0-0.9,0.1-1.2,0.1v-0.6
+		c1.8-0.6,3.5-1.2,5.3-1.9l0.2,0.1v3.2h0.1c0.8-1.2,1.6-2.1,2.2-2.6c0.7-0.5,1.3-0.7,2-0.7c0.6,0,1.1,0.2,1.4,0.5
+		c0.3,0.3,0.5,0.8,0.5,1.4c0,0.5-0.1,0.8-0.4,1.1c-0.2,0.3-0.6,0.4-1,0.5c-0.4,0-0.7-0.1-1-0.3c-0.3-0.2-0.5-0.4-0.7-0.6
+		c-0.2-0.2-0.5-0.3-0.7-0.3c-0.3,0-0.6,0.2-1,0.5c-0.4,0.3-0.7,0.7-1,1.2c-0.3,0.4-0.4,0.9-0.4,1.3v8c0,1.2,0.3,1.9,0.8,2.2
+		c0.5,0.3,1.3,0.5,2.2,0.4v0.5h-8.6v-0.5c1-0.1,1.6-0.3,2-0.6C159.6,60.4,159.8,59.8,159.8,58.9z"/>
+      <path class="st0" d="M180.6,50.7H180c-0.4-1.8-1-3-1.7-3.6c-0.7-0.6-1.5-0.9-2.3-0.8c-1,0-1.7,0.3-2.1,0.8c-0.4,0.5-0.6,1-0.6,1.5
+		c0,0.4,0.1,0.8,0.3,1.2c0.2,0.5,0.6,0.9,1.3,1.3l3.9,2.3c0.9,0.5,1.6,1.1,2.2,1.7c0.5,0.6,0.8,1.5,0.8,2.5c0,1-0.3,1.9-0.8,2.6
+		c-0.5,0.7-1.2,1.2-2,1.5c-0.8,0.3-1.6,0.5-2.4,0.5c-0.8,0-1.6-0.1-2.3-0.3c-0.7-0.2-1.3-0.3-1.8-0.3c-0.2,0-0.4,0-0.5,0.1
+		c-0.1,0.1-0.2,0.2-0.3,0.3h-0.5v-5.6h0.6c0.1,0.7,0.3,1.4,0.6,2.1c0.3,0.8,0.7,1.4,1.3,2c0.6,0.6,1.5,0.9,2.7,0.9
+		c0.7,0,1.3-0.2,1.9-0.5c0.6-0.4,0.9-1.1,1-2.1c0-1.1-0.7-2-1.9-2.6l-2.1-1.2c-1.1-0.6-2.1-1.3-2.9-2.1c-0.8-0.8-1.2-1.8-1.3-3.1
+		c0-0.7,0.2-1.4,0.5-2c0.4-0.7,0.9-1.2,1.6-1.7c0.7-0.4,1.7-0.7,2.8-0.7c0.8,0,1.5,0.1,2,0.4c0.6,0.2,1,0.3,1.3,0.4
+		c0.2,0,0.3-0.1,0.4-0.1c0.1-0.1,0.2-0.2,0.2-0.2h0.4"/>
+      <path class="st0" d="M180.6,50.7H180c-0.4-1.8-1-3-1.7-3.6c-0.7-0.6-1.5-0.9-2.3-0.8c-1,0-1.7,0.3-2.1,0.8c-0.4,0.5-0.6,1-0.6,1.5
+		c0,0.4,0.1,0.8,0.3,1.2c0.2,0.5,0.6,0.9,1.3,1.3l3.9,2.3c0.9,0.5,1.6,1.1,2.2,1.7c0.5,0.6,0.8,1.5,0.8,2.5c0,1-0.3,1.9-0.8,2.6
+		c-0.5,0.7-1.2,1.2-2,1.5c-0.8,0.3-1.6,0.5-2.4,0.5c-0.8,0-1.6-0.1-2.3-0.3c-0.7-0.2-1.3-0.3-1.8-0.3c-0.2,0-0.4,0-0.5,0.1
+		c-0.1,0.1-0.2,0.2-0.3,0.3h-0.5v-5.6h0.6c0.1,0.7,0.3,1.4,0.6,2.1c0.3,0.8,0.7,1.4,1.3,2c0.6,0.6,1.5,0.9,2.7,0.9
+		c0.7,0,1.3-0.2,1.9-0.5c0.6-0.4,0.9-1.1,1-2.1c0-1.1-0.7-2-1.9-2.6l-2.1-1.2c-1.1-0.6-2.1-1.3-2.9-2.1c-0.8-0.8-1.2-1.8-1.3-3.1
+		c0-0.7,0.2-1.4,0.5-2c0.4-0.7,0.9-1.2,1.6-1.7c0.7-0.4,1.7-0.7,2.8-0.7c0.8,0,1.5,0.1,2,0.4c0.6,0.2,1,0.3,1.3,0.4
+		c0.2,0,0.3-0.1,0.4-0.1c0.1-0.1,0.2-0.2,0.2-0.2h0.4L180.6,50.7z"/>
+      <path class="st1" d="M186.7,50.8h7.4c-0.1-0.6-0.2-1.2-0.4-1.8c-0.2-0.6-0.5-1.2-1-1.6c-0.5-0.4-1.2-0.7-2.1-0.7
+		c-1,0-1.8,0.3-2.5,0.9C187.4,48.2,186.9,49.3,186.7,50.8 M197.8,56l0.6,0.3c-0.1,0.3-0.3,0.8-0.6,1.4c-0.3,0.6-0.8,1.3-1.4,2
+		c-0.6,0.7-1.4,1.3-2.3,1.8c-0.9,0.5-2,0.8-3.3,0.8c-2,0-3.6-0.7-4.8-2.1c-1.2-1.4-1.8-3.4-1.9-5.9c0-2.2,0.5-3.9,1.3-5.2
+		c0.8-1.3,1.8-2.2,2.9-2.8c1.1-0.6,2.2-0.8,3.2-0.8c1.7,0,3.1,0.5,4.3,1.5c1.1,1,1.8,2.7,2,5h-11.1c0.2,2.1,0.5,3.7,1.1,4.8
+		c0.6,1.1,1.3,1.9,2.1,2.3c0.8,0.4,1.6,0.6,2.4,0.6c1.1,0,1.9-0.2,2.7-0.7c0.7-0.4,1.3-0.9,1.8-1.5C197.1,57,197.5,56.5,197.8,56z"
+      />
+      <path class="st0" d="M197.8,56c-0.3,0.5-0.6,1-1.1,1.6c-0.5,0.6-1.1,1.1-1.8,1.5c-0.7,0.4-1.6,0.7-2.7,0.7c-0.8,0-1.6-0.2-2.4-0.6
+		c-0.8-0.4-1.5-1.2-2.1-2.3c-0.6-1.1-1-2.7-1.1-4.8h11.1c-0.2-2.3-0.9-4-2-5c-1.1-1-2.6-1.5-4.3-1.5c-1,0-2,0.3-3.2,0.8
+		c-1.1,0.6-2.1,1.5-2.9,2.8c-0.8,1.3-1.2,3-1.3,5.2c0,2.6,0.6,4.5,1.9,5.9c1.2,1.4,2.8,2.1,4.8,2.1c1.3,0,2.4-0.3,3.3-0.8
+		c0.9-0.5,1.7-1.1,2.3-1.8c0.6-0.7,1.1-1.4,1.4-2c0.3-0.6,0.5-1.1,0.6-1.4L197.8,56z M188.1,47.6c0.7-0.6,1.5-0.9,2.5-0.9
+		c0.9,0,1.6,0.2,2.1,0.7c0.5,0.4,0.8,1,1,1.6c0.2,0.6,0.3,1.2,0.4,1.8h-7.4C186.9,49.3,187.4,48.2,188.1,47.6z"/>
+      <path class="st0" d="M207.9,45.8V47h-3.6v10.2c0,0.4,0,0.8,0.1,1.3c0.1,0.5,0.2,0.9,0.5,1.3c0.3,0.4,0.7,0.6,1.3,0.6
+		c0.6,0,1-0.2,1.4-0.5c0.3-0.3,0.6-0.5,0.8-0.8l0.5,0.4c-0.4,0.8-1,1.4-1.8,1.9c-0.8,0.5-1.5,0.8-2.4,0.8c-0.9,0-1.7-0.3-2.3-0.9
+		c-0.6-0.7-0.9-1.9-1-3.6V47h-1.9c-0.1,0-0.1-0.1-0.1-0.3c0-0.2,0.2-0.4,0.5-0.6c0.3-0.2,0.7-0.5,1.1-0.8c0.6-0.7,1.2-1.3,1.6-1.9
+		c0.4-0.6,1-1.3,1.6-2.2c0.2,0,0.3,0.2,0.2,0.5v4.1"/>
+      <path class="st0" d="M207.9,45.8V47h-3.6v10.2c0,0.4,0,0.8,0.1,1.3c0.1,0.5,0.2,0.9,0.5,1.3c0.3,0.4,0.7,0.6,1.3,0.6
+		c0.6,0,1-0.2,1.4-0.5c0.3-0.3,0.6-0.5,0.8-0.8l0.5,0.4c-0.4,0.8-1,1.4-1.8,1.9c-0.8,0.5-1.5,0.8-2.4,0.8c-0.9,0-1.7-0.3-2.3-0.9
+		c-0.6-0.7-0.9-1.9-1-3.6V47h-1.9c-0.1,0-0.1-0.1-0.1-0.3c0-0.2,0.2-0.4,0.5-0.6c0.3-0.2,0.7-0.5,1.1-0.8c0.6-0.7,1.2-1.3,1.6-1.9
+		c0.4-0.6,1-1.3,1.6-2.2c0.2,0,0.3,0.2,0.2,0.5v4.1H207.9z"/>
+      <path class="st0" d="M97.8,11.2v0.7c-0.8,0.1-1.5,0.2-2,0.4c-0.5,0.2-0.9,0.6-1.2,1.3c-0.3,0.7-0.4,1.7-0.4,3.2v20h-0.6L76.7,16
+		h-0.1v14.9c0,1.9,0.2,3.2,0.7,3.9c0.5,0.7,1.5,1,2.8,1v0.7h-9v-0.7c1,0,1.7-0.2,2.2-0.4c0.5-0.2,0.9-0.7,1.1-1.4
+		c0.2-0.7,0.3-1.7,0.3-3.1V14c-0.7-0.9-1.4-1.5-1.9-1.8c-0.5-0.3-1.1-0.4-1.8-0.3v-0.7h6.5l14.6,18.3h0.1V16.8
+		c0-1.4-0.1-2.5-0.4-3.2c-0.3-0.7-0.6-1.1-1.2-1.3c-0.5-0.2-1.2-0.3-2.1-0.4v-0.7"/>
+      <path class="st0" d="M97.8,11.2v0.7c-0.8,0.1-1.5,0.2-2,0.4c-0.5,0.2-0.9,0.6-1.2,1.3c-0.3,0.7-0.4,1.7-0.4,3.2v20h-0.6L76.7,16
+		h-0.1v14.9c0,1.9,0.2,3.2,0.7,3.9c0.5,0.7,1.5,1,2.8,1v0.7h-9v-0.7c1,0,1.7-0.2,2.2-0.4c0.5-0.2,0.9-0.7,1.1-1.4
+		c0.2-0.7,0.3-1.7,0.3-3.1V14c-0.7-0.9-1.4-1.5-1.9-1.8c-0.5-0.3-1.1-0.4-1.8-0.3v-0.7h6.5l14.6,18.3h0.1V16.8
+		c0-1.4-0.1-2.5-0.4-3.2c-0.3-0.7-0.6-1.1-1.2-1.3c-0.5-0.2-1.2-0.3-2.1-0.4v-0.7H97.8z"/>
+      <path class="st1" d="M106.1,35.8c0.6,0,1.3-0.2,1.9-0.5c0.6-0.4,1.2-1,1.6-2c0.4-0.9,0.7-2.3,0.7-3.9c0-1.5-0.2-2.9-0.6-4.1
+		c-0.4-1.3-1-2.3-1.7-3c-0.8-0.8-1.7-1.2-2.8-1.2c-1.2,0-2.1,0.5-3,1.4c-0.8,0.9-1.2,2.3-1.3,4.2c0,0.7,0.1,1.5,0.2,2.6
+		c0.1,1,0.4,2,0.8,3c0.4,1,0.9,1.9,1.6,2.5C104.1,35.4,105,35.8,106.1,35.8 M105.4,20c2.4,0,4.3,0.8,5.8,2.2
+		c1.5,1.4,2.2,3.5,2.3,6.1c0,1.2-0.3,2.5-0.8,3.8c-0.6,1.3-1.4,2.4-2.6,3.3c-1.2,0.9-2.7,1.4-4.5,1.4c-1.5,0-2.9-0.4-4.1-1.1
+		c-1.2-0.7-2.1-1.7-2.7-3c-0.7-1.3-1-2.7-1-4.4c0-1.5,0.3-2.9,0.9-4.1c0.6-1.3,1.5-2.3,2.7-3C102.5,20.4,103.8,20.1,105.4,20z"/>
+      <path class="st0" d="M111.2,22.2c-1.5-1.4-3.4-2.2-5.8-2.2c-1.6,0-3,0.4-4.1,1.2c-1.1,0.8-2,1.8-2.7,3c-0.6,1.2-0.9,2.6-0.9,4.1
+		c0,1.6,0.3,3.1,1,4.4c0.7,1.3,1.6,2.3,2.7,3c1.2,0.7,2.5,1.1,4.1,1.1c1.8,0,3.3-0.5,4.5-1.4c1.2-0.9,2-2,2.6-3.3
+		c0.6-1.3,0.9-2.6,0.8-3.8C113.4,25.7,112.7,23.7,111.2,22.2z M109.6,33.3c-0.4,0.9-1,1.6-1.6,2c-0.6,0.4-1.3,0.6-1.9,0.5
+		c-1.1,0-1.9-0.4-2.6-1.1c-0.7-0.7-1.2-1.5-1.6-2.6c-0.4-1-0.6-2-0.8-3c-0.1-1-0.2-1.9-0.2-2.6c0-1.9,0.5-3.3,1.3-4.2
+		c0.8-0.9,1.8-1.4,3-1.4c1.1,0,2,0.4,2.8,1.2s1.3,1.8,1.7,3c0.4,1.3,0.6,2.6,0.6,4.1C110.3,31.1,110,32.4,109.6,33.3z"/>
+      <path class="st0" d="M117.1,33.4v-8.9c0-1-0.2-1.6-0.4-1.9c-0.3-0.2-0.5-0.3-0.8-0.3c-0.5,0-0.9,0.1-1.2,0.1v-0.6
+		c1.8-0.6,3.5-1.2,5.3-1.9l0.2,0.1v3.2h0.1c0.8-1.2,1.6-2.1,2.2-2.6c0.7-0.5,1.3-0.7,2-0.7c0.6,0,1.1,0.2,1.4,0.5
+		c0.3,0.3,0.5,0.8,0.5,1.4c0,0.5-0.1,0.8-0.4,1.1c-0.2,0.3-0.6,0.4-1,0.5c-0.4,0-0.7-0.1-1-0.3s-0.5-0.4-0.7-0.6
+		c-0.2-0.2-0.5-0.3-0.7-0.3c-0.3,0-0.6,0.2-1,0.5c-0.4,0.3-0.7,0.7-1,1.2c-0.3,0.4-0.4,0.9-0.4,1.3v8c0,1.2,0.3,1.9,0.8,2.2
+		c0.5,0.3,1.3,0.5,2.2,0.4v0.5h-8.6v-0.5c1-0.1,1.6-0.3,2-0.6C117,35,117.1,34.4,117.1,33.4"/>
+      <path class="st0" d="M117.1,33.4v-8.9c0-1-0.2-1.6-0.4-1.9c-0.3-0.2-0.5-0.3-0.8-0.3c-0.5,0-0.9,0.1-1.2,0.1v-0.6
+		c1.8-0.6,3.5-1.2,5.3-1.9l0.2,0.1v3.2h0.1c0.8-1.2,1.6-2.1,2.2-2.6c0.7-0.5,1.3-0.7,2-0.7c0.6,0,1.1,0.2,1.4,0.5
+		c0.3,0.3,0.5,0.8,0.5,1.4c0,0.5-0.1,0.8-0.4,1.1c-0.2,0.3-0.6,0.4-1,0.5c-0.4,0-0.7-0.1-1-0.3s-0.5-0.4-0.7-0.6
+		c-0.2-0.2-0.5-0.3-0.7-0.3c-0.3,0-0.6,0.2-1,0.5c-0.4,0.3-0.7,0.7-1,1.2c-0.3,0.4-0.4,0.9-0.4,1.3v8c0,1.2,0.3,1.9,0.8,2.2
+		c0.5,0.3,1.3,0.5,2.2,0.4v0.5h-8.6v-0.5c1-0.1,1.6-0.3,2-0.6C117,35,117.1,34.4,117.1,33.4z"/>
+      <path class="st0" d="M136.4,20.4v1.1h-3.6v10.2c0,0.4,0,0.8,0.1,1.3c0.1,0.5,0.2,0.9,0.5,1.3c0.3,0.4,0.7,0.6,1.3,0.6
+		c0.6,0,1-0.2,1.4-0.5c0.3-0.3,0.6-0.5,0.8-0.8l0.5,0.4c-0.4,0.8-1,1.4-1.8,1.9c-0.8,0.5-1.5,0.8-2.4,0.8c-0.9,0-1.7-0.3-2.3-0.9
+		c-0.6-0.7-0.9-1.9-1-3.6V21.5h-1.9c-0.1,0-0.1-0.1-0.1-0.2c0-0.2,0.2-0.4,0.5-0.6c0.3-0.2,0.7-0.5,1.1-0.8c0.6-0.7,1.2-1.3,1.6-1.9
+		c0.4-0.6,1-1.3,1.6-2.2c0.2,0,0.3,0.2,0.2,0.5v4.1"/>
+      <path class="st0" d="M136.4,20.4v1.1h-3.6v10.2c0,0.4,0,0.8,0.1,1.3c0.1,0.5,0.2,0.9,0.5,1.3c0.3,0.4,0.7,0.6,1.3,0.6
+		c0.6,0,1-0.2,1.4-0.5c0.3-0.3,0.6-0.5,0.8-0.8l0.5,0.4c-0.4,0.8-1,1.4-1.8,1.9c-0.8,0.5-1.5,0.8-2.4,0.8c-0.9,0-1.7-0.3-2.3-0.9
+		c-0.6-0.7-0.9-1.9-1-3.6V21.5h-1.9c-0.1,0-0.1-0.1-0.1-0.2c0-0.2,0.2-0.4,0.5-0.6c0.3-0.2,0.7-0.5,1.1-0.8c0.6-0.7,1.2-1.3,1.6-1.9
+		c0.4-0.6,1-1.3,1.6-2.2c0.2,0,0.3,0.2,0.2,0.5v4.1H136.4z"/>
+      <path class="st0" d="M154.8,35.9v0.5h-7.6v-0.5c0.6,0,1.1-0.1,1.4-0.3c0.4-0.1,0.6-0.4,0.8-0.8c0.2-0.4,0.2-1.1,0.2-2v-7.1
+		c0-1.2-0.2-2.1-0.6-2.8c-0.4-0.7-1.1-1-2.1-1c-0.5,0-1.1,0.1-1.8,0.5c-0.7,0.3-1.4,0.9-2.1,1.8v8.6c0,0.9,0.1,1.6,0.2,2
+		c0.2,0.4,0.4,0.7,0.8,0.8c0.4,0.1,0.8,0.2,1.4,0.3v0.5h-7.7v-0.5c0.6-0.1,1.1-0.2,1.5-0.3c0.3-0.2,0.6-0.4,0.7-0.9
+		c0.1-0.4,0.2-1.1,0.2-1.9V14.2c0-0.5,0-1-0.2-1.3c-0.2-0.3-0.6-0.5-1.4-0.5c-0.1,0-0.2,0-0.4,0c-0.1,0-0.2,0-0.3,0v-0.6
+		c1.6-0.5,3.3-1,5.1-1.6l0.2,0.1V23h0.1c0.6-0.9,1.4-1.6,2.2-2.1c0.9-0.5,1.8-0.8,2.9-0.8c1.4,0,2.5,0.4,3.1,1.2
+		c0.6,0.7,1,1.5,1.2,2.4c0.1,0.9,0.2,1.6,0.2,2.1v7.1c0,0.9,0,1.5,0.2,1.9c0.1,0.4,0.3,0.7,0.6,0.8
+		C153.8,35.7,154.3,35.8,154.8,35.9"/>
+      <path class="st0" d="M154.8,35.9v0.5h-7.6v-0.5c0.6,0,1.1-0.1,1.4-0.3c0.4-0.1,0.6-0.4,0.8-0.8c0.2-0.4,0.2-1.1,0.2-2v-7.1
+		c0-1.2-0.2-2.1-0.6-2.8c-0.4-0.7-1.1-1-2.1-1c-0.5,0-1.1,0.1-1.8,0.5c-0.7,0.3-1.4,0.9-2.1,1.8v8.6c0,0.9,0.1,1.6,0.2,2
+		c0.2,0.4,0.4,0.7,0.8,0.8c0.4,0.1,0.8,0.2,1.4,0.3v0.5h-7.7v-0.5c0.6-0.1,1.1-0.2,1.5-0.3c0.3-0.2,0.6-0.4,0.7-0.9
+		c0.1-0.4,0.2-1.1,0.2-1.9V14.2c0-0.5,0-1-0.2-1.3c-0.2-0.3-0.6-0.5-1.4-0.5c-0.1,0-0.2,0-0.4,0c-0.1,0-0.2,0-0.3,0v-0.6
+		c1.6-0.5,3.3-1,5.1-1.6l0.2,0.1V23h0.1c0.6-0.9,1.4-1.6,2.2-2.1c0.9-0.5,1.8-0.8,2.9-0.8c1.4,0,2.5,0.4,3.1,1.2
+		c0.6,0.7,1,1.5,1.2,2.4c0.1,0.9,0.2,1.6,0.2,2.1v7.1c0,0.9,0,1.5,0.2,1.9c0.1,0.4,0.3,0.7,0.6,0.8
+		C153.8,35.7,154.3,35.8,154.8,35.9z"/>
+        </g>
+</svg>
+</a>
+    <div class="ace-main-menu">
+      <button title="Open menu" id="ace-open-hamburger" class="ace-hamburger-open">Open</button>
+      <div class="ace-main-menu-content">
+        <button title="Close menu" id="ace-close-hamburger" class="ace-hamburger-close">X</button>
+        <div id="block-north-somerset-main-menu">
+    
+    
+            
+
+                <nav>
+          <ul  class="ace-nav"  class="ace-nav" >
+                                <li >
+                         <a href="/my-services" data-drupal-link-system-path="node/33">Services</a>
+                                        </li>
+                                <li >
+                         <a href="/business" data-drupal-link-system-path="node/31">Business</a>
+                                        </li>
+                                <li >
+                         <a href="/council-democracy" data-drupal-link-system-path="node/30">My council</a>
+                                        </li>
+                                <li >
+                         <a href="/do-it-online" title="Do it online" data-drupal-link-system-path="node/1704">Do it online</a>
+                                        </li>
+                                <li >
+                         <a href="/contact-us" data-drupal-link-system-path="node/1129">Contact us</a>
+                                        </li>
+                                <li >
+                         <a href="/news" data-drupal-link-system-path="news">News</a>
+                                        </li>
+                        </ul>
+        </nav>
+    
+
+
+
+
+
+    </div>
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+</header>
+
+<div role="search" class="ace-search-region">
+    
+    <div class="ace-container">
+        <div class="search-form" data-drupal-selector="search-form" id="block-acesearchblock">
+  
+    
+      <form action="/council-democracy/priorities-strategies/climate-emergency/our-plans-tackle-climate-change" method="post" id="search-form" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-search form-item-search-param js-form-item-search-param form-no-label">
+        <input placeholder="Search..." title="Search" aria-labelledby="search-form" data-drupal-selector="edit-search-param" type="search" id="edit-search-param" name="search_param" value="" size="60" maxlength="128" class="form-search" />
+
+        </div>
+<input autocomplete="off" data-drupal-selector="form-ifhpq8h2o-yhw2ainjc92nwjnobbr2nhed-n-4g2ndw" type="hidden" name="form_build_id" value="form-IFhpq8H2o_yHW2AiNJc92nwJnoBbr2NHeD-n-4G2ndw" />
+<input data-drupal-selector="edit-search-form" type="hidden" name="form_id" value="search_form" />
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Search" class="button js-form-submit form-submit" />
+</div>
+
+</form>
+
+  </div>
+
+    </div>
+
+
+
+</div>
+
+<div role="main" class="ace-container ace-page-container">
+      <div>
+    <div id="block-north-somerset-breadcrumbs">
+    
+    
+              <div class="ace-breadcrumb">
+  <nav class="breadcrumb" aria-labelledby="system-breadcrumb">
+    <div id="system-breadcrumb" class="visually-hidden">Breadcrumb</div>
+    <ol>
+          <li>
+                  <a href="/">Home</a>
+              </li>
+          <li>
+                  <a href="/council-democracy">Council and democracy</a>
+              </li>
+          <li>
+                  <a href="/council-democracy/priorities-strategies">Priorities and strategies</a>
+              </li>
+          <li>
+                  <a href="/council-democracy/priorities-strategies/climate-emergency">Climate Emergency</a>
+              </li>
+          <li>
+                  Our plans to tackle climate change
+              </li>
+        </ol>
+  </nav>
+  </div>
+
+    </div>
+
+
+  </div>
+
+    <a id="main-content"></a>
+      <div>
+    <div data-drupal-messages-fallback class="hidden"></div><div id="block-north-somerset-content">
+  
+    
+      <div class="ace-node-council-information-page">
+        <div class="ace-service-section ace-mobile-hide ace-tablet-hide">
+        
+            <div>  <img src="/sites/default/files/styles/medium/public/2020-06/priorities-strategies.png?itok=Q0U3gioy" width="95" height="96" alt="clipboard and pen logo" />
+
+
+</div>
+      
+        <div class="ace-service-title">
+            <div>Climate emergency</div>
+      </div>
+        <div class="ace-section-menu">
+            <div id="block-mainnavigation">
+    
+    
+            
+
+                <nav>
+          <ul  class="ace-nav"  class="ace-nav" >
+                                <li >
+                         <a href="/council-democracy/priorities-strategies/climate-emergency/carbon-literacy" title="Carbon Literacy" data-drupal-link-system-path="node/3087">Carbon Literacy</a>
+                                        </li>
+                                <li >
+                         <a href="/council-democracy/priorities-strategies/climate-emergency/what-climate-emergency" title="What is a Climate Emergency" data-drupal-link-system-path="node/2882">What is a Climate Emergency</a>
+                                        </li>
+                                <li >
+                         <a href="/council-democracy/priorities-strategies/climate-emergency/our-plans-tackle-climate-change" title="Our plans to tackle climate change" data-drupal-link-system-path="node/2884" class="is-active">Our plans to tackle climate change</a>
+                                        </li>
+                                <li >
+                         <a href="/council-democracy/priorities-strategies/climate-emergency/making-greener-choices" title="Making greener choices" data-drupal-link-system-path="node/2870">Making greener choices</a>
+                                        </li>
+                                <li >
+                         <a href="/council-democracy/priorities-strategies/climate-emergency/climate-news" title="Climate news" data-drupal-link-system-path="node/2895">Climate news</a>
+                                        </li>
+                        </ul>
+        </nav>
+    
+
+
+
+
+
+    </div>
+
+
+        </div>
+    </div>
+    <div class="ace-main-content">
+          <div class="ace-main-content-heading">
+        <h1><span>Our plans to tackle climate change</span>
+</h1>
+        <div id="block-webchattag">
+  
+    
+      
+            <div><div id="engagewebchat" class="pull-right"></div></div>
+      
+  </div>
+
+      </div>
+
+        <div class="ace-notice-paragraph">
+            
+        </div>
+
+        <div class="ace-action-paragraphs">
+            
+        </div>
+
+        <div class="ace-tile-paragraph">
+            
+        </div>
+
+        <div class="ace-content-paragraphs">
+            
+      <div>
+              <div><div class="ace-paragraph-basic-paragraph">
+    <div class="ace-field-title">
+            </div>
+        <div class="ace-field-body">
+        
+            <div><p>After we declared a climate emergency in February 2019, we set to work.</p>
+
+<p>In order to reduce North Somerset's carbon emissions, we recognise the need to make significant changes to the way we live, work, and govern. We see these changes as a unique opportunity to improve our quality of life. This, in turn, will create an area that’s healthier, better to live in and fairer for everyone.</p>
+
+<p>We need to be ambitious to combat climate change. But we needed your help. From December 2019 to January 2020, we consulted on a draft Climate Change Strategy. In response, 81% agreed with our aim to become carbon neutral by 2030.</p>
+
+<p>From this strategy, we also developed an action plan on how to implement these changes - available below. </p></div>
+      
+    </div>
+</div>
+</div>
+              <div><div class="ace-paragraph-resource">
+    <p></p>
+      <div class="ace-field-media-file">
+        <article>
+  
+          <div class="ace-field-media-file">
+        <div class="ace-file-link">
+    
+    <div class="file file--mime-application-pdf file--application-pdf">
+        <a title="Climate emergency strategy - consultation results 2019"
+           href="https://www.n-somerset.gov.uk/sites/default/files/2020-09/Climate%20emergency%20strategy%20-%20consultation%20results%202019.pdf">Climate emergency strategy - consultation results 2019
+            [220.09 KB]
+        </a>
+    </div>
+</div>
+    </div>
+
+  </article>
+
+    </div>
+    <div class="ace-field-media-file">
+        <article>
+  
+          <div class="ace-field-media-file">
+        <div class="ace-file-link">
+    
+    <div class="file file--mime-application-pdf file--application-pdf">
+        <a title="North Somerset climate emergency strategy 2019.pdf"
+           href="https://www.n-somerset.gov.uk/sites/default/files/2020-02/North%20Somerset%20climate%20emergency%20strategy%202019.pdf">North Somerset climate emergency strategy 2019.pdf
+            [201.83 KB]
+        </a>
+    </div>
+</div>
+    </div>
+
+  </article>
+
+    </div>
+    <div class="ace-field-media-file">
+        <article>
+  
+          <div class="ace-field-media-file">
+        <div class="ace-file-link">
+    
+    <div class="file file--mime-application-pdf file--application-pdf">
+        <a title="North Somerset climate emergency action plan.pdf"
+           href="https://www.n-somerset.gov.uk/sites/default/files/2020-02/North%20Somerset%20climate%20emergency%20action%20plan.pdf">North Somerset climate emergency action plan.pdf
+            [374.01 KB]
+        </a>
+    </div>
+</div>
+    </div>
+
+  </article>
+
+    </div>
+
+</div>
+</div>
+              <div><div class="ace-paragraph-basic-paragraph">
+    <div class="ace-field-title">
+                    <h2>
+            <div>Progress reports</div>
+      </h2>
+            </div>
+        <div class="ace-field-body">
+        
+            <div><p>Following our Climate Emergency declaration, we agreed to bring a progress report to full council every six months.</p>
+
+<p>The latest progress report contains an update on council emissions during 2020, showing some of the impacts of the Covid-19 crisis. Accompanying the report is an annotated version of the Climate Emergency Action Plan. This shows progress against specific actions and slides which summarise the report.</p></div>
+      
+    </div>
+</div>
+</div>
+              <div><div class="ace-paragraph-notice-information">
+        <div class="ace-field-body">
+        <p>
+        
+            <div><p>For more information, see our <a href="/news/climate-emergency-six-month-progress-report" title="Climate Emergency six-month progress report">recent press release</a>. </p></div>
+      
+        </p>
+    </div>
+</div></div>
+              <div><div class="ace-paragraph-resource">
+    <p></p>
+      <div class="ace-field-media-file">
+        <article>
+  
+          <div class="ace-field-media-file">
+        <div class="ace-file-link">
+    
+    <div class="file file--mime-application-pdf file--application-pdf">
+        <a title="Climate Emergency progress report - Jan 2021"
+           href="https://www.n-somerset.gov.uk/sites/default/files/2021-01/Committee%20Report%20NSC%20ClimateEmergencyProgressJanuary2021.pdf">Climate Emergency progress report - Jan 2021
+            [257.29 KB]
+        </a>
+    </div>
+</div>
+    </div>
+
+  </article>
+
+    </div>
+    <div class="ace-field-media-file">
+        <article>
+  
+          <div class="ace-field-media-file">
+        <div class="ace-file-link">
+    
+    <div class="file file--mime-application-pdf file--application-pdf">
+        <a title="Climate Emergency update - Jan 2021"
+           href="https://www.n-somerset.gov.uk/sites/default/files/2021-01/ClimateEmergencyUpdate_Jan2021.pdf">Climate Emergency update - Jan 2021
+            [863.26 KB]
+        </a>
+    </div>
+</div>
+    </div>
+
+  </article>
+
+    </div>
+    <div class="ace-field-media-file">
+        <article>
+  
+          <div class="ace-field-media-file">
+        <div class="ace-file-link">
+    
+    <div class="file file--mime-application-pdf file--application-pdf">
+        <a title="North Somerset Climate Emergency action plan - update Jan 2021"
+           href="https://www.n-somerset.gov.uk/sites/default/files/2021-01/North%20Somerset%20Climate%20Emergency_Action%20Plan_Update_Jan2021.pdf">North Somerset Climate Emergency action plan - update Jan 2021
+            [232.3 KB]
+        </a>
+    </div>
+</div>
+    </div>
+
+  </article>
+
+    </div>
+
+</div>
+</div>
+              <div><div class="ace-paragraph-basic-paragraph">
+    <div class="ace-field-title">
+                    <h2>
+            <div>Baseline evidence reports</div>
+      </h2>
+            </div>
+        <div class="ace-field-body">
+        
+            <div><p>To assess where we are as an area, we have produced two emissions inventory reports that cover:</p>
+
+<ul>
+	<li>the council’s own activities</li>
+	<li>emissions for the whole of North Somerset.</li>
+</ul>
+
+<p>We will update the emissions data in these reports will each year. We will use them to watch our progress against our climate emergency target.</p></div>
+      
+    </div>
+</div>
+</div>
+              <div><div class="ace-paragraph-resource">
+    <p></p>
+      <div class="ace-field-media-file">
+        <article>
+  
+          <div class="ace-field-media-file">
+        <div class="ace-file-link">
+    
+    <div class="file file--mime-application-pdf file--application-pdf">
+        <a title="NSC Greenhouse Gas Emissions Report - 2019-20"
+           href="https://www.n-somerset.gov.uk/sites/default/files/2020-11/NSC%20Greenhouse%20Gas%20Emissions%20Report%20-%202019-20.pdf">NSC Greenhouse Gas Emissions Report - 2019-20
+            [697.22 KB]
+        </a>
+    </div>
+</div>
+    </div>
+
+  </article>
+
+    </div>
+    <div class="ace-field-media-file">
+        <article>
+  
+          <div class="ace-field-media-file">
+        <div class="ace-file-link">
+    
+    <div class="file file--mime-application-pdf file--application-pdf">
+        <a title="North Somerset Council Climate Emergency Report on Baseline Emissions – July 2020"
+           href="https://www.n-somerset.gov.uk/sites/default/files/2020-11/Climate%20Emergency%20Baseline%20Report%20-%20July2020_0.pdf">North Somerset Council Climate Emergency Report on Baseline Emissions – July 2020
+            [845.12 KB]
+        </a>
+    </div>
+</div>
+    </div>
+
+  </article>
+
+    </div>
+
+</div>
+</div>
+              <div><div class="ace-paragraph-basic-paragraph">
+    <div class="ace-field-title">
+                    <h2>
+            <div>A greener Corporate Plan</div>
+      </h2>
+            </div>
+        <div class="ace-field-body">
+        
+            <div><p>We also chose the term 'greener' as one of three key themes for our Corporate Plan 2020-24. This means that we will include climate change as a deciding factor in all policy and strategy decisions going forward.</p>
+
+<p>See an update on what we are doing in the video below.</p></div>
+      
+    </div>
+</div>
+</div>
+              <div><div class="ace-paragraph-resource">
+    <p></p>
+      <div class="ace-field-media-file">
+        <article>
+  
+          <div class="ace-field-media-file">
+        <div class="ace-file-link">
+    
+    <div class="file file--mime-application-pdf file--application-pdf">
+        <a title="North Somerset Council Corporate Plan 2020-2024"
+           href="https://www.n-somerset.gov.uk/sites/default/files/2020-08/North%20Somerset%20Council%20Corporate%20Plan%202020-2024.pdf">North Somerset Council Corporate Plan 2020-2024
+            [3.29 MB]
+        </a>
+    </div>
+</div>
+    </div>
+
+  </article>
+
+    </div>
+
+</div>
+</div>
+              <div><div class="ace-paragraph-iframe">
+    <div class="ace-field-iframe">
+        
+            <div><div class=""><style type="text/css">iframe#iframe-field_iframe-12245 {/*frameborder*/ border-width:0;}</style>
+  <iframe  width="100%" height="315" name="iframe-field_iframe-12245" id="iframe-field_iframe-12245" title="" allow="autoplay;camera;microphone;payment;accelerometer;geolocation;encrypted-media;gyroscope" src="https://www.youtube.com/embed/p7-glklRgWc">Your browser does not support iframes, but you can use the following link: <a href="https://www.youtube.com/embed/p7-glklRgWc" title="">Link</a></iframe></div></div>
+      
+    </div>
+    <div class="ace-field-caption">
+        
+    </div>
+</div></div>
+              <div><div class="ace-paragraph-basic-paragraph">
+    <div class="ace-field-title">
+                    <h2>
+            <div>Key changes</div>
+      </h2>
+            </div>
+        <div class="ace-field-body">
+        
+            <div><p>Using these documents as a guide, we decided to implement the following changes: </p>
+
+<ul>
+	<li><a href="/my-services/libraries-leisure-open-spaces/parks-countryside/rewilding-north-somerset" title="Rewilding in North Somerset">Rewilding and green programme</a> - allowing our green spaces to grow wild and planting more trees</li>
+	<li><a href="https://travelwest.info/" title="Transport and travel">Transport </a>- improve paths and roads to encourage more walking and <a href="https://betterbybike.info/">cycling</a>, switch to green energy sources for buses and public transport</li>
+	<li><a href="/my-services/bins-recycling/reducing-reusing-waste/reuse-our-recycling-centres" title="Reuse at our recycling centres">Reduce, reuse, recycle</a> - improve our waste management strategies and services to send less to landfill</li>
+	<li><a href="/my-services/planning-building-control/planning-policy/supplementary-plans-guidance" title="Supplementary plans and guidance">Planning and building</a> - update policies to guide sustainable development, and provide incentives for homeowners to make green improvements</li>
+</ul></div>
+      
+    </div>
+</div>
+</div>
+              <div><div class="ace-paragraph-notice-information">
+        <div class="ace-field-body">
+        <p>
+        
+            <div><p>To keep up to date with what we're doing, visit our <a href="/council-democracy/priorities-strategies/climate-emergency/climate-news">climate news section</a>. </p></div>
+      
+        </p>
+    </div>
+</div></div>
+          </div>
+  
+        </div>
+
+            </div>
+</div>
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<footer aria-label="Site footer" class="ace-footer-section">
+  <div class="ace-footer-flex-section">
+    <ul class="ace-icon-list">
+    <li><a href="https://www.facebook.com/northsomersetcouncil" class="ace-icon facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/NorthSomersetC" class="ace-icon twitter">Twitter</a></li>
+    <li><a href="https://www.youtube.com/user/NorthSomersetCouncil" class="ace-icon youtube">Youtube</a></li>
+    <li><a href="https://www.instagram.com/northsomersetlife/?hl=en" class="ace-icon instagram">Instagram</a></li>
+    <li><a href="http://www.linkedin.com/company/north-somerset-council" class="ace-icon linkedin">LinkedIn</a></li>
+</ul>
+
+<div class="ace-footer1 ace-footer-terms">
+  <div id="block-footersitelinks">
+    
+    
+            
+
+                <nav>
+          <ul  class="ace-nav"  class="ace-nav" >
+                                <li >
+                         <a href="/council-democracy/equalities/accessibility-statement" title="Accessibility statement" data-drupal-link-system-path="node/2552">Accessibility</a>
+                                        </li>
+                                <li >
+                         <a href="/contact-us" title="Contact us" data-drupal-link-system-path="node/1129">Contact us</a>
+                                        </li>
+                                <li >
+                         <a href="/council-democracy/privacy-cookies" title="Privacy and cookies" data-drupal-link-system-path="node/1776">Privacy and cookies</a>
+                                        </li>
+                                <li >
+                         <a href="/do-it-online/help-getting-online" title="support" data-drupal-link-system-path="node/1688">Support</a>
+                                        </li>
+                                <li >
+                         <a href="/council-democracy/privacy-cookies/terms" title="Terms" data-drupal-link-system-path="node/2219">Terms</a>
+                                        </li>
+                        </ul>
+        </nav>
+    
+
+
+
+
+
+    </div>
+
+
+</div>
+
+<div class="container">
+  <div class="row footer-feedback">
+    <div class="feedback">
+      <div class="smileys">
+        <div class="smile">
+          <a href="https://websurveys2.govmetric.com/theme/gm/1696?Q_RATINGID=4"
+             class="gm_sidebar_anchor" title="Please rate this page" target="_blank"
+             rel="nofollow">
+            <img src="https://websurveys2.servmetric.com/imgs/smileys/large/poor/smiley.png" alt="Rate as Poor">
+            <span class="tt">Poor</span>
+          </a>
+        </div>
+        <div class="smile">
+          <a href="https://websurveys2.govmetric.com/theme/gm/1696?Q_RATINGID=2"
+             class="gm_sidebar_anchor" title="Please rate this page" target="_blank"
+             rel="nofollow">
+            <img src="https://websurveys2.servmetric.com/imgs/smileys/large/average/smiley.png" alt="Rate as Average">
+            <span class="tt">Average</span>
+          </a>
+        </div>
+        <div class="smile">
+          <a href="https://websurveys2.govmetric.com/theme/gm/1696?Q_RATINGID=3"
+             class="gm_sidebar_anchor" title="Please rate this page" target="_blank"
+             rel="nofollow">
+            <img src="https://websurveys2.servmetric.com/imgs/smileys/large/good/smiley.png" alt="Rate as Good">
+            <span class="tt">Good</span>
+          </a>
+        </div>
+      </div>
+      <h2>Share your feedback</h2>
+    </div>
+
+
+    <link rel="stylesheet" type="text/css"
+          href="https://wsstatic.govmetric.com/css/client/gm_sidebar_rh.css"/>
+    <script type="text/javascript"
+            src="https://wsstatic.govmetric.com/js/client/gm_sidebar.js"></script>
+    <script type="text/javascript" src="https://hitcounter.govmetric.com/1071"></script>
+    <!-- WebMetric snippet ends here -->
+
+  </div>
+</div>
+
+  </div>
+  <div class="ace-footer-column-section">
+    <div class="ace-footer-col ace-footer1">
+    <div id="block-footerservices">
+    
+    
+            
+                <ul  class="ace-nav ace-footer-menu"  class="ace-nav ace-footer-menu">
+                                                            <li  id="ace-nsc-services">
+                    <div class="ace-footer-title"><a href="/my-services" data-drupal-link-system-path="node/33">Services</a></div>
+                                            <button class="ace-icon-open">
+                            X
+                        </button>
+                                    
+                                                    <ul  class="ace-nav ace-footer-menu"  class="ace-nav ace-footer-menu">
+                                                                <li  >
+                    <a href="/my-services/adult-social-care-health" title="Adult social care and health" data-drupal-link-system-path="node/1739">Adult social care and health</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/my-services/benefits-support" data-drupal-link-system-path="node/1598">Benefits and support</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/my-services/bins-recycling" data-drupal-link-system-path="node/1863">Bins and recycling</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/my-services/births-marriages-deaths" data-drupal-link-system-path="node/1765">Birth, marriages and deaths</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/my-services/children-young-people-families" data-drupal-link-system-path="node/1591">Children, young people and families</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/my-services/community-safety-crime" data-drupal-link-system-path="node/1774">Community safety and crime</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/my-services/community-safety-crime/emergency-management/covid-19-north-somerset-together" title="COVID-19: North Somerset Together" data-drupal-link-system-path="node/1676">COVID-19: North Somerset Together</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/my-services/housing" data-drupal-link-system-path="node/1669">Housing</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/my-services/jobs-training" title="Jobs and training" data-drupal-link-system-path="node/1611">Jobs and training</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/my-services/libraries-leisure-open-spaces" data-drupal-link-system-path="node/1779">Leisure, libraries and open spaces</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/my-services/nuisances-pollution-environmental-issues" data-drupal-link-system-path="node/1746">Nuisances, pollution and environmental protection</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/my-services/parking-travel-roads" data-drupal-link-system-path="node/1869">Parking, travel and roads</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/my-services/planning-building-control" data-drupal-link-system-path="node/1868">Planning and building control</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/my-services/schools-learning" title="Schools and learning" data-drupal-link-system-path="node/1775">Schools and learning</a>
+                
+                                </li>
+                    </ul>
+    
+                                </li>
+                    </ul>
+    
+
+
+    </div>
+
+
+</div>
+    <div class="ace-footer-col ace-footer2">
+    <div id="block-footermybusiness">
+    
+    
+            
+                <ul  class="ace-nav ace-footer-menu"  class="ace-nav ace-footer-menu">
+                                                            <li  id="ace-nsc-my-business">
+                    <div class="ace-footer-title"><a href="/business" data-drupal-link-system-path="node/31">Business</a></div>
+                                            <button class="ace-icon-open">
+                            X
+                        </button>
+                                    
+                                                    <ul  class="ace-nav ace-footer-menu"  class="ace-nav ace-footer-menu">
+                                                                <li  >
+                    <a href="/business/business-rates-payments" data-drupal-link-system-path="node/1639">Business rates and payments</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/business/business-support-advice" data-drupal-link-system-path="node/1643">Business support and advice</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/business/environmental-health" data-drupal-link-system-path="node/1644">Environmental health</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/business/health-safety" data-drupal-link-system-path="node/1645">Health and safety</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/business/licences-permits" data-drupal-link-system-path="node/1714">Licences and permits</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/business/regeneration-development" data-drupal-link-system-path="node/1762">Regeneration and development</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/business/tenders-procurement" data-drupal-link-system-path="node/1673">Tenders and procurement</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/business/trading-standards" data-drupal-link-system-path="node/1759">Trading standards</a>
+                
+                                </li>
+                    </ul>
+    
+                                </li>
+                    </ul>
+    
+
+
+    </div>
+
+
+</div>
+
+    <div class="ace-footer-col ace-footer3">
+    <div id="block-footermycouncil">
+    
+    
+            
+                <ul  class="ace-nav ace-footer-menu"  class="ace-nav ace-footer-menu">
+                                                            <li  id=ace-nsc-my-council>
+                    <div class="ace-footer-title"><a href="/council-democracy" title="Council and democracy" data-drupal-link-system-path="node/30">My council</a></div>
+                                            <button class="ace-icon-open">
+                            X
+                        </button>
+                                    
+                                                    <ul  class="ace-nav ace-footer-menu"  class="ace-nav ace-footer-menu">
+                                                                <li  >
+                    <a href="/council-democracy/accounts-spending-insurance" title="Accounts, spending and insurance" data-drupal-link-system-path="node/1717">Accounts, spending and insurance</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/council-democracy/complaints-feedback" title="Complaints and feedback" data-drupal-link-system-path="node/1656"> Complaints and feedback</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/council-democracy/councillors-committees" title="Councillors and committies" data-drupal-link-system-path="node/1781">Councillors and committees</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/council-democracy/data-protection-freedom-information" title="Data protection and freedom of information" data-drupal-link-system-path="node/1715">Data protection and freedom of information</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/council-democracy/equalities" title="Equalities" data-drupal-link-system-path="node/1658">Equalities</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/council-democracy/get-involved" title="Get involved" data-drupal-link-system-path="node/1702">Get involved</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/council-democracy/news-media" title="News and media" data-drupal-link-system-path="node/1721">News and media</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/council-democracy/priorities-strategies" title="Priorities and strategies" data-drupal-link-system-path="node/1659">Priorities and strategies</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/council-democracy/statistics-data" title="Statistics and data" data-drupal-link-system-path="node/1650">Statistics and data</a>
+                
+                                </li>
+                                                                <li  >
+                    <a href="/council-democracy/voting-elections" title="Voting and elections" data-drupal-link-system-path="node/1681">Voting and elections</a>
+                
+                                </li>
+                    </ul>
+    
+                                </li>
+                                                            <li  id=ace-nsc-news>
+                    <div class="ace-footer-title"><a href="/news" data-drupal-link-system-path="news">News</a></div>
+                                    
+                                </li>
+                                                            <li  id=ace-nsc-find-my-nearest>
+                    <div class="ace-footer-title"><a href="/find-my-nearest" data-drupal-link-system-path="find-my-nearest">Find my nearest</a></div>
+                                    
+                                </li>
+                    </ul>
+    
+
+
+    </div>
+
+
+</div>
+
+  </div>
+
+</footer>
+
+
+  </div>
+
+
+<script src="/sites/default/files/js/js_Ke4wK5yXGdznPIZ8oTAOIRoRI9IQg3oBa56ZUtWkbSs.js"></script>
+
+
+    <script type="text/javascript">
+        var jQueryCookie = jQuery.noConflict();
+        jQueryCookie(document).ready(function () {
+            jQueryCookie.cookieBar({
+                fixed: true,
+                acceptText: 'I have read and understood',
+                bottom: true,
+                effect: 'fade',
+                policyButton: false,
+                message: '<span>We use cookies to give you the best possible service on our website. You can change your cookie settings in your browser at any time. <a href="/privacy-cookies/cookies-on-our-website/cookies/">Find out how we use cookies on our site.</a></span>'
+            });
+        });
+    </script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"83237ce389","applicationID":"282271752","transactionName":"ZVVXYUcCXkJQAkZcWFwfdFZBCl9fHiVAQEdTXGlbWgdVbXIOXEFFXVxZUEc\/fl5VBGRcUkVzWltBEV9dXQRAGAlEWVBC","queueTime":0,"applicationTime":738,"atts":"SRJUFw8YTUw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+

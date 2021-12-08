@@ -1,0 +1,711 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+	<head>
+	    <title>Strategy, Implementation Plan and Reports </title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta name="silktide-cms" content="eyJlZGl0b3JVcmwiOiJodHRwczovLzBmNTM5NDM0LWEyZjQtNDRjMy04MzM2LTM3NTdkN2M5Y2ZjMy5henVyZXdlYnNpdGVzLm5ldC91bWJyYWNvIy9jb250ZW50L2NvbnRlbnQvZWRpdC83MzU1P21jdWx0dXJlPWVuLVVTIn0=">
+		<link rel="stylesheet" href="/css/bootstrap.css" media="screen" />
+		<link rel="stylesheet" href="/css/bootstrap-responsive.min.css" media="screen" />
+		<link rel="stylesheet" href="/css/typicons.css" media="screen" />
+		<link rel="stylesheet" href="/css/font-awesome.min.css" media="screen" />
+		<link rel="stylesheet" href="/css/styles.css?v=20160112" media="screen" />
+		<link rel="stylesheet" href="/css/navigation.css" media="screen" />
+		<link rel="stylesheet" href="/css/responsive.css" media="screen" />
+		<link rel="stylesheet" href="/css/sefton-icons.css" media="screen" />
+		<link rel="stylesheet" href="/css/galleria.classic.css" media="screen" />
+		<link rel="stylesheet" href="/css/Sefton.css" media="screen" />
+		<link rel="stylesheet" href="/css/sefton-icon-subset.css" media="screen" />
+		<link rel="stylesheet" href="/css/print.css" media="print" />
+		<link rel="stylesheet" href="/css/LeisureActivities.css" media="screen" />
+		<link rel="stylesheet" href="/css/sefton-ads.css"/>
+		<link rel="icon" type="image/png" href="/images/assets/favicon.png" />
+		<link rel="icon" type="image/x-icon" href="/images/assets/favicon.ico" />
+		<!-- Conditional stylesheets for IE -->
+		<!--[if IE 7]>
+			<link rel="stylesheet" href="/css/sefton-icons-ie7.css" media="screen">
+		<![endif]-->
+		<!--[if IE ]>
+			<style type="text/css">
+				.galleria-stage { height: 320px }
+			</style>
+		<![endif]-->
+                <script>
+                    /**
+                    * Function that tracks a click on an outbound link in Analytics.
+                    * This function takes a valid URL string as an argument, and uses that URL string
+                    * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+                    * using 'navigator.sendBeacon' in browser that support it.
+                    */
+					/* I've added a small tweak to the hitCallback function courtesy of www.cocept.io
+					to fix the inability to open a tracked link in a new window - PH 14/8/17 */
+					var trackOutboundLink = function (url, new_window) {
+						ga('send', 'event', 'outbound', 'click', url, {
+                			'transport': 'beacon',
+                    		'hitCallback': function () {
+								if (!new_window) {
+									document.location = url;
+								}
+							}
+						});
+						if (new_window){
+    						window.open(url);
+						}
+					}
+				</script>
+		
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/Sefton-single-twitter.css"/>
+
+		<script src="/scripts/modernizr-2.6.2.min.js" type="text/javascript"></script>
+		<script src="/scripts/twitterFetcher.js" type="text/javascript"></script>
+
+		 
+
+		
+	<!-- eGov Meta Data : Mandatory -->
+	<!-- this will make your html5 page invalid! -->
+	<meta name="DC.Subject" content="">
+	<meta name="DC.Date" content="Monday, September 13, 2021" >
+	<meta name="DC.Creator" content="Sefton Council" >
+	<meta name="DC.Publisher" content="Sefton Metropolitan Borough Council, Bootle Town Hall, Oriel Road, Bootle, L20 7AE, UK. Website http://www.sefton.gov.uk, Telephone 0345 140 0845" >
+	<meta name="DC.Title" content="" >
+	<!-- end eGov -->
+	<meta name="tgn.id" content="1003641">
+	<meta name="tgn.name" content="sefton">
+	<meta name="tgn.nation" content="United Kingdom">
+	<meta name="geo.position" content="53.445784;-2.994280">
+	<meta name="geo.placename" content="Bootle, Merseyside">
+	<meta name="geo.country" content="gb">
+	<meta name="geo.region" content="UK">
+	<meta name="dmoz.id" content="Regional/Europe/United_Kingdom/England/Merseyside/Government">
+	<meta name="description" content="">
+	<meta name="google-site-verification" content="AEMCTO2TeaQ4bJpuI5LVtsbzvJtyWuunfaBX8j18mtc" />
+	<!-- Added for siteimprove deeplinking -->
+	<meta name="siteimprove.PageId" content="7355" />
+    
+
+	<!-- robots -->
+	<meta name="robots" content=>
+
+        
+         
+		
+    <script src="https://ads.counciladvertising.net/tag/head/seftonc"></script>
+		
+	</head>
+	<body>		
+		
+	<!-- SITE HEADER -->
+	<header id="top" class="site-header">
+		     <div class="row leader-margin-bottom">
+                 <div class="container">
+    	<div class="leader span8 offset2">
+            <!-- Advert code -->
+        <script async src="//ads.counciladvertising.net/code/seftonc/leaderboard/public" data-can-ad></script>
+    	</div>
+    	</div>
+	</div>
+		<div class="site-header-inner">
+			<div class="site-top clearfix">
+				<div class="container">
+					<nav class="horizontal-nav clearfix pull-left hidden-phone">
+						<ul>
+							<li class="invisible"><a href="#content">Skip to content</a></li>
+							<li class="invisible"><a href="#main-menu">Skip to main menu</a></li>
+							<li class="first"><a href="/miscellaneous-pages/contact-the-council.aspx">Contact</a></li>
+							<li><a href="/miscellaneous-pages/about-this-website.aspx">Accessibility help</a></li>
+							<li><a href="/miscellaneous-pages/languages.aspx"><i class="icon-comment"></i>Languages</a></li>
+							<li><a href="/miscellaneous-pages/sitemap.aspx">Sitemap</a></li>
+							<li><strong><a class="reciteme" href="#">Listen and translate <i class="icon-comment"></i></a></strong></li>
+						</ul>
+					</nav>
+					<div class="header-atoz pull-right">
+						<span class="atoz-label">
+
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="site-logo-search">
+				<div class="container-fluid">
+					<div class="row-fluid">
+						<div class="span3 logo">
+							<a href="/sefton-home.aspx"><img src="/images/sefton_council_logo.png" alt="Sefton Council" title="Return to the Sefton Council home page" /></a>
+						</div>
+						<div class="span3 logo stack-tablet" style="margin-top:6px;">
+							<a href="https://www.seftondirectory.com/kb5/sefton/directory/home.page" style="margin-left: 5px;"><img src="/images/sefton_directory_new.png" alt="Sefton Directory" title="Go to the Sefton Directory website" /></a>
+						</div>	
+						<div class="span2 logo stack-tablet" style="margin-top:6px; margin-left: 10px;">
+							<a style="font-size:1.7em; font-weight:bold; margin-left: 5px; padding-left: 45px; white-space: nowrap;" href="https://www.sefton.gov.uk/mysefton/"><i class="fa fa-envelope">&nbsp;</i>Sign up</a>
+                        </div>
+						<div class="span4 header-search stack-tablet">
+							<div class="input-append pull-right">
+								<form class="navbar-search" action="/miscellaneous-pages/site-search" method="get">
+									<input type="text" class="search-query" placeholder="Search" name="searchString">
+									<button type="submit" class="btn btn-blue"><i class="icon-search"></i></button>
+									<div style="text-align:left;padding-left:20px;margin-top:0px;clear:both">
+										<a style="font-size:11px" data-container="body" data-toggle="popover"
+											data-placement="left" data-html="true" data-trigger="click"
+											data-content='<ul><li>Use double-quotes to search for phrases, <i>eg "council tax"</i></li><li>Exclude terms by preceding them with a hyphen, <i>eg parks -car</i></li></ul>'>
+											Search Tips
+										</a>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- PRIMARY NAVIGATION -->
+		<nav id="main-menu" class="primary-navigation">
+			<div class="container">
+				<ul id="primary-links" class="primary-links clearfix">
+					<li class="active leaf menu-home"><a href="/sefton-home.aspx"><i class="icon-home visible-phone"></i> Home</a></li>
+					<!--<li class="expandable menu-council-services"><a href="/council-services.aspx"><i class="icon-th visible-phone"></i> Council Services <i class="icon-angle-down"></i></a>-->
+					<li class="expandable shortcuts menu-council-services"><span>Residents <i class="icon-angle-down"></i></span>
+						<div class="mega-menu span7">
+							<div class="row-fluid">
+								<div class="span5 council-services">
+									<ul>
+										<li class="first"><a href="/advice-benefits"><i class="icon-li icon-sc-benefits"></i>Advice &amp; Benefits</a></li>
+										<li><a href="/bins-recycling"><i class="icon-li icon-sc-bins"></i>Bins &amp; Recycling</a></li>
+										<li><a href="/social-care"><i class="icon-li icon-sc-social"></i>Social Care</a></li>
+										<li><a href="/council-tax"><i class="icon-li icon-sc-council-tax"></i>Council Tax</a></li>
+										<li><a href="/schools-learning"><i class="icon-li icon-sc-learning"></i>Schools &amp; Learning</a></li>
+										<li><a href="/parking-roads-travel"><i class="icon-li icon-sc-roads"></i>Parking, Roads &amp; Travel</a></li>
+										<li class="last"><a href="/environmental-protection"><i class="icon-li icon-sc-emergencies"></i>Environmental Protection</a></li>
+									</ul>
+								</div>
+								<div class="span5 council-services">
+									<ul>
+										<li class="first"><a href="/your-council"><i class="icon-li icon-sc-council"></i>Your Council</a></li>
+										<li><a href="/jobs-training-and-volunteering/"><i class="icon-li icon-sc-jobs"></i>Jobs &amp; Training</a></li>
+										<li><a href="/housing"><i class="icon-li icon-sc-housing"></i>Housing</a></li>
+										<li><a href="/births-marriages-and-deaths"><i class="icon-li icon-sc-bmd"></i>Births, Marriages &amp; Deaths</a></li>
+										<li><a href="/sport-leisure"><i class="icon-li icon-sc-leisure"></i>Sports &amp; Leisure</a></li>
+										<li><a href="/planning-building-control"><i class="icon-li icon-sc-planning"></i>Planning &amp; Building Control</a></li>
+										<li><a href="/public-health"><i class="icon-li icon-sc-health"></i>Public Health</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>  
+					</li>
+					<li class="expandable shortcuts menu-council-services"><span>Business <i class="icon-angle-down"></i></span>
+						<div class="mega-menu span7">
+							<div class="row-fluid">
+								<div class="span5 council-services">
+									<ul class="icons-ul">
+										<li><a href="/business/business-rates"><i class="icon-li icon-sc-business"></i> Business Rates</a></li>
+										<li><a href="/business/business-support-and-investment"><i class="icon-li icon-sc-business"></i> Business Support &amp; Investment</a></li>
+										<li><a href="/business/licensing-registration"><i class="icon-li icon-sc-business"></i> Licensing &amp; Registration</a></li>
+										<li><a href="/business/tenders-contracts"><i class="icon-li icon-sc-business"></i> Tenders &amp; Contracts</a></li>
+										<li><a href="/business/pay-an-invoice-from-the-council"><i class="icon-li icon-sc-business"></i> Pay an Invoice from the Council</a></li>
+									</ul>
+								</div>
+								<div class="span5 council-services">
+									<ul class="icons-ul">
+										<li><a href="/business/commercial-property"><i class="icon-li icon-sc-business"></i> Commercial Property</a></li>
+										<li><a href="/business/food-hygiene-ratings"><i class="icon-li icon-sc-business"></i> Food Hygiene</a></li>
+										<li><a href="/business/commercial-waste"><i class="icon-li icon-sc-business"></i> Commercial Waste</a></li>
+										<li><a href="/business/security-service-sefton-arc"><i class="icon-li icon-sc-business"></i> Security Service - Sefton Arc</a></li>
+										<li><a href="/business/business-improvement-districts"><i class="icon-li icon-sc-business"></i> Business Improvement Districts</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="expandable shortcuts menu-council-services"><span>Around Sefton <i class="icon-angle-down"></i></span>
+						<div class="mega-menu span7">
+							<div class="row-fluid">
+								<div class="span5 council-services">
+									<ul class="icons-ul">
+										<li><a href="http://aintree.thejockeyclub.co.uk/" target="_blank"><i class="icon-li icon-sc-sefton"></i> Aintree Racecourse</a></li>
+										<li><a href="/around-sefton/another-place-by-antony-gormley.aspx"><i class="icon-li icon-sc-sefton"></i> Another Place by Antony Gormley</a></li>
+										<li><a href="/around-sefton/arts-culture-and-events"><i class="icon-li icon-sc-sefton"></i> Arts, Culture &amp; Events</a></li>
+										<li><a href="/around-sefton/beaches"><i class="icon-li icon-sc-sefton"></i> Beaches</a></li>
+										<li><a href="/around-sefton/coast-countryside"><i class="icon-li icon-sc-sefton"></i> Coast &amp; Countryside</a></li>
+									</ul>
+								</div>
+								<div class="span5 council-services">
+									<ul class="icons-ul">
+										<li><a href="/around-sefton/parks-and-greenspaces"><i class="icon-li icon-sc-sefton"></i> Parks &amp; Greenspaces</a></li>
+										<li><a href="/around-sefton/walking-cycling"><i class="icon-li icon-sc-sefton"></i> Walking &amp; Cycling</a></li>
+										<li><a href="http://www.visitsouthport.com/" target="_blank"><i class="icon-li icon-sc-sefton"></i> Visit Southport</a></li>
+										<li><a href="/around-sefton/filming-media-production-in-sefton"><i class="icon-li icon-sc-sefton"></i> Filming in Sefton</a></li>
+										<li><a href="/around-sefton/southport-eco-visitor-centre"><i class="icon-li icon-sc-sefton"></i> Southport Eco Visitor Centre</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="expandable shortcuts menu-do-it-online"><span>I want to <i class="icon-angle-down"></i></span>
+						<div class="mega-menu span8 three-columns">
+							<div class="row-fluid">
+								<div class="span4">
+									<h4><i class="icon-bullhorn"></i> Report:</h4>
+									<ul class="icons-ul">
+									  <li class="first"><i class="icon-li icon-angle-right"></i><a href="/bins-recycling/bin-collections/missed-grey-bin-collection-household-waste/missed-grey-wheelie-bin-collections/">Missed bin</a></li>
+									  <li><i class="icon-li icon-angle-right"></i><a href="/parking-roads-travel/street-maintenance/highway-issues">Highway issues</a></li>
+									  <li><i class="icon-li icon-angle-right"></i><a href="/parking-roads-travel/road-safety/report-a-broken-street-light-on-the-highway">Broken street lights</a></li>  
+									  <li><i class="icon-li icon-angle-right"></i><a href="/bins-recycling/litter-and-fly-tipping/fly-tipping">Flytipping</a></li>
+									  <li><i class="icon-li icon-angle-right"></i><a href="/environmental-protection/pests-pollution-and-food-hygiene/dogs/report-dog-fouling">Dog fouling</a></li>
+									  <li><i class="icon-li icon-angle-right"></i><a href="/environmental-protection/pests-pollution-and-food-hygiene/pollution">Pollution</a></li>
+									  <li><i class="icon-li icon-angle-right"></i><a href="/social-care/children-and-young-people/report-a-child-or-young-person-at-risk">Concerns about a child</a></li>
+									  <li><i class="icon-li icon-angle-right"></i><a href="https://forms.sefton.gov.uk/hatecrimereport" target="_blank">Hate crime</a></li>
+									  <li class="last"><i class="icon-li icon-angle-right"></i><a href="/miscellaneous-pages/online-services?view=report">All Report It Services &gt;&gt;</a></li>
+									</ul>
+								</div>
+								<div class="span4">
+									<h4><i class="icon-credit-card"></i> Pay:</h4>
+									<ul class="icons-ul">
+									  <li class="first"><i class="icon-li icon-angle-right"></i><a href="https://www.civicaepay.co.uk/Sefton/Webpay_Public/Webpay/Default.aspx?fund=01" target="_blank">Council tax online</a></li>
+									  <li><i class="icon-li icon-angle-right"></i><a href="https://www.civicaepay.co.uk/Sefton/Webpay_Public/Webpay/Default.aspx?fund=19" target="_blank">A parking fine</a></li>
+									  <li><i class="icon-li icon-angle-right"></i><a href="https://www.civicaepay.co.uk/Sefton/Webpay_Public/Webpay/Default.aspx?fund=26" target="_blank">Planning charges</a></li>
+									  <li><i class="icon-li icon-angle-right"></i><a href="/bins-recycling/bulky-item-collections/arrange-a-bulky-item-collection" target="_blank">Bulky item collection</a></li>
+									  <li><i class="icon-li icon-angle-right"></i><a href="https://www.civicaepay.co.uk/Sefton/Webpay_Public/Webpay/Default.aspx?fund=16" target="_blank">BID levy</a></li>
+									  <li><i class="icon-li icon-angle-right"></i><a href="https://www.civicaepay.co.uk/Sefton/Webpay_Public/Webpay/Default.aspx?fund=07" target="_blank">Business rates</a></li>
+									  <li><i class="icon-li icon-angle-right"></i><a href="https://www.civicaepay.co.uk/Sefton/Webpay_Public/Webpay/Default.aspx?fund=21" target="_blank">A fixed penalty notice</a></li>
+									  <li class="last"><i class="icon-li icon-angle-right"></i><a href="/miscellaneous-pages/online-services?view=pay">All Pay It Services &gt;&gt;</a></li>
+									</ul>
+								</div>
+								<div class="span4">
+									<h4><i class="icon-edit"></i> Apply:</h4>
+									<ul class="icons-ul">
+										<li><i class="icon-li icon-angle-right"></i><a href="/parking-roads-travel/parking/blue-badge-applications">A blue badge (or to renew one)</a></li>
+										<li><i class="icon-li icon-angle-right"></i><a href="/planning-building-control/apply-for-permission/how-to-make-a-planning-application">For planning permission</a></li>
+										<li><i class="icon-li icon-angle-right"></i><a href="/around-sefton/parks-and-greenspaces/allotments">For an allotment</a></li>
+										<li><i class="icon-li icon-angle-right"></i><a href="/business/licensing-registration">For a licence</a></li>
+										<li><i class="icon-li icon-angle-right"></i><a href="https://www.seftondirectory.com/kb5/sefton/directory/fel.page">For two year old childcare</a></li>
+										<li class="last"><i class="icon-li icon-angle-right"></i><a href="/miscellaneous-pages/online-services?view=apply">All Apply For It Services &gt;&gt;</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- /PRIMARY NAVIGATION -->		
+	</header>
+
+	<!-- MOBILE NAV -->
+	<header class="visible-phone site-header">
+	<nav class="horizontal-nav pull-left" style="font-size:smaller">
+		<ul>
+           	<li class="first"><a href="/miscellaneous-pages/contact-the-council">Contact</a></li>
+           	<li><a href="/miscellaneous-pages/about-this-website">Accessibility help</a></li>
+           	<li><a href="/miscellaneous-pages/languages"><i class="icon-comment"></i>Languages</a></li>
+		  	<li><a href="/miscellaneous-pages/sitemap">Sitemap</a></li>
+			<li><strong><a class="reciteme" href="#">Listen and translate <i class="icon-comment"></i></a></strong></li>
+        </ul>
+    </nav>
+	<br /><br />
+
+	<div class="site-logo-search">
+		<div class="container">
+			<div class="row">
+				<div id="mobile_logo" class="span4 logo mobile_logo">
+					<a href="/sefton-home.aspx"><img src="/images/sefton_council_logo.png" alt="Sefton Council" title="Return to the Sefton Council home page" /></a>
+				</div>
+				<div class="span2 mobile_logo" style="margin-top:6px; margin-left: 10px;">
+							<a style="font-size:1.7em; font-weight:bold; padding-left: 45px; color: #0E7CB5;" href="http://www.merseynowsefton.org/"><i class="fa fa-envelope"></i> Sign up</a>
+                        </div>
+				<div class="span6 header-search">
+					<div class="input-append pull-right">
+						<form class="navbar-search" action="/miscellaneous-pages/site-search.aspx" method="get">
+							<input type="text" class="search-query" placeholder="Search" name="searchString">
+							<button type="submit" class="btn btn-blue"><i class="icon-search"></i></button>
+						</form>
+					</div>
+       			</div>
+   			</div>
+		</div>
+	</div>
+
+</header>
+	<!-- /MOBILE NAV -->
+	<!-- /SITE HEADER -->
+
+	<!-- BREADCRUMB -->
+	<div class="breadcrumb-trail">
+		<div class="container">
+				
+				<ul class="clearfix">
+					
+							<li><a href="/environmental-protection/">Environmental Protection</a></li>
+							<li><i class="icon-angle-right"></i></li>
+							<li><a href="/environmental-protection/energy-and-environment/">Energy and Environment</a></li>
+							<li><i class="icon-angle-right"></i></li>
+							<li><a href="/environmental-protection/energy-and-environment/climate-emergency/">Climate Emergency</a></li>
+							<li><i class="icon-angle-right"></i></li>
+		
+					
+					<li>Strategy, Implementation Plan and Reports</li>
+				</ul>
+		</div>
+	</div>
+	<!-- /BREADCRUMB -->
+
+	<div id="print_logo" class="print_logo">
+		<img src="/images/sefton_council_logo_bw.png" alt="Sefton Council" />
+	</div>
+
+	
+    <!-- HERO (SPOTLIGHT) -->
+    <div class="hero hero-collapsed">	
+		<div class="container">
+			<div class="row">
+				<div class="page-title-container clearfix span8">
+			    	<h1><span class="page-title-icon"><i class='icon-sc-emergencies'></i></span> <span class="page-title">Strategy, Implementation Plan and Reports</span></h1>
+		  	  	</div>
+			</div>
+		</div>
+    </div>
+    <!-- /HERO (SPOTLIGHT) -->
+
+	<!-- SITE CONTENT -->
+
+    <div class="site-content">
+      <div class="container">
+	      <div class="row">
+					
+					<!-- DO IT ONLINE - MOBILE VIEW -->
+					<div class="hidden-desktop">
+						<!-- Still used in mobile template -->
+<!-- Strongly typed version -->
+					</div>
+					<!-- /DO IT ONLINE - MOBILE VIEW -->
+
+			<!-- RIGHT SIDEBAR - DESKTOP VIEW -->
+			  	<div class="span3 right-sidebar pull-right visible-desktop">
+					<div class="span3">
+						<!-- Strongly typed method -->
+	<!-- RENDER ANY PUBLIC NOTICES -->
+	<div>
+
+	</div>
+	<!-- RENDER ANY DO IT ONLINE LINKS -->
+	<!-- RENDER ANY RELATED LINKS -->
+	<!-- RENDER ANY CONTACTS -->
+
+<!--<img class="img-rounded visible-desktop" src="/images/tmp_image_signpost.jpg" />-->
+					</div>
+			  	</div>
+			<!-- /RIGHT SIDEBAR -->
+
+			<!-- LEFT SIDEBAR - DESKTOP VIEW -->
+		      <aside class="span3 left-sidebar visible-desktop">
+
+		        <nav class="topic-nav">
+		          <div class="topic-nav-header">
+		            <a href=/environmental-protection/energy-and-environment/climate-emergency/ class="clearfix active">
+		              <i class="icon-book"></i>
+						<span><em>This section:</em> Climate Emergency</span>
+		            </a>
+		          </div>
+		            <!-- Strongly typed version -->
+		<ul>            
+				<li class="first active">
+						<a href="/environmental-protection/energy-and-environment/climate-emergency/strategy-implementation-plan-and-reports/" class="menu-item">Strategy, Implementation Plan and Reports</a>
+				</li>
+				<li class="">
+						<a href="/environmental-protection/energy-and-environment/climate-emergency/school-eco-savers-league/" class="menu-item">School Eco Savers League</a>
+				</li>
+				<li class="">
+						<a href="/environmental-protection/energy-and-environment/climate-emergency/single-use-plastics/" class="menu-item">Single Use Plastics</a>
+				</li>
+				<li class="last ">
+						<a href="/environmental-protection/energy-and-environment/climate-emergency/southport-eco-centre/" class="menu-item">Southport Eco Centre</a>
+				</li>
+		</ul>  
+		        </nav>
+
+
+			    </aside>
+			<!-- /LEFT SIDEBAR -->
+
+			<!-- CENTRAL COLUMN (BODY) - DESKTOP AND MOBILE VIEW -->
+			    <div id="content" class="span6 central-column">
+					<div class="hidden-desktop">
+						<!-- Strongly typed method -->
+	<div>
+	</div>
+					</div>
+					<div class="page-content" style="text-align:justify">
+						<p><span class="sefton_h3"><strong>Sefton Climate Emergency Strategy</strong></span></p>
+<p>Following the declaration, a strategy document has been developed.  The strategy provides the basis from which future plans develop and represents a commitment from Sefton Council to taking action.</p>
+<p><strong>CLIMATE</strong></p>
+<p>The strategy sets out seven key principles which make up our CLIMATE acronym. The principles will guide our actions and future activities:</p>
+<p><span><strong>C</strong></span>arbon Reduction</p>
+<p><span><strong>L</strong></span>eadership </p>
+<p><span><strong>I</strong></span>nnovation </p>
+<p><span><strong>M</strong></span>obilisation</p>
+<p><span><strong>A</strong></span>daptation</p>
+<p><span><strong>T</strong></span>ransformation</p>
+<p><span><strong>E</strong></span>ngagement  </p>
+<p><a data-udi="umb://media/0d02760dd7fa4740baa445c7aece32fe" href="/media/4733/climate-emergency-strategy-final.pdf" title="Climate Emergency Strategy">Read our full strategy. </a></p>
+<p><strong>Climate Emergency Action Plan</strong></p>
+<p>Following approval of the strategy, a Climate Emergency Action Plan has been developed setting out our actions in response to the Climate Emergency.</p>
+<p>The Action Plan covers three 3 year phases to align with the Council’s financial planning cycle (shown below).  This provides us with the opportunity to review and revise our approach as opportunities arise.</p>
+<p><strong>Phase 1</strong> 2020 – 2023;</p>
+<p><strong>Phase 2</strong> 2023 – 2026; </p>
+<p><strong>Phase 3</strong> 2026 -2029.</p>
+<p><a data-udi="umb://media/284545dbc0dc48849e90e7c22ee24fd5" href="/media/4290/climate-emergency-action-plan-phase-1-final.docx" title="Climate Emergency Action Plan 2020-2023">Read our implementation plan</a></p>
+<p><strong>Annual Reports</strong></p>
+<p>In our strategy, we commit to an Annual Report in July to update on work towards our 2030 target. </p>
+<p><a data-udi="umb://media/c5ab4a1ca0de4b20833b61d659cfda6f" href="/media/4734/climate-emergency-annual-report-2021.pdf" title="Climate Emergency Annual Report 2021">Read our latest Annual Report </a></p>
+					</div>
+				
+				    <!-- ADDITIONAL RELATED LINKS AND CONTACTS -->
+				    <footer class="page-additional-links">
+				      
+				    <hr class="nbm ntm" />
+
+						<div class="additional-links-group" id="downloads">
+		<!-- Strongly typed version -->
+
+
+
+</div>
+
+						<p class="page-updated"><span class="label">Last Updated on Monday, September 13, 2021</span></p>
+						
+					</footer>
+					<!-- /ADDITIONAL RELATED LINKS AND CONTACTS -->
+	
+				</div>
+			<!-- /CENTRAL COLUMN (BODY) -->
+					
+					<!-- RELATED LINKS AND CONTACTS - MOBILE VIEW -->
+					<div class="span3 hidden-desktop">
+				        <!-- Still used in mobile templates -->
+<!-- Strongly typed version -->
+		 				<!-- Still used in mobile template -->
+	<!-- Strongly typed version -->
+					</div>
+					<!-- /RELATED LINKS AND CONTACTS - MOBILE VIEW -->
+		    </div>
+      </div>
+    </div>
+    <!-- /SITE CONTENT -->
+
+
+	
+
+<!-- SITE FOOTER -->
+	<footer class="site-footer">
+		<!-- SOCIAL SHARE -->
+		<div class="share-stack hidden-phone">
+			<div class="container">
+				<nav class="horizontal-nav clearfix">
+					<div class="nav-label"><i class="icon-share"></i> &nbsp;SHARE THIS PAGE:</div>
+					<ul>
+							<li class="first"><a href='http://www.twitter.com/share?url=https://www.sefton.gov.uk/environmental-protection/energy-and-environment/climate-emergency/strategy-implementation-plan-and-reports/'><i class="icon-twitter"></i><strong>Twitter</strong></a></li>
+							<li><a target="_blank" href='http://www.facebook.com/sharer/sharer.php?u=https://www.sefton.gov.uk/environmental-protection/energy-and-environment/climate-emergency/strategy-implementation-plan-and-reports/'><i class="icon-facebook"></i><strong>Facebook</strong></a></li>
+							<li class="last"><a target="_blank" href='mailto:?subject=Check out this website...&amp;body=https://www.sefton.gov.uk/environmental-protection/energy-and-environment/climate-emergency/strategy-implementation-plan-and-reports/'><i class="icon-envelope"></i><strong>Email</strong></a></li>
+
+					</ul>
+				</nav>				
+			</div>
+		</div>
+		
+		<!-- /SOCIAL SHARE -->
+				<div class="row" id="blue">
+					<!-- SEFTON CONNECTED (SOCIAL MEDIA) -->
+		
+					<div class="span6 social-feeds">
+						<div class="social-feeds-inner">
+
+						<!--twitter widget content placeholder is here-->
+						
+	<div id="singleTweet">
+		<div id="singleTweetContent"></div>
+	</div>
+
+						</div> 
+					</div>
+					
+					<div class="span6 social-feeds hidden-phone hidden-tablet">
+						<div class="social-feeds-inner">
+							<div id="sm-icons">
+        						<span class="span1"><a href="https://www.facebook.com/pages/Sefton-Council/634089093354185" target="_blank" title="Link to Facebook profile"><i class="fa fa-facebook" aria-hidden="true"></i></a></span>
+    							<span class="span1"><a href="https://www.instagram.com/sefton_council/" target="_blank" title="Link to Instagram profile"><i class="fa fa-instagram" aria-hidden="true"></i></a></span>
+    							<span class="span1"><a href="http://twitter.com/seftoncouncil" target="_blank" title="Link to Twitter profile"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></span>
+    							<span class="span1"><a href="http://www.youtube.com/playlist?list=PLfmfMRXWodJm0opWqXQDGX_pGsq-wmno5" target="_blank" title="Link to YouTube profile"><i class="fa fa-youtube" aria-hidden="true"></i></a></span>
+          						<span class="span1"><a href="https://www.linkedin.com/company/sefton-council/" target="_blank" title="Link to LinkedIn profile"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
+							</div>
+								<!-- close social-feeds-inner -->
+						</div>
+					</div><!-- Close span6 -->
+					
+					<!-- SOCIAL MEDIA - MOBILE -->
+					<div class="span6 social-feeds hidden-desktop">
+						<div class="container">
+							<nav class="horizontal-nav clearfix">
+								<ul class="social-media-mobile">
+									<li class="span1"><a href="https://www.facebook.com/pages/Sefton-Council/634089093354185" target="_blank" title="Link to Facebook profile"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li class="span1"><a href="https://www.instagram.com/sefton_council/" target="_blank" title="Link to Instagram profile"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+									<li class="span1"><a href="http://twitter.com/seftoncouncil" target="_blank" title="Link to Twitter profile"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+									<li class="span1"><a href="http://www.youtube.com/playlist?list=PLfmfMRXWodJm0opWqXQDGX_pGsq-wmno5" target="_blank" title="Link to YouTube profile"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+									<li class="span1"><a href="https://www.linkedin.com/company/sefton-council/" target="_blank" title="Link to LinkedIn profile"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- /SOCIAL MEDIA - MOBILE -->
+
+					<!-- /SEFTON CONNECTED (SOCIAL MEDIA) -->
+					
+					</div><!-- Close row -->
+		<!-- SITEMAP AND SOCIAL STACK -->
+		<div class="sitemap-stack">
+			<div class="container">
+
+				<div class="row">
+
+					<!-- LEGAL SIGNOFF STACK -->
+	 				<div class="legal-stack">
+						<div class="container">
+							<nav class="horizontal-nav clearfix pull-left">
+								<ul>
+									<li class="first"><a href="/miscellaneous-pages/privacy-policy.aspx">Privacy policy</a></li>
+									<li class="last"><span class="no-link">&copy; Sefton Council 2021</span></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- /LEGAL LINKS STACK -->
+				</div>
+			</div>
+		</div>
+		<!-- /SITEMAP AND SOCIAL STACK -->
+			
+	</footer>
+	<a class="reciteMeButton" href="#">Recite Me Button</a>
+    <!-- Advert Code -->
+	<script src="//ads.counciladvertising.net/code/seftonc/media/public"></script>
+
+	
+	<script type="text/javascript" >
+		function InitialiseC4A() {
+			/* Chat Tool */
+			var Tool1 = new C4A.Tools(1); 
+			C4A.Run('07900276-da37-4a43-b721-7e179921f3ee');
+		}
+	</script>
+		
+	<noscript><a href="https://www.click4assistance.co.uk/add-live-chat-software-click4assistance-uk" target="_blank" style="font-size:10px;position:fixed;bottom:2px;right:2px;">Click4Assistance UK Live Chat Software</a></noscript>
+	
+	<script src="https://v4in1-si.click4assistance.co.uk/SI.js" type="text/javascript" defer="defer"></script>
+
+		<!-- scripts at the bottom -->
+        <!--JQuery must go to version 3 or over for PCI-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="/scripts/bootstrap.js" type="text/javascript"></script>
+		<script src="/scripts/respond.min.js" type="text/javascript"></script>
+		<script src="/scripts/jquery.carouFredSel.min.js" type="text/javascript"></script>
+		<script src="/scripts/jquery.touchSwipe.min.js" type="text/javascript"></script>
+		<script src="/scripts/jquery.accessPlugins.js" type="text/javascript"></script>
+		<script src="/scripts/jquery.tinynav.min.js" type="text/javascript"></script>
+		<!--<script src="/scripts/galleria/galleria-1.3.6.js" type="text/javascript"></script>
+		<script src="/scripts/galleria/plugins/flickr/galleria.flickr.min.js" type="text/javascript"></script>-->
+        <script src="/scripts/galleria/galleria-1.5.7.js" type="text/javascript"></script>
+        <script src="/scripts/galleria/plugins/flickr/galleria.flickr.min.js" type="text/javascript"></script>
+		<script src="/scripts/scripts.js?v=20171213" type="text/javascript"></script>
+		<script src="/scripts/sefGetStoreSingleTweet.js" type="text/javascript"></script>
+        <!--JQuery must go to version 3 for PCI - must change jQuery UI too -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="/css/fullcalendar.css">
+	    <script src="/scripts/fullcalendar.js" type="text/javascript"></script>
+        <script src="/scripts/gcal.js" type="text/javascript"></script>
+
+		<script type="text/javascript">
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-721044-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+			
+		<script type="text/javascript">
+    		$(document).ready(function() {
+        		$('#homeCarousel').carousel({
+            		interval: 3500,
+            		cycle: true
+        		});
+        		$('#homeCarousel_Mobile').carousel({
+            		interval: 3500,
+            		cycle: true
+        		});
+    		});
+
+			// Inserts the search string back into the search box after postback
+			var ctls = document.getElementsByName("searchString");
+			ctls[0].value = getParameterByName("searchString");
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('[data-toggle="popover"]').popover();
+			});
+	
+			$('[data-toggle="popover"]').on('click', function (e) {
+				e.preventDefault();
+				$('[data-toggle="popover"]').not(this).popover('hide');
+			});
+			
+		</script>
+		
+	<script type='text/javascript'>
+			$(document).ready(function() {
+    			$('#calendar').fullCalendar({
+        			events: {
+						googleCalendarApiKey: 'AIzaSyAro4CEipQymM5cc5Ocw02ovJ3uWZWhA5w',
+            			googleCalendarId: '23lei5ludhs1av5ko13cp4i1fg@group.calendar.google.com',
+	    				editable: true
+        			}
+    			});
+			});
+		</script>
+		
+	<script type="text/javascript">
+        var serviceUrl = "//api.reciteme.com/asset/js?key=";
+        var serviceKey = "0d37491903d56b56490fc6211b7889f466b55085";
+        var options = {};  // Options can be added as needed
+        var autoLoad = false;
+        var enableFragment = "#reciteEnable";
+    
+        var loaded=[],frag=!1;window.location.hash===enableFragment&&(frag=!0);function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,void 0!=b&&b()}:void 0!=b&&(a.onload=function(){b()});a.src=c;document.getElementsByTagName("head")[0].appendChild(a)}function _rc(c){c+="=";for(var b=document.cookie.split(";"),a=0;a<b.length;a++){for(var d=b[a];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(c))return d.substring(c.length,d.length)}return null}function loadService(c){for(var b=serviceUrl+serviceKey,a=0;a<loaded.length;a++)if(loaded[a]==b)return;loaded.push(b);loadScript(serviceUrl+serviceKey,function(){"function"===typeof _reciteLoaded&&_reciteLoaded();"function"==typeof c&&c();Recite.load(options);Recite.Event.subscribe("Recite:load",function(){Recite.enable()})})}"true"==_rc("Recite.Persist")&&loadService();if(autoLoad&&"false"!=_rc("Recite.Persist")||frag)document.addEventListener?document.addEventListener("DOMContentLoaded",function(c){loadService()}):loadService();
+    </script>
+
+    <script type="text/javascript">
+        jQuery(".reciteme").click(function(i,e){
+            loadService();
+            return false;
+        });
+
+    </script>
+		<script type="text/javascript">		
+			jQuery(".reciteMeButton").click(function(i,e){
+				loadService();
+				return false;
+			});
+			</script>
+
+	</body>
+</html>
+
