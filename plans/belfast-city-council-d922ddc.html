@@ -1,0 +1,2252 @@
+
+
+
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"d4dcc9f5a3","applicationID":"548242454","transactionName":"ZAZbZ0NUV0NZU0dfDV1MdGVyGm5JS1lETwVwDFdHQ1pVXF1CHH8MVwZB","queueTime":0,"applicationTime":24,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"d4dcc9f5a3",applicationID:"548242454"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<title>Belfast Resilience Ambitions: A climate plan for Belfast</title>	
+	<meta name="description" content="Belfast’s Resilience Assessment identified a wide range of shocks and stresses for the city, improving our knowledge of existing and emerging risks." />
+  <meta name="keywords" content="belfast city council, bcc, belfast cc, belfastcc, belfast council, belfast city" />
+
+	<!-- Canonical URL -->
+	<link rel="canonical" href="https://www.belfastcity.gov.uk/documents/belfast-resilience-ambitions-a-climate-plan-for-be" />
+		<link href="https://www.belfastcity.gov.uk/documents/belfast-resilience-ambitions-a-climate-plan-for-be" rel="alternate" hreflang="en-GB" />		
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content="https://www.belfastcity.gov.uk/documents/belfast-resilience-ambitions-a-climate-plan-for-be" />
+	<meta name="twitter:title" content="Belfast Resilience Ambitions: A climate plan for Belfast" />
+	<meta name="twitter:site" content="@belfastcc" />
+	<meta name="twitter:description" content="Belfast’s Resilience Assessment identified a wide range of shocks and stresses for the city, improving our knowledge of existing and emerging risks." />
+	<meta name="twitter:image" content="http://www.belfastcity.gov.uk/App_Themes/main/img/layout/placeholder.png?width=640&amp;resizemode=force" />
+
+
+	<!-- Open Graph -->
+	<meta property="og:site_name" content="Belfast City Council" />
+	<meta property="og:url" content="https://www.belfastcity.gov.uk/documents/belfast-resilience-ambitions-a-climate-plan-for-be" />
+	<meta property="og:title" content="Belfast Resilience Ambitions: A climate plan for Belfast" />
+	<meta property="og:description" content="Belfast’s Resilience Assessment identified a wide range of shocks and stresses for the city, improving our knowledge of existing and emerging risks." />
+	<meta property="og:image" content="http://www.belfastcity.gov.uk/App_Themes/main/img/layout/placeholder.png?width=640&amp;resizemode=force" />
+	<meta property="fb:admins" content="Belfast City Council" />
+
+	<link href="https://www.belfastcity.gov.uk/App_Themes/main/css/main.min.css?v=16" rel="stylesheet" />	
+	<link href="https://www.belfastcity.gov.uk/App_Themes/main/css/additional.min.css?v=4" rel="stylesheet" /> 
+	
+  <link href="/kentico/bundles/pageComponents/styles?v=dK92EAB8kuxsY-OyAO1YaYBeNcZjyK0l15Bs758_3AA1" rel="stylesheet"/>
+<link href="/kentico/bundles/formComponents/styles?v=MUq3cWmQodbuSP9EG5MBIG_4j6WiaOPwY6kd5jgIqi01" rel="stylesheet"/>
+
+
+	<link rel="apple-touch-icon" sizes="76x76" href="https://www.belfastcity.gov.uk/App_Themes/main/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://www.belfastcity.gov.uk/App_Themes/main/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://www.belfastcity.gov.uk/App_Themes/main/favicon/favicon-16x16.png">	
+	<link rel="mask-icon" href="https://www.belfastcity.gov.uk/App_Themes/main/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body>
+
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KB5JLZ6"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+	<div role="region" aria-label="Skip link region">
+		<a class="skip-to-content-link" href="#maincontent">Skip to main content</a>
+	</div>
+	
+	<!-- Emergency banner - Full width -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Emergency banner - Full width -->
+
+
+
+
+
+
+
+	<header>
+
+			<!-- Pay, Report, Apply button - Mobile -->
+			<ul class="help-buttons-mobile show-for-small-only">
+				<li><a href="https://www.belfastcity.gov.uk/pay-apply-book-report" ><img src="https://www.belfastcity.gov.uk/getmedia/1e89793c-b8ed-47bd-b647-6802aeed5825/icon-pay.svg?ext=.svg" alt=""/>Pay</a></li><li><a href="https://www.belfastcity.gov.uk/pay-apply-book-report" ><img src="https://www.belfastcity.gov.uk/getmedia/aca2e14b-e865-47ea-97f3-d5805bc5b608/icon-report.svg?ext=.svg" alt=""/>Report</a></li><li><a href="https://www.belfastcity.gov.uk/pay-apply-book-report" ><img src="https://www.belfastcity.gov.uk/getmedia/8d6d40f2-7dd0-4eb0-ba9a-7be9d6033990/icon-apply.svg?ext=.svg" alt=""/>Apply</a></li>				
+			</ul>
+			<div class="wrapper-header" data-aos="fade-in">
+				<div class="grid-container">
+					<div class="grid-x grid-padding-x">
+						<div class="cell large-3 medium-4 small-7">
+							<a class="logo" href="https://www.belfastcity.gov.uk">
+								<img src="https://www.belfastcity.gov.uk/App_Themes/main/img/layout/logo.png" alt="Belfast City Council - homepage"/>
+							</a>
+						</div>
+						<div class="cell large-9 medium-8 small-5 align-self-middle text-right">
+						
+							<nav class="primary-nav show-for-large">
+								<ul>
+									<li><a href="https://www.belfastcity.gov.uk/council" >Your council</a></li><li><a href="https://www.belfastcity.gov.uk/bins-environment" >Bins and environment</a></li><li><a href="https://www.belfastcity.gov.uk/things-to-do" >Things to do</a></li><li><a href="https://www.belfastcity.gov.uk/community" >Your community</a></li><li><a href="https://www.belfastcity.gov.uk/births-deaths-ceremonies" >Births, deaths and ceremonies</a></li><li><a href="https://www.belfastcity.gov.uk/all-services" >A-Z of services</a></li><li><a href="https://www.belfastcity.gov.uk/contact" >Contact us</a></li>			
+								</ul>
+							</nav>			
+
+							<!-- Search button - Mobile -->
+								<button id="mobileSearchToggle" class="btn-mobile-search show-for-small-only" type="button" aria-label="Mobile search toggle">
+									<span class="sz-icon-search"></span>
+								</button>
+
+							<!--Burger menu button -->
+							<button aria-label="Mobile Navigation Toggle" id="mobileMenu" class="hamburger hamburger--elastic float-right hide-for-large" type="button">
+								<span class="hamburger-box">
+									<span class="hamburger-inner"></span>
+								</span>
+								<span class="name">Menu</span>
+							</button>
+
+						</div>
+					</div>
+
+					<div class="utility-block  hide-for-small-only">
+						<div class="help-buttons">		
+							<span class="round-corner"></span>
+							<a class="btn-help" href="https://www.belfastcity.gov.uk/pay-apply-book-report" ><img src="https://www.belfastcity.gov.uk/getmedia/1e89793c-b8ed-47bd-b647-6802aeed5825/icon-pay.svg?ext=.svg" alt=""/>Pay</a><a class="btn-help" href="https://www.belfastcity.gov.uk/pay-apply-book-report" ><img src="https://www.belfastcity.gov.uk/getmedia/aca2e14b-e865-47ea-97f3-d5805bc5b608/icon-report.svg?ext=.svg" alt=""/>Report</a><a class="btn-help" href="https://www.belfastcity.gov.uk/pay-apply-book-report" ><img src="https://www.belfastcity.gov.uk/getmedia/8d6d40f2-7dd0-4eb0-ba9a-7be9d6033990/icon-apply.svg?ext=.svg" alt=""/>Apply</a>											
+						</div>
+						<div class="access-buttons">
+							<span class="round-corner left"></span>
+							<a class="" href="javascript:;" onclick="BrowseAloud.panel.toggleBar(true,event);return false;">
+								<img src="https://www.belfastcity.gov.uk/App_Themes/main/img/layout/icon-readaloud.png" alt="Read aloud icon"/>
+								<span class="name">Read aloud</span>
+							</a>
+							<a class="" href="https://www.belfastcity.gov.uk/accessibility">
+								<img src="https://www.belfastcity.gov.uk/App_Themes/main/img/layout/icon-accessibility.png" alt="Accessibility icon"/>
+								<span class="name">Accessibility</span>
+							</a>
+							<span class="round-corner right"></span>
+						</div>
+							<div class="search-bar">
+								<div class="search-field">
+									<label for="searchInput" class="show-for-sr">Search site</label>
+									<input id="searchInput" class="site-search-textbox" type="search" placeholder="Search"/>
+									<button id="shoulderSearch" class="cta" type="submit" aria-label="Search button"><span class="sz-icon-search"></span></button>
+								</div>
+								<button id="toggleSearch" class="search-button" type="button" aria-label="Search toggle" aria-expanded="false">
+									<span class="sz-icon-search icon-open"></span>
+									<span class="icon-close">close</span>
+									<span class="round-corner"></span>
+								</button>
+							</div>
+					</div>
+				
+				</div>
+			</div>
+			<!-- Mobile nav -->
+			<div id="mobileNav" class="wrapper-mobile-nav">			
+				<ul class="mobile-nav">
+					<li><a href="https://www.belfastcity.gov.uk/council" >Your council</a></li><li><a href="https://www.belfastcity.gov.uk/bins-environment" >Bins and environment</a></li><li><a href="https://www.belfastcity.gov.uk/things-to-do" >Things to do</a></li><li><a href="https://www.belfastcity.gov.uk/community" >Your community</a></li><li><a href="https://www.belfastcity.gov.uk/births-deaths-ceremonies" >Births, deaths and ceremonies</a></li><li><a href="https://www.belfastcity.gov.uk/all-services" >A-Z of services</a></li><li><a href="https://www.belfastcity.gov.uk/contact" >Contact us</a></li><li><a href="https://www.belfastcity.gov.uk/accessibility" >Accessibility statement</a></li>					
+				</ul>						
+			</div>
+
+		<!-- Mobile search field -->
+		<div id="mobileSearchField" class="mobile-search-field show-for-small-only">
+			<div class="input-group">
+			  <label for="mobileSiteSearch" class="show-for-sr">Mobile site search</label>
+			  <input id="mobileSiteSearch" class="input-group-field site-search-textbox" type="search" placeholder="Search Belfast City Council">
+			  <div class="input-group-button">
+			    <input id="mainSearchMobile" type="submit" class="button" value="Search">
+			  </div>
+			</div>
+		</div>
+
+		
+		<!-- Hero -->
+		<div class="wrapper-hero wrapper-hero--sub" data-interchange="[/App_Themes/main/img/layout/placeholder.png?width=640&amp;resizemode=force, small],[/App_Themes/main/img/layout/placeholder.png?width=1024&amp;resizemode=force, medium], [/App_Themes/main/img/layout/placeholder.png?width=1360&amp;resizemode=force, large]" data-aos="fade-in">
+
+			<!-- Background video -->
+			<!-- <div class="video-container">
+				<video autoplay playsinline loop muted poster="App_Themes/main/img/temp/bg-video.jpg">
+					<source src="/App_Themes/main/img/temp/hero-vid-1.mp4" type="video/mp4">
+				</video>
+				<div class="overlay"></div>
+			</div> -->
+
+			<div id="maincontent" class="">
+				<div class="grid-container">
+					
+						<div class="grid-x grid-padding-x">
+							<div class="cell medium-12 small-12">
+																	<h1 class="hero-title" data-aos="short-fade-up" data-aos-delay="400">Resilience Ambitions</h1>
+								
+									
+							</div>
+						</div>
+
+				</div>
+			</div>
+
+		</div>
+
+	</header>
+		
+
+  
+
+<main>
+
+	
+
+<!--breadcrumbs-->
+<div class="wrapper-breadcrumbs hide-for-small-only" data-aos="fade-in">	
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+					<div class="cell large-12">
+						<nav aria-label="Breadcrumbs">
+							<ul class="breadcrumbs">
+								<li><a href="/">Home</a></li>
+<li><span class="show-for-sr">Current: </span> Belfast Resilience Ambitions: A climate plan for Belfast</li>							</ul>
+						</nav>
+					</div>	
+			</div>
+		</div>
+</div>
+				
+
+
+
+	
+
+	<div class="wrapper-content shade-bottom">
+		
+		<div id="related-page-arrow" class="section-arrow hide">
+			<span class="sz-icon-caret-down"></span>
+		</div>		
+
+
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="cell medium-12">
+
+					<div class="inner-padder">
+
+						<article class="wysiwyg" data-aos="short-fade-up">					
+
+							<p style="text-align: right;">Published in December 2020</p>
+
+<h2>Introduction</h2>
+
+<p>Belfast&rsquo;s Resilience Assessment identified a wide range of shocks and stresses for the city, improving our knowledge of existing and emerging risks. Coordinated response to these risks is being taken forward by city partners, working collaboratively through the city&rsquo;s Community Planning Partnership Board, and delivering the priorities set out in the &lsquo;Belfast Agenda&rsquo;.</p>
+
+<p>Public conversation on the draft Resilience Strategy found strong agreement with the shocks and stresses identified. However, there was also consensus that climate change presents acute risks for the city, and that we need a singular focus to prepare Belfast for its effects.</p>
+
+<p>This &lsquo;ambitions document&rsquo; is Belfast&rsquo;s first Climate Plan. It outlines a resilience &lsquo;goal&rsquo; for the city, with a determined focus on climate adaptation, climate mitigation and the green economy. It sets out 30 &lsquo;transformational programmes&rsquo;- these are decade long interventions which will have a positive impact, at scale, across the city. The programmes have been endorsed by the city&rsquo;s Resilience and Sustainability Board, and will be taken forward in a collaborative way by city partners in this decade. We have retained the emphasis on &lsquo;multiple problem solvers&rsquo;- actions that solve several risks at once- and in particular ensuring that children and young people play a central role in climate action in their city.</p>
+
+<p>Grainia Long<br />
+Commissioner for Resilience<br />
+December 2020</p>
+
+<h2>Foreword from the Chair of Strategic Policy and Resources Committee</h2>
+
+<p>Belfast Agenda, the city&rsquo;s community plan, is clear in its purpose- for Belfast to be a sustainable city. Meeting that vision has required the development of this document- the city&rsquo;s first &lsquo;climate plan&rsquo; &ndash; a document which sets out a clear goal, to transition Belfast to an &lsquo;inclusive, net-zero emissions, climate- resilient economy in a generation&rsquo;. Across Belfast, partner organisations have not only helped identify the risks that face our city but they have also agreed that the ultimate goal for the city should be to <strong>transition to an inclusive, net-zero emissions economy in a generation. </strong></p>
+
+<p>This is the first time that Belfast has taken an integrated and collaborative approach to the development of a climate plan, and I am particularly pleased at the level of partnership working involved.</p>
+
+<p>I would like to thank all the members of the Resilience and Sustainability Board who have agreed to work together to deliver thirty programmes, at scale, to meet our goal. We all welcome the variety of programmes that have been designed to be <strong>&lsquo;multiple problem solvers</strong>&rsquo; and look forward to witnessing the transition of Belfast into a more climate-ready city. This plan is a first of many for Belfast and its timing is important for us all to drive the city forward in its green recovery.</p>
+
+<p>Working together will help us to ultimately deliver the goal and enable city partners across all sectors to deliver these ambitious programmes. We are delighted to be involved from the beginning of this project and we are grateful for the commitment of city leaders, communities, organisations, universities and of course our residents who have supported the development of this plan. I believe this document positions Belfast as a city which can demonstrate its commitment to tackling the climate crisis, in the interests of all our residents today&rsquo;s and tomorrow&rsquo;s.</p>
+
+<p>Councillor Christina Black<br />
+Chair<br />
+Strategic Policy and Resources Committee</p>
+
+<h2>Contents</h2>
+
+<p><a href="#ResilienceGoal"><strong>Resilience goal</strong></a></p>
+
+<p><strong>Areas of focus</strong></p>
+
+<ul>
+	<li><a href="#UNDG">Delivery of United Nations Sustainable Development Goals</a></li>
+	<li><a href="#case-climate">Case study: Climate resilience</a></li>
+	<li><a href="#case-children">Case study: Children and young people</a></li>
+	<li><a href="#case-connected">Case study: Connectivity</a></li>
+</ul>
+
+<p><a href="#Climate-adaptation-mitigation"><strong>Climate adaptation and mitigation</strong></a></p>
+
+<p>A Belfast resilient to the effect of climate change shock.</p>
+
+<ul>
+	<li>Adapting to, and mitigating climate change across the city</li>
+</ul>
+
+<p><a href="#Participation-children-young-people"><strong>Participation of children and young people</strong></a></p>
+
+<p>Children and young people as active participants - co-designing a future-proofed city.</p>
+
+<ul>
+	<li>Ensuring the city&rsquo;s children and young people co-design plans for a sustainable, climate-resilient city, and have every opportunity to participate in delivery</li>
+</ul>
+
+<p><a href="#zero-emissions-economy"><strong>Connected, net-zero-emissions economy</strong></a></p>
+
+<p>A sustainable Belfast, interconnected through people, secure and resilient together.</p>
+
+<ul>
+	<li>Achieving a step change towards zero emissions, in this decade, through well-design and well-funded infrastructure</li>
+</ul>
+
+<h2><a id="ResilienceGoal" name="ResilienceGoal"></a>Resilience goal</h2>
+
+<p>Our goal is to transition Belfast to an inclusive, net-zero emissions, climate-resilient economy in a generation.</p>
+
+<h2>Multiple problem solvers</h2>
+
+<p>We have identified a series of levers aimed at resolving several risks at once. These &lsquo;multiple problem solvers&rsquo; provide focus and direction towards our transition to an inclusive, net-zero emissions climate-resilient economy.</p>
+
+<ul>
+	<li>Climate adaptation and mitigation</li>
+	<li>Participation of children and young people</li>
+	<li>Connected, net-zero emissions economy</li>
+</ul>
+
+<h2><a id="UNDG" name="UNDG"></a>Delivery of United Nations Sustainable Development Goals</h2>
+
+<p>Belfast&rsquo;s Resilience Strategy has been informed by, and is aligned with the UN Sustainable Development Goals.</p>
+
+<p>The 2030 Agenda for Sustainable Development is an historic global agreement to eradicate extreme poverty, fight inequality and injustice and leave no one behind. Agreed by world leaders at the UN in 2015, the 17 Sustainable Development Goals (SDGs) succeed the Millennium Development Goals (MDGs). The SDGs are universal with all signatories - including the UK - expected to contribute to them internationally and deliver them domestically.</p>
+
+<p><strong>Belfast&rsquo;s Resilience Strategy contributes to the delivery of these important global goals.</strong></p>
+
+<h3>United Nations: Sustainable Development Goals</h3>
+
+<ol>
+	<li>No poverty</li>
+	<li>Zero hunger</li>
+	<li>Good health and well-being</li>
+	<li>Quality education</li>
+	<li>Gender equality</li>
+	<li>Clean water and sanitation</li>
+	<li>Affordable and clean energy</li>
+	<li>Decent work and economic growth</li>
+	<li>Industry, innovation and infrastructure</li>
+	<li>Reduced inequalities</li>
+	<li>Sustainable cities and communities</li>
+	<li>Responsible consumption and production</li>
+	<li>Climate action</li>
+	<li>Life below water</li>
+	<li>Life on land</li>
+	<li>Peace, justice and strong institutions</li>
+	<li>Partnerships for the goals</li>
+</ol>
+
+<h2><a id="Climate-adaptation-mitigation" name="Climate-adaptation-mitigation"></a>Climate adaptation and mitigation&nbsp;</h2>
+
+<p>The effects of climate change present the greatest economic, social and environmental risks to the city of Belfast, in this decade and beyond&rsquo;. The city&rsquo;s future economic growth must therefore be inclusive, sustainable and low-carbon.</p>
+
+<blockquote>
+<p>&ldquo;The economic cost of flooding could be profound. Belfast is &lsquo;predicted to be the most economically impacted, with aggregated annual average damages of approximately &pound;16m.&rsquo;&quot;</p>
+
+<p>&nbsp;NI Flood Risk Assessment, 2018</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li>Belfast must be &lsquo;climate ready&rsquo; i.e. prepared for changes to the city&rsquo;s weather, to our water, and to our biodiversity arising from climate change. The city must prevent economic shocks arising from climate change, and a widening of inequality due to its effects. It must urgently build community resilience to respond to the impacts of climate change, and ultimately transition to a net-zero emissions economy.</li>
+	<li>Belfast is facing a climate crisis. A harbour city, and already an area of significant flood risk, our proximity to water and the increasing presence of water in our city as the climate warms is a significant risk. Pockets of poor air pollution and our dependence on cars as a form of transport, coupled with the prevalence of hard infrastructure throughout the city highlight a series of interconnected challenges, which if left unchecked will leave the city exposed.</li>
+	<li>Our ability to respond to a changing climate will fundamentally impact on the city&rsquo;s economic prosperity in the years to come. The prevalence of extreme weather events will require additional city resources; the design, development and location of future developments will be impacted by climate events and our attractiveness as a destination to live work and enjoy will all be impacted by our ability to prepare for, respond and absorb climate related shocks and stresses.</li>
+	<li>The Intergovernmental Panel on Climate Change (IPCC) warned in 2018 that cities have twelve years to make rapid, far-reaching and unprecedented changes in all aspects of society in order to limit global warming to 1.5&deg;C. Belfast must heed that warning and make climate resilience an urgent and strategic focus for the entire city.</li>
+	<li>Furthermore, our dependence on energy will increase. While immediate energy demand scenarios are currently uncertain due to the impact of COVID-19, the Belfast Mini Stern demonstrates the scale of the city&rsquo;s long-term economic dependence on energy - it predicts that Belfast will spend c.&pound;466 million per year in 2050.&rsquo; Belfast therefore faces two energy challenges- to decarbonise rapidly while building the city&rsquo;s energy independence. Doing so provides an immense economic return to the city, as set out in the Mini Stern.</li>
+</ul>
+
+<blockquote>
+<p>&ldquo;Belfast is emitting 1.5 million tonnes of carbon a year. At this rate, we will have used up our carbon by 2030.&rdquo;</p>
+
+<p>Belfast Net-zero Carbon Roadmap (Mini Stern)</p>
+</blockquote>
+
+<p>The &lsquo;foundational programmes&rsquo; endorsed by the city&rsquo;s Resilience and Sustainability Board are strongly informed by the city&rsquo;s &lsquo;Mini Stern&rsquo;, by consultation with city partners and with communities, and are intended as a step change in the city&rsquo;s approach to climate adaptation and mitigation.</p>
+
+<h3>1.&nbsp;New city-wide structures to collaborate on climate action</h3>
+
+<p>Belfast has established two permanent new structures to drive partnership and collaboration to build the city&rsquo;s climate resilience and drive climate action. The Belfast Climate Commission is a &lsquo;think-tank&rsquo; which ensures the right evidence and analysis is available to decision makers. The Resilience and Sustainability Board is a permanent feature of the Community Planning structures for the city. The board is a genuine partnership between agencies and organisations on climate action in Belfast, and over time will ensure integration of systems to increase the city&rsquo;s efficiency and effectiveness.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Climate action</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Stress - Infrastructure capacity</li>
+		<li>Shock - Flooding and extreme weather events</li>
+		<li>Shock - Public Health</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>Clean water and sanitation</li>
+		<li>Affordable and clean energy</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Life on land</li>
+		<li>Peace, justice and strong institutions</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>2. Delivery of Recommendations in Belfast&rsquo;s Mini Stern: A Net-Zero Carbon Roadmap for Belfast</h3>
+
+<p>Working with Leeds and Edinburgh, Belfast&rsquo;s first Net-Zero Carbon Roadmap has been produced, to identify the sources of Scope 1 and 2 emissions, and to set out cost effective and innovative stretch measures needed to reach net-zero carbon by 2050. Through the Belfast Climate Commission and the Resilience and Sustainability Board, recommendations within the roadmap will be delivered to enable Belfast to reach its goal.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Climate action</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock -&nbsp;Flooding and extreme weather events</li>
+		<li>Shock - Public Health</li>
+		<li>Stress -&nbsp;Housing supply in the city</li>
+		<li>Stress -&nbsp;Climate change&nbsp;</li>
+		<li>Stress -&nbsp;Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li>Good health and well-being</li>
+		<li>Affordable and clean energy</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>3.&nbsp;Climate change risk assessment</h3>
+
+<p>We have commissioned Arup (our 100 Resilient Cities strategic partner) to undertake a high level climate change risk assessment- to provide us with an assessment of the potential impact of climate change on the city&rsquo;s infrastructure. This work has identified significant areas of risk for the city, and areas of focus for climate planning into the future.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Climate action</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li>Shock or stress
+	<ul>
+		<li>Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock -&nbsp;UK Exit</li>
+		<li>Shock - Flooding and extreme weather events</li>
+		<li>Stress -&nbsp;Economic recovery capacity&nbsp;</li>
+		<li>Stress -&nbsp;Climate change</li>
+		<li>Stress -&nbsp;Mental Ill-health</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>Good health and well-being</li>
+		<li>Affordable and clean energy</li>
+		<li>Climate action</li>
+		<li>Life below water</li>
+		<li>Life on land</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>4.&nbsp;Belfast City Council Climate Adaptation and Mitigation Plan</h3>
+
+<p>Belfast City Council will publish its Climate Adaptation and Mitigation Plan in 2021, based on data from an internal sustainability review, an energy review and the development of climate adaptation priorities. The document will be the first comprehensive and integrated plan by the council on climate adaptation and mitigation.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Climate action</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Redundant</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li><strong>​</strong>Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock -&nbsp;Flooding and extreme weather events</li>
+		<li>Stress -&nbsp;Economic recovery capacity</li>
+		<li>Stress -&nbsp;Climate change</li>
+		<li>Stress - Mental ill-health</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li>​Good health and well-being</li>
+		<li>Affordable and clean energy</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Life below water</li>
+		<li>Life on land</li>
+		<li>Peace, justice and strong institutions</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>5. Belfast City Council Climate Adaptation and Mitigation Plan Belfast Harbour - Green Port</h3>
+
+<p>Belfast Harbour&rsquo;s ambition is to become one of the &lsquo;greenest&rsquo; ports in the world. Its strategic goals include achieving net-zero carbon emissions in Belfast Harbour before 2030, through decarbonisation of our operations and nature based solutions. Its partnership-based action plans will protect and enhance our marine biodiversity and wider environment. With the help of digital innovation, it will help facilitate a circular economy and improve air quality standards throughout its estate. As a socially responsible Green Port, Belfast Harbour&rsquo;s vision is to work with others as a green developer and support our port community, customers and tenants as together we build a sustainable future for all.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li>Climate action</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong>
+	<ul>
+		<li>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock -&nbsp;UK Exit&nbsp;</li>
+		<li>Shock -&nbsp;Flooding and extreme weather events</li>
+		<li>Stress -&nbsp;Economic recovery capacity</li>
+		<li>Stress -&nbsp;Carbon intensive systems</li>
+		<li>Stress -&nbsp;Climate change</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>Clean water and sanitation</li>
+		<li>Affordable and clean energy</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Life below water</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>6. Queen&rsquo;s University Environmental Solutions Centre</h3>
+
+<p>We will explore the feasibility of establishing a city-wide support organisation drawing on the on model of Adaptation Scotland to provide advice and support to help public sector, businesses and communities understand what climate change will mean for them, and the best way to plan for its impact. City partners will work collaboratively to support the establishment of an interdisciplinary Environmental Solutions Centre at QUB, a collaboration between academics working on environment and sustainability research. The goal of the centre is to provide solutions to decarbonise economies and radically reduce greenhouse gas emissions to achieve net-zero and to provide solutions that reverse the loss of biodiversity worldwide. Queen&rsquo;s has co-designed the centre with key partners in industry, local and regional government and civil society. The centre will focus on data analytics and synthesis and will deliver solutions through co-defined interdisciplinary working groups bringing together stakeholders from across a broad spectrum of relevant partners, and will be a critical asset to the city in its progress to reach net-zero.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Climate action</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Stress -<strong> ​</strong>Infrastructure capacity</li>
+		<li>Shock - Flooding and extreme weather events</li>
+		<li>Shock - Public Health</li>
+		<li>Stress - Climate change</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>Zero hunger</li>
+		<li>Good health and well-being</li>
+		<li>Quality education</li>
+		<li>Affordable and clean energy</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Life below water</li>
+		<li>Life on land</li>
+		<li>Peace, justice and strong institutions</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>7. Sustainable District</h3>
+
+<p>Belfast Linen Quarter BID, working collaboratively with city partners, will establish the city&rsquo;s first &lsquo;Sustainable District&rsquo; bringing together business, the public sector and the private sector to collaborate and innovate on energy, water and waste efficiency, decarbonisation and sustainable practices, to accelerate the city&rsquo;s transition to a climate-resilient economy. The vision is to co-create a prosperous, inclusive, climate-resilient district founded on a circular, net-zero carbon economy. Work programmes will include system re-design to develop sustainable products &amp; services; Sustainable waste management; a district-wide green energy contract, to accelerate the move to renewables; New approaches to public realm that reduce car use and increase cycling and walking and a strategy for improved air quality.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Climate action</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>​Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock -&nbsp;Flooding and extreme weather events</li>
+		<li>Shock -&nbsp;Cyber resilience</li>
+		<li>Stress -&nbsp;Economic recovery capacity&nbsp;</li>
+		<li>Stress -&nbsp;Carbon intensive systems</li>
+		<li>Stress -&nbsp;Housing supply in the city</li>
+		<li>Stress -&nbsp;Segregation and division</li>
+		<li>Stress - Climate change</li>
+		<li>Stress -&nbsp;Mental Ill-health</li>
+		<li>Stress -&nbsp;Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>No poverty</li>
+		<li>Zero hunger</li>
+		<li>Good health and well-being</li>
+		<li>Affordable and clean energy</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Climate action</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>8. Belfast Region City Deal</h3>
+
+<p>The Digital Innovation Pillar of the Belfast Region City Deal prioritises resilience and sustainability, with a core commitment to triple bottom line delivery in all of its programs taking into account social, economic and environmental sustainability factors. Specific programs will target funding of innovation in energy transition, integrated transport solutions and building technology, in this decade. The Belfast Digital Innovation ambition will also focus on development of platforms such as digital twins, built on committed 5G/ IoT deployments within the city and which coupled with Belfast&rsquo;s leading expertise in cyber and AI technologies, will ensure that our innovation excellence is targeted to ensure our strategic city assets such as housing, energy, transport, water and telecommunications are resilient by design. Opportunities will therefore be sought to invest in enabling infrastructure to meet the city&rsquo;s ambitions while also emphasising skills and business growth at scale.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Climate action</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock - UK Exit</li>
+		<li>Stress -&nbsp;Cyber resilience</li>
+		<li>Stress -&nbsp;Economic recovery capacity</li>
+		<li>Stress -&nbsp;Population change</li>
+		<li>Stress -&nbsp;Carbon intensive systems</li>
+		<li>Stress -&nbsp;Segregation and division</li>
+		<li>Stress -&nbsp;Mental Ill-health</li>
+		<li>Stress -&nbsp;Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>No poverty</li>
+		<li>Good health and well-being</li>
+		<li>Quality education</li>
+		<li>Affordable and clean energy</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Climate action</li>
+		<li>Peace, justice and strong institutions</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>9. One Million Trees</h3>
+
+<p>Inspired by an original idea from the Belfast Metropolitan Residents Group, city partners will plant one million trees across Belfast by 2035. Launched in late 2020, and designed as a major programme to support climate adaptation across the city, it is a collaboration between public, private and voluntary sector partners, and will make a substantial contribution to the DAERA &lsquo;Forest of the Future&rsquo; regional tree planting programme.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li>Climate action</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock -&nbsp;Condition of existing Housing Stock</li>
+		<li>Economic recovery capacity</li>
+		<li>Population change</li>
+		<li>Housing supply in the city</li>
+		<li>Segregation and division</li>
+		<li>Climate change</li>
+		<li>Use of prescription drugs</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>Good health and well-being</li>
+		<li>Clean water and sanitation</li>
+		<li>Affordable and clean energy</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Life on land</li>
+		<li>Peace, justice and strong institutions</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>10. Local Development Plan: a Critical Lever for Resilience</h3>
+
+<p>Belfast&rsquo;s draft Local Development Plan (LDP) provides a robust statutory framework to enable Belfast&rsquo;s transition to an inclusive, net-zero emissions, climate-resilient economy. The draft plan provides a 15-year framework to support the city&rsquo;s ambitions, providing the delivery of sustainable development, facilitating growth and allocating sufficient land to meet the needs of the city. Core objectives of the draft LDP include the promotion of a green and active place and building a smart, connected and resilient city. The draft LDP is therefore a critical lever in the delivery of this strategy&rsquo;s objectives.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Climate action</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress​</strong>
+	<ul>
+		<li><strong>​</strong>Stress - Infrastructure capacity</li>
+		<li>Shock - Flooding and extreme weather events</li>
+		<li>Shock - Public Health</li>
+		<li><strong>​</strong>Stress - Carbon intensive systems</li>
+		<li>Stress - Climate change</li>
+		<li>Stress - Use of prescription drugs</li>
+		<li>Stress - Mental Ill-health</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li>Good health and well-being</li>
+		<li>Clean water and sanitation</li>
+		<li>Affordable and clean energy</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Life on land</li>
+		<li>Peace, justice and strong institutions</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>11. Sustainability and Food</h3>
+
+<p>In developing this strategy, we have had insufficient time to look in detail at the city&rsquo;s food needs into the future, however this is a priority for strategy implementation. Working with partners across the city, a work stream examining the climate impacts and opportunities for an ongoing and city-wide programme of healthy and sustainable food will be critical to Belfast&rsquo;s resilience.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Climate action</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Stress -<strong> ​</strong>Infrastructure capacity</li>
+		<li>Shock - Public Health</li>
+		<li>Stress -<strong>&nbsp;</strong>Economic recovery capacity</li>
+		<li>Stress -<strong>&nbsp;</strong>Carbon intensive systems</li>
+		<li>Stress -<strong>&nbsp;</strong>Climate change</li>
+		<li>Stress -<strong>&nbsp;</strong>Mental Ill-health</li>
+		<li>Stress -<strong>&nbsp;</strong>Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>No poverty</li>
+		<li>Zero hunger</li>
+		<li>Good health and well-being</li>
+		<li>Quality education</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Life below water</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h2><a id="case-climate" name="case-climate"></a>Case Study: Climate Action</h2>
+
+<p>Cape Town made international headlines in 2017 when they faced the prospect of an imminent &ldquo;Day Zero&rdquo;, a scenario in which the city government would have to turn off the water distribution networks to conserve water, in response to experiencing the driest three-year period since the 1930s. The city&rsquo;s normal recourse was to increase water restrictions but more action was needed.</p>
+
+<p>Capetonians mobilised to take remarkable action. Lawns and water sensitive plants were replaced with less water reliant alternatives. Residents invested in water saving devices such as low-flow taps and shower heads. Community organisations developed their own response strategies. Some corporations went off-grid, turning to groundwater or desalination. The local government worked tirelessly with businesses to share information, hear concerns, plan and became much better at partnering. This collective response would eventually drive down water consumption by over 50%. Day Zero was called off in 2018 and later removed as a possibility for 2019 and again in 2020.</p>
+
+<p>Positively, behaviours have changed permanently as residents&rsquo; water-saving and efficiency behaviours endured, even as restrictions were gradually lessened. Water consumption is unlikely to ever return to pre-drought levels. Cape Town&rsquo;s achievement is evidence of the positive impact that partnering with residents and stakeholders at all levels can have on a city&rsquo;s governance and operations.</p>
+
+<h2><a id="Participation-children-young-people" name="Participation-children-young-people"></a>Participation of children and young people</h2>
+
+<p>The participation of children and young people in decisions that affects their lives is of critical importance in the design of a sustainable city. Our resilience goal, to transition to an inclusive, net-zero emissions, climate-resilient city in a generation is not possible unless we involve children and young people in strategy design, and ensure their participation in its delivery.</p>
+
+<p><strong>We consider this value so important that it is one of three areas of focus, or &lsquo;multiple-problem solvers&rsquo; as we restructure our economy and society, as climate change advances. </strong></p>
+
+<p>In this section, we include several &lsquo;foundation programmes&rsquo; which place children at the centre of decisions on climate adaptation and mitigation in Belfast.</p>
+
+<p>35% of Belfast&rsquo;s population is aged 25 and under. Young people are a major asset for the city, especially given the shocks and stresses outlined earlier, e.g. the risk of population decline, outward migration, and how we build our economic resilience.</p>
+
+<p>A young population provides Belfast with a bright economic future, with a source of future talent. If young people are properly involved in the decisions that affect their lives, they could also help to shape a transformed sustainable economy for the city. Our conversation with children and young people as part of this strategy consultation, found that sustainability and inclusion were key priorities for them, and would frame the choices they take about where to live in the future.</p>
+
+<p>Poor air quality and the prevalence of cars are considered among the biggest barriers to child‑friendliness and a key factor affecting independent mobility among children. Less mobility means reduced access to and experience of the city and fewer possibilities to take advantage of the city&rsquo;s opportunities. Designing a sustainable and child-friendly city is also critical to attracting today&rsquo;s skilled and talented workforce to the city, particularly those with children. Cities like Rotterdam and Vancouver have taken ambitious steps to make urban environments attractive to families, retaining skilled workers and driving the local economy.</p>
+
+<p>We have been inspired and encouraged by action taken in New Zealand (particularly Christchurch), in Wales, where there is a strong policy focus on &lsquo;Future Generations&rsquo;, and by Medellin in Colombia, which has invested in a Children and Young Persons&rsquo; &lsquo;Unit&rsquo; in the city government.</p>
+
+<p>A city&rsquo;s design has an immense impact on the health and wellbeing of children. Sustainable healthy cities are also child-friendly cities. Designing a city in the best interests of children is therefore critical to Belfast&rsquo;s resilience.</p>
+
+<p>The physical environment in which children live is a key determinant of their health, behaviour and development. Research and practice from other cities shows that a strategic focus on connectivity - walking, cycling and play - can improve the health and wellbeing of children and young people. Conversely, high‑density traffic, poor air quality and a lack of public space can directly discourage people from being physically active, in turn, impacting on their health prospects. Child-centred urban planning is critical to achieving Belfast Agenda priorities on inclusive growth, and importantly to achieving a step change indifferences in life expectancy.</p>
+
+<p>The focus of this strategy, to transition to a net-zero emissions city, is also intended to make the city more attractive for children and young people, improving liveability and increasing their social and economic opportunities.</p>
+
+<p>During the formal consultation on this draft strategy, we listened to and considered the views of more than 367 children and young people, and their views have strongly informed the content of our final document.</p>
+
+<p><strong>A snapshot of how young people participated in the process:</strong></p>
+
+<ul>
+	<li>The Commissioner for Resilience met 60 Belfast Youth Forum members.</li>
+	<li>32 young people took part in two online sessions with the Lord Mayor. Belfast climate strikers gave talks, came to the kiosk and attended online engagement sessions.</li>
+	<li>40 primary school children engaged through story telling sessions at two after schools clubs.</li>
+	<li>90 young people gave us their #ResilientBelfast stories and pictures.</li>
+	<li>40 children took trees home to plant across the city.</li>
+	<li>87 attendees at a &lsquo;Planning Resilient Futures&rsquo; student conference.</li>
+	<li>Resilient discussion with 25 university students.</li>
+	<li>367 young people involved to date.</li>
+</ul>
+
+<p><strong>Some common themes which emerged were:</strong></p>
+
+<ul>
+	<li>Young people&rsquo;s high levels of anxiety about the potential impacts of climate change on the poorest and most vulnerable communities in Belfast.&nbsp;</li>
+	<li>Many children and young people said they felt &lsquo;helpless&rsquo; to the impacts of climate change that decision makers were not making the crisis a core priority.</li>
+	<li>Children&rsquo;s attitudes towards transport are very different to adults &ndash; they often do not see owning a car in the future as important or even necessary.</li>
+	<li>The value placed by young people on their ability to live in a healthy city - many expressed this as a &lsquo;right&rsquo; and in particular referred to the health impacts of air pollution, which should be made a city priority.</li>
+	<li>Many young people emphasised the importance of urgency in delivery of change, saying that not everything has to be perfect before it is done.</li>
+	<li>They welcomed the centrality of children and young people to the strategy and the potential for ongoing and meaningful involvement to the future design of climate policy and strategy in the city.</li>
+	<li>Many young people felt their knowledge of the climate crisis and what is required is stronger than the decisions makers in the city, and their involvement is necessary to ensure we take the right approach now.</li>
+	<li>They cautioned against their involvement being seen as &lsquo;tokenistic&rsquo; and challenged decision makers to demonstrate their commitment by resourcing this work.</li>
+	<li>They expressed real concern about other &lsquo;shocks and stresses&rsquo; referred to in the strategy - particularly mental ill-health and digital inequality.</li>
+</ul>
+
+<p><strong>In developing this strategy, we have adopted the seven key principles developed by Arup in its Designing for Urban Childhoods report:</strong></p>
+
+<ul>
+	<li>The quality of life experienced by urban populations, and particularly by children, will determine our global future.</li>
+	<li>Child-friendly urban planning is a vital part of creating inclusive cities that work better for everyone.</li>
+	<li>Focusing on the needs of children can help act as a unifying theme for the promotion of progressive ideas and ambitious actions.</li>
+	<li>Children&rsquo;s infrastructure can help to enhance the economic value and long-term viability of the urban environment.</li>
+	<li>Providing multifunctional, playable space - beyond the playground - can enable everyday freedoms and create a public realm for all ages to enjoy together.</li>
+	<li>Interventions at the neighbourhood scale offer the greatest potential to create a children&rsquo;s infrastructure network that allows safe and enjoyable journeys. Decision makers should be opportunistic and strategic, and integrate child-friendly thinking into all aspects of city making.</li>
+</ul>
+
+<h3>12. A Permanent Platform for Involving Children and Young People on Climate Change</h3>
+
+<p>Led by the Belfast Climate Commission, and codesigned by children and young people, we will develop a model for ensuring the participation and involvement of young people, in future climate planning. The model will be developed in 2021, and will initially be developed to ensure their involvement in the UN Climate Conference COP26, but will be used annually to involve children and young people in decisions on the city&rsquo;s future.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li>Children and young people</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong>
+	<ul>
+		<li>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Shock - ​Condition of existing Housing Stock</li>
+		<li>Shock - Cyber resilience</li>
+		<li>Stress - Climate change</li>
+		<li>Stress - Poverty and inequality</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li>Quality education</li>
+		<li>Gender equality</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Peace, justice and strong institutions</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>13. Quality of urban childhood</h3>
+
+<p>Working with partners across the city, Belfast City Council will put in place a series of indicators to measure the quality of &lsquo;urban childhood&rsquo; in Belfast. This will include measuring the amount of time children spend playing outdoors, their level of contact with nature and their ability to get around independently. These will inform decisions by organisations working across Belfast to improve urban childhoods and urban resilience more generally&rsquo;.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Children and young people</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Shock - ​Condition of existing Housing Stock</li>
+		<li>Shock - ​Public Health</li>
+		<li>Stress - Carbon intensive systems</li>
+		<li>Stress - Housing supply in the city</li>
+		<li>Stress - Segregation and division</li>
+		<li>Stress - Poverty and inequality</li>
+		<li>Stress - Use of prescription drugs</li>
+		<li>Stress - Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>No poverty</li>
+		<li>Zero hunger</li>
+		<li>Good health and well-being</li>
+		<li>Quality education</li>
+		<li>Clean water and sanitation</li>
+		<li>Affordable and clean energy</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Climate action</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>14. Ulster University Architects for Change Programme</h3>
+
+<p>The &lsquo;Architects of Change&rsquo; programme puts students from Ulster University&rsquo;s School of Architecture and the Built Environment at the heart of developing and delivering a training programme to business leaders across the region. Leading academics will work with students on strategies for smart cities, zero emission definition and delivery aiming to address how gaps in knowledge and skill can be addressed through training. This training programme will support business leaders to access the relevant knowledge to deliver environmentally, socially sustainable practice within their organisations. Participants will receive mentoring, materials and consultancy from the University to ensure growth beyond the life of the training. Longer term, the project will deliver innovative concepts for design, planning, construction and management of climate resilient, net-zero emission buildings and communities. It will help shape Belfast as a smart, green city; improving the health and wellbeing of citizens, users and communities.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li>Children and young people</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>​Shock or stress</strong>
+	<ul>
+		<li>Stress - ​Infrastructure capacity</li>
+		<li>Shock - Condition of existing Housing Stock</li>
+		<li>Shock - Flooding and extreme weather events</li>
+		<li>Stress - ​Population change</li>
+		<li>Stress - ​Carbon intensive systems</li>
+		<li>Stress - ​Housing supply in the city</li>
+		<li>Stress - ​Segregation and division</li>
+		<li>Stress - ​Climate change</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>Zero hunger</li>
+		<li>Good health and well-being</li>
+		<li>Quality education</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>15. A Playful City</h3>
+
+<p>Belfast City Council will work to establish Belfast as &lsquo;A Playful City&rsquo; by 2023, our designated year of culture, by bringing together the goals within its City Regeneration Strategy, its Cultural Strategy and its Resilience Strategy.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Children and young people</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Shock - Condition of existing Housing Stock</li>
+		<li>Shock - Flooding and extreme weather events</li>
+		<li>Stress - Population change</li>
+		<li>Stress - Housing supply in the city</li>
+		<li>Stress - Segregation and division</li>
+		<li>Stress - Climate change</li>
+		<li>Poverty and inequality</li>
+		<li>Stress - Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>No poverty</li>
+		<li>Zero hunger</li>
+		<li>Good health and well-being</li>
+		<li>Quality education</li>
+		<li>Clean water and sanitation</li>
+		<li>Affordable and clean energy</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Climate action</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>16. City centre public realm play spaces</h3>
+
+<p>Working with its city partners, Belfast City Council will invest in a network of city centre public realm play spaces. This should include permanent spaces in the city centre and a network of temporary/ pop-up play spaces across the city. This should include multifunctional use of space and re-use of existing infrastructure such as schoolyards, community hubs and carparks for community activities after hours. Belfast City Council wants to create a colourful, playful city that appeals to people of all ages. Working with city partners, Belfast City Council will build on its development of play spaces and invest in a network of city centre public realm that support diverse, interesting and inclusive family-friendly spaces. This could include permanent spaces in the city centre, embedding incidental play within the public realm and a creating network of pop up play spaces across the city. We will create multi-functional spaces through the reuse of existing infrastructure such as schoolyards, vacant spaces, community hubs and car parks for community activities after hours.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Children and young people</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Shock - Condition of existing Housing Stock</li>
+		<li>Shock - Flooding and extreme weather events</li>
+		<li>Stress - Population change</li>
+		<li>Stress - Housing supply in the city</li>
+		<li>Stress - Segregation and division</li>
+		<li>Stress - Climate change</li>
+		<li>Stress - Poverty and inequality</li>
+		<li>Stress - Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>No poverty</li>
+		<li>Zero hunger</li>
+		<li>Good health and well-being</li>
+		<li>Quality education</li>
+		<li>Clean water and sanitation</li>
+		<li>Affordable and clean energy</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Climate action</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3>17.&nbsp;Ulster University MSc in Planning and City Resilience</h3>
+
+<p>Committed to producing leaders in planning for resilient, inclusive and healthy cities, Ulster University has launched an MSc in Planning and City Resilience. Using the city as a laboratory, studies can explore sustainable development, social and climate justice, inclusive planning and partnerships, and smart interventions.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Children and young people</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>​Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock - Condition of existing Housing Stock</li>
+		<li>Shock -&nbsp;Flooding and extreme weather events</li>
+		<li>​Stress -&nbsp;Population change</li>
+		<li>​Stress -&nbsp;Carbon intensive systems</li>
+		<li>​Stress -&nbsp;Housing supply in the city</li>
+		<li>​Stress -&nbsp;Segregation and division</li>
+		<li>​Stress -&nbsp;Climate change</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li>​Zero hunger</li>
+		<li>Good health and well-being</li>
+		<li>Quality education</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>18.&nbsp;Public transport</h3>
+
+<p>To achieve our priorities on climate resilience, city connectivity and urban childhoods, it is recommended that city partners should agree to an ambition to provide all children and young people have access to free public transport in Belfast - by an agreed year in the next decade. In achieving this goal we will enable a number of our objectives.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Children and young people</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>​Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock -&nbsp;Flooding and extreme weather events</li>
+		<li>​Stress -&nbsp;Population change</li>
+		<li>​Stress -&nbsp;Carbon intensive systems</li>
+		<li>​Stress -&nbsp;Climate change</li>
+		<li>Stress - Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>Good health and well-being</li>
+		<li>Affordable and clean energy</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h2><a id="case-children" name="case-children"></a>Case Study: Children And Young People</h2>
+
+<h3>Paris: OASIS Schoolyards: battling heat and building resilience</h3>
+
+<p>The densest capital in Europe, Paris has only 14.5m2 of green space per inhabitant. This increases both the urban heat island effect and the risk of storm water flooding. With space at a premium the city had to consider existing assets it could leverage to tackle its resilience challenges of heat waves, flooding, declining social cohesion, and limited green space. In 2017, the Paris Resilience Strategy envisioned the renovation of the city&rsquo;s network of 761 schools into green islands or &ldquo;oases&rdquo; of cooler temperatures and community solidarity. In 2018, Project OASIS (Openness, Adaptation, Sensitisation, Innovation and Social Ties) brought together twelve city departments to begin a pilot with three schools participating. After extensive engagement with pupils, parents and the education community, renovation work began which included replacing asphalt with porous material, improving storm water drainage, increasing green space, modernizing water management, installing cooling fountains and water sprayers and creating natural and artificial shade structures. The project gained European recognition winning the 2019 Urban Innovation Actions award and a further &euro;5m of EU-co funding.</p>
+
+<p>Paris aims to scale this concept to approximately 700 schools by 2050. The Oases are expected to decrease average surface temperatures by 10%, reduce daytime air temperatures up to 3 degrees centigrade&nbsp;and increase water absorption capacity from 4 to 16mm. These new breathing spaces at the heart of neighbourhoods, designed by users, will improve the living environment, cope with the climate emergency, and reinforce social cohesion.</p>
+
+<h2><a id="zero-emissions-economy" name="zero-emissions-economy"></a>Connected, net-zero emissions economy</h2>
+
+<p>Resilient cities are well connected cities. Our vision of Belfast is as an inter-connected city, with secure, resilient infrastructure that meets its economic, social and environmental goals. A city that values sustainable forms of transport.</p>
+
+<p>Connected cities have well-developed networks of people, communities, industries and institutions all working collaboratively towards common goals. Investment in resilient infrastructure is critical to ensuring and enabling inclusive growth - connecting people and communities with markets, and with affordable easy access to high quality jobs and services. Resilient infrastructure is essential for place-making, good relations and building healthy and sustainable cities. Industrial strategy requires reliable, accessible and competitively-priced infrastructure to attract foreign direct investment and to create jobs.</p>
+
+<blockquote>
+<p>&ldquo;It has never been more important for a city-region to be connected and have high levels of connectivity. Investment in infrastructure must facilitate and enable the growth of those businesses and sectors which have the potential to close the productivity gap.&rdquo;</p>
+</blockquote>
+
+<p>Belfast has made huge strides since the Belfast/ Good Friday agreement towards being a connected city. However, much more progress is required to build &lsquo;one city&rsquo;, where our connections reduce our vulnerabilities and strengthen our capacity to withstand risks. The potential to be gained from an &lsquo;infrastructure revolution&rsquo; for the city was highlighted in the Belfast Region Infrastructure Investment Framework - commissioned by the Belfast Region City Deal partners as part of their work to present a case to the UK Treasury for investment in the City Region. The Framework recognised the economic potential to be gained from a step change in investment in key infrastructure classes to boost growth in the region, and in turn enhance economic resilience.</p>
+
+<p>This requires a shift in mindset - so that infrastructure is understood as vital to our economic and social interests, and responsibility for building, maintaining and investing in infrastructure goes beyond central government to a range of partners across the city.</p>
+
+<p>It also requires a transformation in how we move around our city. Car dependency is undermining our resilience - by requiring more hard infrastructure that builds our exposure to climate risks rather than reducing them. Belfast must make a strategic shift away from the car as the predominant mode of transport, and this will in turn boost our climate resilience, and make our city a healthier, cleaner more enjoyable Belfast.</p>
+
+<blockquote>
+<p>&ldquo;Strategic city-wide focus on connectivity has the potential to boost Belfast&rsquo;s resilience - its capacity to withstand shocks and adapt to future risks.&rdquo;</p>
+</blockquote>
+
+<p>The Good Relations Strategy for the city makes similar and important commitments on the need for a genuinely connected city, &lsquo;&hellip;The way we have done things in the past needs to adapt to help us reach the ambitions we have set ourselves in the Belfast Agenda. We need social innovation; changing the way we plan, deliver and consume services and how and where we access them, how we travel within the city, how we educate our young people, how we view and use local spaces, and how we interact with one another across the city. These are all critical to achieving these ambitions.&rsquo;</p>
+
+<p>This strategy seeks to complement and underpin delivery of the Good Relations Strategy. The following recommendations are aimed at supporting the strategy in practice.</p>
+
+<h3>19. Sustainable drainage</h3>
+
+<p>Ensuring sustainable drainage is critical to any city&rsquo;s climate resilience. Led by Department of Infrastructure and working with delivery partners across Belfast, the draft Sustainable Drainage Infrastructure Plan is a critical programme of work, to be delivered in this decade and to ensure Belfast has a network of sustainable drainage systems to meet its existing and future growth.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Connected, net-zero emissions economy</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>​Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock - Flooding and extreme weather events</li>
+		<li>​Stress -&nbsp;Housing supply in the city</li>
+		<li>​Stress -&nbsp;Climate change</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>Good health and well-being</li>
+		<li>Clean water and sanitation</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Sustainable cities and communities</li>
+		<li>Climate action</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>20.&nbsp;A Zero Emissions city bus fleet by 2030</h3>
+
+<p>The transition to zero emissions public transport is a priority for the city. Translink, the city&rsquo;s main public transport provider, has an ambitious target to decarbonise its entire Belfast bus fleet by 2030. In addition, Translink plans to target a 50% reduction in GHG emissions, per passenger km, by 2030. Working in partnership with DFI and a range of regional partners, Translink is exploring opportunities to decarbonise rapidly through use of zero and low emissions vehicles and renewable energy. Translink will procure and place into service 103 zero emission double deck buses consisting of both Hydrogen Fuel Cell and Battery Electric vehicles by the end of 2022. This programme will deliver clean air, environmentally friendly public transport ultimately being powered by sustainably produced hydrogen and electricity.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Connected, net-zero emissions economy</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock - Flooding and extreme weather events</li>
+		<li>Stress -&nbsp;Population change</li>
+		<li>Stress - Carbon intensive systems</li>
+		<li>Stress - Climate change</li>
+		<li>Stress -&nbsp;Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>Good health and well-being</li>
+		<li>Affordable and clean energy</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals<strong>​</strong></li>
+	</ul>
+	</li>
+</ul>
+
+<h3>21.&nbsp;Delivering Belfast&rsquo;s Net-Zero Carbon Roadmap: Buildings</h3>
+
+<p>Belfast&rsquo;s &lsquo;Mini Stern&rsquo; - the Net-Zero Carbon Roadmap for the city identifies buildings and transport as key emitters of carbon. Targeted intervention in housing, to meet the targets set out in the roadmap is necessary. Housing organisations in the city will explore financial options required to meet the targets by 2030 and 2050 respectively, and set interim milestones to report on progress on a five yearly basis.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Connected, net-zero emissions economy</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li><strong>​</strong>Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock - Condition of existing Housing Stock</li>
+		<li>Shock - Flooding and extreme weather events</li>
+		<li>Shock - Public Health</li>
+		<li>Stress -&nbsp;Population change</li>
+		<li>Stress -&nbsp;Segregation and division</li>
+		<li>Stress -&nbsp;Climate change&nbsp;</li>
+		<li>Stress -&nbsp;Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>No poverty</li>
+		<li>Good health and well-being</li>
+		<li>Clean water and sanitation</li>
+		<li>Affordable and clean energy</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Climate action</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>22. Delivering Belfast&rsquo;s Net-Zero Carbon Roadmap: Buildings A Bolder Vision for Belfast</h3>
+
+<p>A Bolder Vision for Belfast was collaboratively developed by Belfast City Council, Department for Communities and Department for Infrastructure and provides the blueprint for creating a more attractive, accessible, safe and vibrant city centre that will improve economic, societal, health and environmental wellbeing for all. Underpinned by four Visioning Principles it delivers an ambitious and challenging framework for 13 &lsquo;What Ifs?&rsquo;, transformational projects identified through stakeholder engagement, data and analysis. It is a high-level Vision, requiring change among all stakeholders and citizens, and is intended to inspire potential solutions to shape a dynamic, sustainable and connected 21st century city.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Connected, net-zero emissions economy</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li><strong>​</strong>Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock -&nbsp;UK Exit</li>
+		<li>Shock -&nbsp;Flooding and extreme weather events</li>
+		<li>Shock -&nbsp;Public Health</li>
+		<li>Stress -&nbsp;Economic recovery capacity&nbsp;</li>
+		<li>Stress -&nbsp;Population change</li>
+		<li>Stress -&nbsp;Carbon intensive systems</li>
+		<li>Stress -&nbsp;Segregation and division&nbsp;</li>
+		<li>Stress -&nbsp;Climate change</li>
+		<li>Stress -&nbsp;Mental Ill-health</li>
+		<li>Stress -&nbsp;Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>No poverty</li>
+		<li>Zero hunger</li>
+		<li>Good health and well-being</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>23. Electric vehicle infrastructure</h3>
+
+<p>By 2030, in parallel with the city&rsquo;s ambitions to decarbonise the city&rsquo;s bus fleet, Belfast will have delivered a network of electric vehicles to support transition.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Connected, net-zero emissions economy</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li><strong>​</strong>Stress&nbsp;&nbsp;Infrastructure capacity</li>
+		<li>Shock -&nbsp;Flooding and extreme weather events</li>
+		<li>Stress -&nbsp;Economic recovery capacity</li>
+		<li>Stress -&nbsp;Carbon intensive systems</li>
+		<li>Stress -&nbsp;Climate change</li>
+		<li>Stress -&nbsp;Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li>Good health and well-being</li>
+		<li>Affordable and clean energy</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>24. Investment in existing NIHE stock</h3>
+
+<p>Investment solutions to improve NIHE stock will be critical to the city&rsquo;s resilience. It is important that these solutions are part of a wider city-wide approach to decarbonisation and retrofit of existing stock, as is taking place in other cities, with similar resilience challenges.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Connected, net-zero emissions economy</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Shock - Condition of existing Housing Stock</li>
+		<li>Shock - Flooding and extreme weather events</li>
+		<li>Stress -&nbsp;Housing supply in the city</li>
+		<li>Stress -&nbsp;Segregation and division</li>
+		<li>Stress -&nbsp;Mental Ill-health</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>Good health and well-being</li>
+		<li>Clean water and sanitation</li>
+		<li>Affordable and clean energy</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Climate action</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>25. Developing a Hydrogen Eco System</h3>
+
+<p>To accelerate the city&rsquo;s transition to a net-zero carbon economy, city partners across energy, waste, housing, water and transport will develop a network of hydrogen powered infrastructure in this decade. This will include hydrogen for transport, for logistics and mobility and for buildings.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Connected, net-zero emissions economy</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Shock -&nbsp;Flooding and extreme weather events</li>
+		<li>Stress - Carbon intensive systems</li>
+		<li>Stress - Climate change</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>Affordable and clean energy</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>26.&nbsp;Belfast Destination Hub - A Low Carbon Exemplar for the City</h3>
+
+<p>The Destination Hub will be a landmark signature experience in the heart of our city centre that speaks to the essence of this vibrant place. Supported by the Belfast Region City Deal, this major cultural attraction will invite visitors to explore the many stories of the city and its people through an immersive, multi-gallery experience. The Hub will be a cultural beacon for the city, an anchor for the wider Belfast experience and an area of orientation for visitors into Northern Ireland. Importantly, its design will be a bold demonstrator of intent on Belfast&rsquo;s ambitions to be a net-zero emissions, climate-resilient city.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Connected, net-zero emissions economy</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li><strong>​</strong>Shock -&nbsp;Cyber resilience</li>
+		<li><strong>​</strong>Shock -&nbsp;Public Health</li>
+		<li>Stress - Economic recovery capacity</li>
+		<li>Stress - Carbon intensive systems</li>
+		<li>Stress - Climate change</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>Good health and well-being</li>
+		<li>Quality education</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>27.&nbsp;Sustainable Tourism</h3>
+
+<p>Belfast has joined the GDS (Global Destinations Sustainability) Movement, the world&rsquo;s leading benchmarking and performance improvement programme for tourism destinations. A partnership between Visit Belfast, and Belfast City Council, the city will take part in the GDS Index for the first time in 2020 in order to inform and accelerate sustainable tourism development and bring a co-ordinated focus to the sustainable tourism agenda across the city region. This is the beginning of Belfast&rsquo;s commitment to build back better; informing the city&rsquo;s vision for sustainable tourism and the future 10-year action plan for tourism in the city region. The end goal is for Belfast become a more regenerative, flourishing and sustainable place to visit, meet and thrive.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Connected, net-zero emissions economy</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li>Shock&nbsp;-<strong> ​</strong>Flooding and extreme weather events</li>
+		<li>Stress -&nbsp;Economic recovery capacity</li>
+		<li>Stress -&nbsp;Carbon intensive systems</li>
+		<li>Stress -&nbsp;Climate change</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li>​Good health and well-being</li>
+		<li>Quality education</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>28.&nbsp;Training and skills for an inclusive low-carbon economy</h3>
+
+<p>Working with its education partners, Belfast City Council will explore the development of a major programme of training and skills for a generation of professionals to lead our transition to an inclusive low-carbon economy. Inspired by the Canadian Academy for Sustainable Innovation, we will aim to set a target to provide thousands of professionals with the skills, knowledge, and experience to manage our move to a sustainable future by 2050.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Connected, net-zero emissions economy</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li><strong>​</strong>Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock -&nbsp;Flooding and extreme weather events</li>
+		<li>Stress -&nbsp;Economic recovery capacity</li>
+		<li>Stress -&nbsp;Carbon intensive systems</li>
+		<li>Stress - Climate change</li>
+		<li>Stress -&nbsp;Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>Good health and well-being</li>
+		<li>Affordable and clean energy</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>29. Innovation and Inclusive Growth Commission</h3>
+
+<p>The city&rsquo;s Innovation and Inclusive Growth Commission is a collaboration between Belfast City Council, Belfast Harbour, Ulster University and Queen&rsquo;s University. The Commission was established to develop an integrated, inclusive and long-term growth plan for the city. Its recommendations span a decade-long focus on how to build a job-led transition to an inclusive net-zero emissions economy.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Connected, net-zero emissions economy</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li><strong>​</strong>Shock - UK Exit</li>
+		<li>Stress - Cyber resilience</li>
+		<li>Stress -&nbsp;Economic recovery capacity</li>
+		<li>Stress -&nbsp;Population change</li>
+		<li>Stress -&nbsp;Mental Ill-health</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Responsible consumption and production</li>
+		<li>Peace, justice and strong institutions</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>30. Fuel Poverty</h3>
+
+<p>As we transition to a low carbon economy, we are aiming to make the city more energy efficient and energy self-sufficient. We should therefore agree the eradication of fuel poverty as a city-wide ambition.</p>
+
+<ul>
+	<li><strong>Area of focus</strong>
+
+	<ul>
+		<li><strong>​</strong>Connected, net-zero emissions economy</li>
+	</ul>
+	</li>
+	<li><strong>Quality of resilience</strong><strong>​</strong>
+	<ul>
+		<li><strong>​</strong>Reflective</li>
+		<li>Resourceful</li>
+		<li>Inclusive</li>
+		<li>Integrated</li>
+		<li>Robust</li>
+		<li>Redundant</li>
+		<li>Flexible</li>
+	</ul>
+	</li>
+	<li><strong>Shock or stress</strong>
+	<ul>
+		<li><strong>​</strong>Stress -&nbsp;Infrastructure capacity</li>
+		<li>Shock - Public Health</li>
+		<li>Stress -&nbsp;Economic recovery capacity</li>
+		<li>Stress -&nbsp;Carbon intensive systems</li>
+		<li>Stress -&nbsp;Climate change</li>
+		<li>Stress -&nbsp;Poverty and inequality</li>
+		<li>Stress -&nbsp;Governance and financing of risk</li>
+	</ul>
+	</li>
+	<li><strong>United Nations: Sustainable Development Goal</strong>
+	<ul>
+		<li><strong>​</strong>No poverty</li>
+		<li>Zero hunger</li>
+		<li>Good health and well-being</li>
+		<li>Affordable and clean energy</li>
+		<li>Decent work and economic growth</li>
+		<li>Industry, innovation and infrastructure</li>
+		<li>Reduced inequalities</li>
+		<li>Sustainable cities and communities</li>
+		<li>Responsible consumption and production</li>
+		<li>Climate action</li>
+		<li>Life on land</li>
+		<li>Partnerships for the goals</li>
+	</ul>
+	</li>
+</ul>
+
+<h2><a id="case-connected" name="case-connected"></a>Case Study: Connected, Net-Zero emissions Economy</h2>
+
+<p><strong>Melbourne: Melbourne Urban Forest: bringing a city together to enhance its natural assets </strong></p>
+
+<p>With a rapidly growing population anticipated to reach 8million by 2051, metropolitan Melbourne&rsquo;s urban footprint is both expanding outward and becoming denser shrinking the city&rsquo;s green space, intensifying the urban heat island and contributing to flooding and run off during storms.</p>
+
+<p>Resilient Melbourne in partnership with The Nature Conservancy developed a comprehensive urban forestry strategy: Living Melbourne: Our Metropolitan Urban Forest which seeks to ameliorate the shocks and stresses associated with extreme heat, fire and flooding. With the help of private sector engagement to map canopy cover in the city, the Living Melbourne Strategy set a goal of increasing all sub-regional canopy cover levels by 20-30% by 2050. With this goal set, the Resilient Melbourne team along with Melbourne&rsquo;s 32 councils developed a cohesive roadmap for improving biodiversity and urban forest cover.</p>
+
+<p>Implementation of the urban forest strategy, estimated to cost AUS$570M, is expected to bring economic benefits currently valued at AUS$4.95 billion per year, a figure expected to rise as the canopy cover increases.</p>
+
+<p>Nature is an immensely valuable asset for driving urban resilience. Exposure to nature reduces stress and the incidence of mental illness while also strengthening community bonds by providing spaces to congregate and enjoy physical activities thus also addressing public health and social inequality.</p>
+
+<h2>Next steps</h2>
+
+<p>Delivery of our ambitions will be overseen by the Resilience and Sustainability Board, and other Community Planning Partnership Boards, and in doing so will develop relevant delivery and resource plans.</p>
+
+<p>Individual city partners will take responsibility for delivery of key aspects of the strategy&rsquo;s ambitions. To make contact with the team at Belfast City Council, email <a href="mailto:resilient@belfastcity.gov.uk?subject=NEXT%20STEPS%20-%20BELFAST%20AMBITIONS">resilient@belfastcity.gov.uk</a></p>
+
+<p><strong>Community planning partnership</strong></p>
+
+<ul>
+	<li>Resilience and sustainability board
+	<ul>
+		<li>Future-proofed city - Belfast Resilience Strategy Assessment</li>
+		<li>Future-proofed city - Belfast Ambitions Document: A Climate Plan for Belfast</li>
+	</ul>
+	</li>
+	<li>Living here board</li>
+	<li>Working and learning board</li>
+	<li>Growing the economy and city development board</li>
+</ul>
+
+<h2>Resilience And Sustainability Board Members</h2>
+
+<ul>
+	<li>Action Mental Health</li>
+	<li>Belfast City Council</li>
+	<li>Belfast Harbour</li>
+	<li>Belfast Met</li>
+	<li>Department for Infrastructure</li>
+	<li>Department for Economy</li>
+	<li>Department for Finance</li>
+	<li>East Side partnership</li>
+	<li>Greater Shankill</li>
+	<li>Housing Executive</li>
+	<li>Health and Social Care</li>
+	<li>Include Youth</li>
+	<li>Invest Northern Ireland</li>
+	<li>Linen Quarter Bid</li>
+	<li>Civil Contingencies Resilience</li>
+	<li>Northern Ireland Water</li>
+	<li>NICVA</li>
+	<li>Police Service Northern Ireland</li>
+	<li>Translink</li>
+	<li>Ulster University</li>
+	<li>Utility Regulator</li>
+	<li>Visit Belfast</li>
+	<li>West Belfast Partnership</li>
+</ul>
+
+
+							<!--attachments-->
+									
+
+							
+
+
+
+						</article>
+
+								<ul class="menu">
+									
+										<li>
+                      <button class="btn-main btn-main--small" type="button" onclick="window.location.href ='/PDF-Convert?convertURL=http://www.belfastcity.gov.uk/Documents/Belfast-Resilience-Ambitions-A-climate-plan-for-Be&nodeID=3458'" data-tooltip title="Save this web page as a PDF">Save this web page as a PDF</button>											
+										</li>
+								</ul>
+
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>			
+
+	
+
+	
+
+</main>
+
+
+	
+	<footer id="wrapper-footer" class="wrapper-footer top-lightgrey">
+		<div id="related-page-arrow-master" class="section-arrow hide">
+			<span class="sz-icon-caret-down"></span>
+		</div>
+
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+
+				<div class="cell medium-6">
+					<div class="padder-right">
+
+						<div class="grid-x grid-margin-x">
+							<div class="cell large-8 medium-7 small-7">
+								<img class="logo" src="https://www.belfastcity.gov.uk/App_Themes/main/img/layout/logo-footer.png" alt="Belfast City Council logo"/>
+							</div>
+							<div class="cell large-4 medium-5 small-5">
+								<p class="small-title">Contact details</p>
+								<address>
+									<p>Belfast City Hall, <br />Belfast, <br />BT1 5GS <br /><strong><a href="tel:02890320202">028 9032 0202</a></strong></p>
+								</address>
+							</div>
+						</div>
+
+						<!-- <div class="card-feedback">
+							<div class="grid-x grid-padding-x">
+								<div class="cell large-8 medium-7 small-7 align-self-middle">
+									<p class="title">Give us your feedback</p>
+								</div>
+								<div class="cell large-4 medium-5 small-5 align-self-bottom">
+									<a class="cta" href="">Feedback</a>
+								</div>
+							</div>
+						</div> -->
+
+						<hr />
+
+						<div class="grid-x grid-maring-x medium-up-3 small-up-3 footer-logos">
+							<div class="cell text-center align-self-middle"><a target="_blank" href="http://www.plainenglish.co.uk/"><img src="https://www.belfastcity.gov.uk/getmedia/9b55f84e-5929-43a2-8dcd-04dee9603125/logo-approved.jpg?width=152&height=55&ext=.jpg" alt="Website approved logo" /></a></div><div class="cell text-center align-self-middle"><a target="_blank" href="https://www.nidirect.gov.uk/"><img src="https://www.belfastcity.gov.uk/getmedia/d9d255ca-c0be-420d-b627-229d010d8fb3/logo-nidirect.jpg?width=135&height=44&ext=.jpg" alt="NI Direct logo" /></a></div><div class="cell text-center align-self-middle"><a target="_blank" href="https://www.gov.uk/"><img src="https://www.belfastcity.gov.uk/getmedia/a7c8edd5-5fd4-4052-8133-4ddfc54333fe/logo-gov.jpg?width=150&height=56&ext=.jpg" alt="Gov.uk logo" /></a></div>							
+						</div>
+
+						<hr />
+						<p class="small-title">Social media channels</p>
+
+						<div class="grid-x grid-maring-x">
+									<div class="cell auto text-center">
+										<a class="social-button" target="_blank" href="https://twitter.com/belfastcc">
+											<span class="icon sz-icon-twitter"></span>
+											<span class="tooltip-text">Twitter</span>
+										</a>
+									</div>
+									<div class="cell auto text-center">
+										<a class="social-button" target="_blank" href="https://www.facebook.com/belfastcitycouncil">
+											<span class="icon sz-icon-facebook"></span>
+											<span class="tooltip-text">Facebook</span>
+										</a>
+									</div>
+									<div class="cell auto text-center">
+										<a class="social-button" target="_blank" href="https://www.instagram.com/belfastcitycouncil/">
+											<span class="icon sz-icon-instagram"></span>
+											<span class="tooltip-text">Instagram</span>
+										</a>
+									</div>
+									<div class="cell auto text-center">
+										<a class="social-button" target="_blank" href="https://www.linkedin.com/company/belfast-city-council">
+											<span class="icon sz-icon-linkedin2"></span>
+											<span class="tooltip-text">LinkedIn</span>
+										</a>
+									</div>
+									<div class="cell auto text-center">
+										<a class="social-button" target="_blank" href="https://www.youtube.com/user/BelfastCityCouncil">
+											<span class="icon sz-icon-youtube"></span>
+											<span class="tooltip-text">YouTube</span>
+										</a>
+									</div>
+									<div class="cell auto text-center">
+										<a class="social-button" target="_blank" href="https://www.flickr.com/photos/belfastcitycouncil">
+											<span class="icon sz-icon-flickr"></span>
+											<span class="tooltip-text">Flickr</span>
+										</a>
+									</div>
+						</div>
+
+					</div>
+				</div>
+
+					<div class="cell medium-6">
+						<div class="padder-left">
+							<p class="small-title">Site navigation</p>
+							<div class="grid-x grid-margin-x" role="navigation"><div class="cell medium-6 small-6"><ul class="footer-links" role="presentation"><li><a href="https://www.belfastcity.gov.uk/news" >News</a></li><li><a href="https://www.belfastcity.gov.uk/eventsnews" >Events</a></li><li><a href="https://www.belfastcity.gov.uk/bins-recycling" >Bins and recycling</a></li><li><a href="https://www.belfastcity.gov.uk/jobs-training" >Jobs and training</a></li><li><a href="https://www.belfastcity.gov.uk/parks" >Parks and open spaces</a></li><li><a href="https://www.belfastcity.gov.uk/business" >Business and investment</a></li></ul></div><div class="cell medium-6 small-6"><ul class="footer-links"><li><a href="https://www.belfastcity.gov.uk/housing" >Housing</a></li><li><a href="https://www.belfastcity.gov.uk/licences" >Licences and permits</a></li><li><a href="https://www.belfastcity.gov.uk/community" >Community</a></li><li><a href="https://www.belfastcity.gov.uk/cleansingservices" >Street cleaning</a></li><li><a href="https://www.belfastcity.gov.uk/contact" >Contact us</a></li><li><a href="https://www.belfastcity.gov.uk/all-services" >A-Z of services</a></li></ul></div></div><div class="grid-x grid-margin-x" role="navigation"><div class="cell medium-6 small-6"><ul class="base-links"><li><a href="https://www.belfastcity.gov.uk/privacy" >Privacy</a></li><li><a href="https://www.belfastcity.gov.uk/cookies" >Cookies</a></li><li><a href="https://www.belfastcity.gov.uk/accessibility" >Accessibility statement</a></li><li><a href="https://www.belfastcity.gov.uk/terms-conditions" >Terms and conditions</a></li><li><a href="https://www.belfastcity.gov.uk/freedom-of-information-requests" >Freedom of Information requests</a></li><li><a href="https://www.belfastcity.gov.uk/modern-slavery-act" >Modern Slavery Act</a></li></ul></div><div class="cell medium-6 small-6"><ul class="base-links"><li><a href="https://www.belfastcity.gov.uk/copyright" >Copyright</a></li><li><a href="https://www.belfastcity.gov.uk/disclaimer" >Disclaimer</a></li><li><a href="https://www.belfastcity.gov.uk/gdpr" >GDPR</a></li><li><a href="https://www.belfastcity.gov.uk/open-and-linked-data" >Open and linked data</a></li><li><a href="https://www.belfastcity.gov.uk/socialmedia" >Social media</a></li><li><a href="https://www.belfastcity.gov.uk/site-map" >Site Map</a></li></ul></div></div>								
+						</div>
+					</div>
+
+			</div>
+		</div>
+	</footer>
+
+	<!-- Sticky elements -->
+	<!-- Mobile 'read aloud' button -->
+	<a class="btn-sticky-readaloud show-for-small-only" href="#" onclick="BrowseAloud.panel.toggleBar(true,event);return false;">
+		<img src="https://www.belfastcity.gov.uk/App_Themes/main/img/layout/icon-readaloud.png" alt="Read aloud icon"/>
+		<span class="name">Read aloud</span>
+	</a>
+
+	<!--ie11 warning-->
+	<div id="pnlIEAlert" aria-hidden="true" class="info-strip-ie">
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="medium-10 cell">
+					<div class="content">
+						<p class="title">It looks like you're using IE11...</p>
+						<p>This browser offers limited functionality on our website. We recommend you use the latest version of Chrome, Safari, Edge and Firefox.</p>
+					</div>
+				</div>
+				<div class="cell medium-2 text-right">
+					<button id="closeNoticeIE" class="close-notice" type="button">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- browsealoud -->
+	<div id="__ba_launchpad"></div>
+	
+	
+  <script src="/kentico/bundles/jquery?v=2u0aRenDpYxArEyILB59ETSCA2cfQkSMlxb6jbMBqf81"></script>
+<script src="/kentico/bundles/jquery-unobtrusive-ajax?v=yWiSJlfkRWGOtjh38MIfwsmv_b3zyMucdfkOPGDhEoA1"></script>
+<script src="/kentico/bundles/pageComponents/scripts?v=ZDHo1Xs5kqtvXRGHWv6y7h517EdKQ9XTHBF0f0E8-Vc1"></script>
+<script src="/kentico/bundles/forms/scripts?v=LiXJ5hkuKk3VENLDTZsVIPcuCZBjfgxFk-MWkQ65h7I1"></script>
+
+
+	 
+
+	
+
+	<link rel="stylesheet" href="https://use.typekit.net/diy6pgn.css">
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLq0r2lEEF12R_EIPEipZ9x356tAYNQ_A"></script> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://www.belfastcity.gov.uk/App_Themes/main/foundation/js/vendor/foundation.min.js"></script>
+	<script src="https://www.belfastcity.gov.uk/App_Themes/main/js/jquery.main.min.js?v=3"></script>
+	<script src="https://www.belfastcity.gov.uk/App_Themes/main/js/jquery.mapping.min.js"></script>
+	
+	<script src="https://www.belfastcity.gov.uk/App_Themes/main/js/jquery.funnelback-completion-15.6.0.js"></script>	
+	<script src="https://www.browsealoud.com/plus/scripts/ba.js"></script>
+
+	<script src="https://www.belfastcity.gov.uk/App_Themes/main/js/jquery.additional.min.js?v=2"></script> 	
+
+	<script>
+		$(document).ready(function () { 
+			// Site Search.
+			jQuery("input.site-search-textbox").fbcompletion({
+				'enabled'    : 'enabled',
+				'standardCompletionEnabled': true,
+				'collection' : 'bcc-website',
+				'program'    : '//belfastcc.funnelback.co.uk/s/suggest.json',
+				'format'     : 'extended',
+				'alpha'      : '.5',
+				'show'       : '10',
+				'sort'       : '0',
+				'length'     : '3',
+				'delay'      : '0',
+				'profile'    : '_default',
+				'query'      : '',
+				//Search based completion
+				'searchBasedCompletionEnabled': false,
+				'searchBasedCompletionProgram': '//belfastcc.funnelback.co.uk/s/search.json',
+			});
+		});	
+	</script>
+
+	
+
+		<script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js"></script>
+		<script>
+			var config = {
+				apiKey: '8499ebdb79c9123dc32075411db7724877b855e5',
+				product: 'COMMUNITY',
+				necessaryCookies:["CMSPreferredCulture", "__RequestVerificationToken", "CookieControl", "JSESSIONID"],
+				optionalCookies: [
+					{
+						name: 'analytics',
+						label: 'Analytics',
+						description: 'Analytical cookies help us to improve our website by collecting and reporting information on its usage.',
+						cookies: ['_ga', '_gid', '_gat', '_gat*', '__utma', '__utmt', '__utmb', '__utmc', '__utmz', '__utmv', '_fbp', 'bannerCookie_*', '*-noticeIEAlertBanner'],
+						recommendedState: true,
+						onAccept: function () {
+
+							(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+							new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+							j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+							'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+							})(window,document,'script','dataLayer','GTM-KB5JLZ6');
+
+						},
+						onRevoke: function () { }
+					}
+				],
+				initialState: 'OPEN',
+				notifyOnce: false,
+				position: 'RIGHT',
+				theme: 'DARK',
+				statement: {
+					description: 'For more information visit our',
+					name: 'Cookies Statement',
+					url: '/cookies',
+					updated: '28/07/2020'
+				},
+				accessibility: [
+					{
+						highlightFocus: false,
+						outline: false
+					}
+				],
+				text:{
+					title:"This site uses cookies",
+					intro:"Some of these cookies are essential, while others help us to improve your experience by providing insights into how the site is being used.",
+					necessaryTitle:"Necessary Cookies",
+					necessaryDescription:"Necessary cookies enable core functionality. The website cannot function properly without these cookies, and can only be disabled by changing your browser preferences.",
+					thirdPartyTitle:"Warning: Some cookies require your attention",
+					thirdPartyDescription:"",
+					on:"On",
+					off:"Off",
+					accept:"Accept",
+					settings:"Cookie Preferences",
+					acceptRecommended:"Accept Recommended Settings",
+					notifyTitle:"Your choice regarding cookies on this site",
+					notifyDescription:"We use cookies to optimise site functionality and give you the best possible experience.",
+					closeLabel:"Close",
+					accessibilityAlert:"This site uses cookies to store information. Press accesskey C to learn more about your options.",
+					rejectSettings:"Reject All"
+				}
+			};
+
+			CookieControl.load(config);
+		</script>
+
+	<script>
+    $(function () {
+      var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+      if (isIE11) {
+        $("<link/>", {
+            rel: "stylesheet",
+            type: "text/css",
+            href: "//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+        }).appendTo("head");
+        $.getScript("https://code.jquery.com/ui/1.12.1/jquery-ui.js", function () {
+          $(".date-pick").datepicker({ dateFormat: 'dd/mm/yy' });
+        });
+      }
+    });
+  </script>
+
+
+</body>
+</html>

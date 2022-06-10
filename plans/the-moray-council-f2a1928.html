@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="IE=11" http-equiv="X-UA-Compatible" />
+<meta name="description" content="Climate Change - Moray Council">
+<meta name="audience" content="Moray Residents, Businesses and Visitors">
+<meta name="date" content="2021-04-8">
+<!-- e-goverment required Meta Tags-->
+<meta name="DCTERMS.audience" content="Moray Residents, Businesses and Visitors">
+<meta name="DC.coverage" content="Moray, UK" />
+<meta name="DC.date.modified" content="2021-04-8">
+<meta name="DC.date" content="2021-04-8" />
+<meta name="DC.date.issued" content="2021-04-8">
+<meta name="DC.description" content="Climate Change - Moray Council">
+<meta name="DC.format" content="text/xhtml">
+<meta name="DC.language" content="eng">
+<meta name="DC.publisher" content="The Moray Council, Council Offices, High Street, Elgin, Moray, IV30 1BX">
+<meta name="DC.rights.copyright" content="2004-2022 The Moray Council">
+<meta name="DC.title" content="Climate Change - Moray Council">
+<meta name="eGMS.subject" content="Local Government">
+<meta name="eGMS.subject.category" content="Local Government">
+<meta name="viewport" content="width=device-width, user-scalable=yes " />
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/js/respond.src.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="/js/shortkeys.js"></script>
+<script src="/js/brow.js"></script>
+<link rel="stylesheet" id="switch_style" href="/css/mc1.css">
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
+<script src="/js/feedback1.5.js"></script>
+
+
+
+
+
+<link rel="apple-touch-icon" href="//www.moray.gov.uk/apple-touch-icon.png">
+
+<script type="text/javascript">
+
+function resizeText(multiplier) {
+if (document.body.style.fontSize == "") {
+document.body.style.fontSize = "1.0em";
+}
+document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.2) + "em";
+}
+
+
+/* Junk */
+
+
+$(document).ready(function(){	
+	if($(window).width() < 767) {
+		$("#main_menu").css("display","none");
+	}
+$("#drop_down_menu").click(function() {
+$("#main_menu").slideToggle(1000);
+});
+});
+
+
+/*
+function checkPosition()
+{
+	if($(window).width() < 767) {
+		$("#main_menu").css("display","none");
+	}
+$("#drop_down_menu").click(function() {
+$("#main_menu").slideToggle(1000);
+});
+}
+
+
+checkPosition();
+*/
+/*
+$(document).ready(function(){	
+$("#col_drop").click(function() {
+$("#main_menu").slideToggle(1000);
+});
+});
+*/	
+
+
+
+	
+$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});	
+
+
+	
+	
+//ADDED FOR SLIDING BOXES
+
+
+
+$(document.body ).ready(function(){
+
+  $( ".drop_down_box" ).each(function( i ) {
+ 
+
+  var header =  $(this).children(".drop_down_box_head").attr("id");
+  var div_box =  $(this).children(".drop_down_box_info").attr("id");
+ 
+    var chck_header = header.concat('b');
+  var hash_tag = '#';
+  
+/*alert(chck_header);
+alert(div_box);*/
+
+  if (chck_header == div_box)  {
+  
+  $(hash_tag.concat(header)).on('keypress',function(e) {
+    if(e.which == 13) {
+	$(hash_tag.concat(div_box)).slideToggle(1000);
+$(this).find(".drop_down-collapse").toggleClass(".glyphicon-triangle-bottom").toggleClass("glyphicon-triangle-top");
+	}
+	});
+  
+  
+$(hash_tag.concat(header)).click(function() {
+$(hash_tag.concat(div_box)).slideToggle(1000);
+$(this).find(".drop_down-collapse").toggleClass(".glyphicon-triangle-bottom").toggleClass("glyphicon-triangle-top");
+});
+  
+  
+  }
+ 
+
+	
+	
+  });
+});
+//END ADDED OF SLIDING BOXES
+	
+
+//START OF - NEW CODE AUGUST 2017 FOR SLIDING BOXES
+
+$( document.body ).ready(function(){
+  $(".box").each(function( i ) {
+ 
+  var header =  $(this).children("h2").attr("id");
+  var div_box =  $(this).children("div").attr("id");  
+  var chck_header = header.concat('b');
+  var hash_tag = '#';
+	$(hash_tag.concat(header)).click(function() {
+	$(hash_tag.concat(div_box)).slideToggle(300);
+	$(this).find('.menu-c').toggleClass('glyphicon-chevron-down').toggleClass('glyphicon-chevron-up'); 
+});
+});
+});
+
+//END OF  - NEW CODE AUGUST 2017 FOR SLIDING BOXES 
+
+
+</script>
+
+<script>
+$(document).ready(function(){
+    $('.stPrint').click(function(){
+        window.print();
+    });
+});
+</script>
+
+
+
+<script>
+$(document).ready(function(){
+$( "#covid" ).click(function() {
+   window.location.href = "http://www.moray.gov.uk/covid19";
+});
+	$(window).scroll(function(){
+		$(".sidelinks").css("top", Math.max(0, 210 - $(this).scrollTop()));
+});
+
+});
+</script>
+
+
+<link rel="stylesheet" media="print" type="text/css" href="/css/css_print.css">
+<title>Climate Change - Moray Council</title>
+</head>
+<body>
+					<div id="fb-root"></div>
+
+
+
+
+
+
+<div class="wrapper">
+	<header role="banner">
+
+<!-- Nav TOp Starts Here -->
+<div class="container-fluid" id="head">
+
+<div class="row">
+	<div class="col-sm-12" role="navigation" aria-label="Skip Header Change Font Size Switch Contrast Version">
+				<p><a href="#main" id="skip" title="Go to main content on page">Skip to main content</a> | <a class="switch" tabindex="0" id="mc1" title="Change site to default layout">Normal</a> or <a id="mc1_hc" class="switch" tabindex="0" title="Change site to high contrast layout">High Contrast Version</a></p>
+	</div>
+</div>
+
+
+
+
+<div class="row mclogo">
+	<div class="col-xs-12 col-sm-8 title_tab ">
+
+		<div id ="header_logos">
+			<a href="/index.html" title="Link to homepage"><img src="/images/MCLogo.png" id="logo_text" alt="Moray Council"></a>
+		</div>
+
+<div class="tab_cont" role="navigation" aria-label="tabs">
+					
+					<div class="col-xs-4 col-xs-offset-1 col-sm-1 col-md-1"><a href = "../moray_standard/page_88318.html">Pay</a></div>
+									    <div class="col-xs-4 col-xs-offset-1 col-sm-2 col-md-2"><a href = "../moray_standard/page_88163.html">Report</a></div> 					<div class="col-xs-4 col-xs-offset-1 col-sm-2 col-md-2"><a href = "../moray_standard/page_88160.html">Request</a></div> 
+										<div class="col-xs-4 col-xs-offset-1 col-sm-1 col-md-1"><a href = "http://newsroom.moray.gov.uk/">News</a></div> 					
+					<div class="col-xs-4 col-xs-offset-1 col-sm-2 col-md-2"><a href = "../moray_standard/page_100047.html">Contact</a></div>
+					<div class="col-xs-4 col-xs-offset-1 col-sm-2 col-md-2"><a href = "https://online.moray.gov.uk">myaccount</a></div>  					<div class="col-xs-1 col-sm-0 "></div>
+					
+</div>	
+	
+	</div>
+
+<!-- <div class="col-xs-0 col-sm-1"></div> -->
+	<div class="col-xs-12 col-sm-4 srch_box" role="search" aria-label="Search Site">
+		
+	<form id="search" class="form_class" action="//www.moray.gov.uk/search/">
+		
+	<div class="input-group">
+		
+			<span class="input-group-btn">
+			<button class="btn btn-default" name="sa">Search <span class="glyphicon glyphicon-search"></span></button>
+			</span>
+			<label for="q" class="hidden">Search Website</label><input type="text" class="form-control" placeholder="Search for..." aria-label="Search Moray Council Website" id="q" name="q">
+	</div>
+	</form>
+	<br>
+	
+	<form method="get" action="http://findmynearest.moray.gov.uk/my_moray.php">
+	
+	<div class="input-group">
+		
+				<span class="input-group-btn">
+			<button class="btn btn-default">Find My Nearest <span class="glyphicon glyphicon-pushpin"></span></button>
+			</span>
+			<label for="pcode" class="hidden">Search Find My Nearest</label><input type="text" class="form-control" name="pcode" id="pcode" aria-label="Search Find My Nearest" placeholder="eg IV30 1BA">
+    
+	</div>
+	</form>
+	
+	</div>
+	
+	
+</div>
+
+
+		<div class="row">
+		
+		
+		<div class="col-sm-12 moba2z" role="navigation" aria-label="Link to A to Z Page">
+					
+					<a href="../moray_standard/page_101140.html">A to Z</a>
+										</div>
+		
+					<div class="col-sm-12 norma2z" role="navigation" aria-label="A to Z Navigation">
+					A to Z of Services:
+<a href="../moray_standard/page_101016.html" title="Page A of A to Z">A</a>
+<a href="../moray_standard/page_101017.html" title="Page B of A to Z">B</a>
+<a href="../moray_standard/page_101022.html" title="Page C of A to Z">C</a>
+<a href="../moray_standard/page_101023.html" title="Page D of A to Z">D</a>
+<a href="../moray_standard/page_101024.html" title="Page E of A to Z">E</a>
+<a href="../moray_standard/page_101025.html" title="Page F of A to Z">F</a>
+<a href="../moray_standard/page_101026.html" title="Page G of A to Z">G</a>
+<a href="../moray_standard/page_101028.html" title="Page H of A to Z">H</a>
+<a href="../moray_standard/page_101029.html" title="Page I of A to Z">I</a>
+<a href="../moray_standard/page_101030.html" title="Page J of A to Z">J</a>
+<a href="../moray_standard/page_101031.html" title="Page K of A to Z">K</a>
+<a href="../moray_standard/page_101032.html" title="Page L of A to Z">L</a>
+<a href="../moray_standard/page_101033.html" title="Page M of A to Z">M</a>
+<a href="../moray_standard/page_101034.html" title="Page N of A to Z">N</a>
+<a href="../moray_standard/page_101035.html" title="Page O of A to Z">O</a>
+<a href="../moray_standard/page_101036.html" title="Page P of A to Z">P</a>
+<a href="../moray_standard/page_101037.html" title="Page Q of A to Z">Q</a>
+<a href="../moray_standard/page_101038.html" title="Page R of A to Z">R</a>
+<a href="../moray_standard/page_101040.html" title="Page S of A to Z">S</a>
+<a href="../moray_standard/page_101041.html" title="Page T of A to Z">T</a>
+<a href="../moray_standard/page_101042.html" title="Page U of A to Z">U</a>
+<a href="../moray_standard/page_101043.html" title="Page V of A to Z">V</a>
+<a href="../moray_standard/page_101044.html" title="Page W of A to Z">W</a>
+<a href="../moray_standard/page_101049.html" title="Page X of A to Z">X</a>
+<a href="../moray_standard/page_101050.html" title="Page Y of A to Z">Y</a>
+<a href="../moray_standard/page_101052.html" title="Page Z of A to Z">Z</a>
+	
+					</div>
+		</div>
+</div>
+
+ <!-- End Nav Top -->
+<!-- header section yellow alert message -->
+<!--<div style="background:yellow; color:#000; text-align: center; font-weight:bold; padding: 5px;"><span id="disruptionsTrue">There are disruptions affecting the following service areas: School online payments (iPayimpact). We apologise for any inconvenience this may cause. </span></div>-->
+
+<!--<div onclick="location.href='http://www.moray.gov.uk/moray_standard/page_135833.html';" style="background:yellow; color:#000; text-align: center; font-weight:bold; padding: 5px; cursor: pointer;"><span id="disruptionsTrue">There are disruptions affecting the following service areas: Online Services. Click for more details. </span></div>-->
+
+<!--<div id="covid" role="navigation" aria-label="Covid information link"><strong><a href ="http://www.moray.gov.uk/covid19" style="color: white;">Click or tap for Coronavirus-related service disruption</a></strong></div>-->
+<!-- header section yellow alert message ends -->
+
+
+
+
+
+
+
+
+
+
+
+<nav id="breadcrumb" aria-label="Breadcrumb Navigation">
+       <div id="bcrumb_txt"><span id="bcrumb_you_are_here">YOU ARE HERE &gt;</span>
+	    &#160;
+        	    <a href="/index.html" class="brd_crmb">Home</a>
+                                                                                                                                                                                                                                                                                                                            &#160;&gt;&#160;
+        	    <a href="/moray_section/section_88557.html" class="brd_crmb">Planning and Building Standards</a>
+                                                            &#160;&gt;&#160;
+        	    <a href="/moray_section/section_109845.html" class="brd_crmb">Local Plans & Strategies</a>
+                                                                                                                                                                                                            &#160;&gt;&#160;
+	    	    <a href="/moray_standard/page_136444.html" class="brd_crmb">Climate Change</a>
+                                                                                                                                                                                                                                    	   </div>
+</nav>    
+	</header>
+
+
+<!-- header section ends here -->
+
+
+<!-- main holding div start -->
+<div class="row">
+	<div id="main_sh">
+<div class="container-fluid">
+
+
+
+<!-- navigation section start -->
+
+ 
+
+
+	
+
+
+
+
+
+
+
+
+
+
+									
+
+<div class="col-sm-3">
+		<div id="drop_down_menu">
+			<div id="dca">
+			<a href="#">Main Menu</a>
+			</div>
+			<div id="dcb">
+			<span class="glyphicon glyphicon-menu-hamburger"></span>
+			</div>
+		</div>
+<div id="main_menu" class="list-group" role="navigation">
+																																																												      <a class="list-group-item nav" href="/moray_section/section_88557.html"><span class="glyphicon glyphicon-menu-down"></span> Planning and Building Standards</a>
+    						
+					
+																						
+																						
+																										 <a class="list-group-item subnav" href="/moray_section/section_109845.html"
+><span class="glyphicon glyphicon-menu-down"></span> Local Plans & Strategies</a>
+							    																
+			
+																
+			
+																
+			
+																
+			
+																
+			
+																
+			
+																
+			
+																
+			
+																
+			
+																
+			
+																
+			
+																									 							  <a class="list-group-item nav3" href="/moray_standard/page_136444.html"
+><span class="glyphicon glyphicon-menu-down"></span> Climate Change</a>
+
+							     																<a class="list-group-item" href="/moray_standard/page_141423.html"
+><span class="glyphicon glyphicon-menu-right"></span> Local Heat and Energy Efficiency Strategy (LHEES)</a>
+								    						 
+							
+			
+		
+    																																																	</div>
+
+
+
+
+
+</div>
+
+
+ <!-- navigation section finish -->
+
+<!-- Our Services Drop Down -->
+
+
+<!-- Our Services Drop Down End-->
+
+
+
+
+<!-- main section starts here -->
+	<div class="col-sm-9" id="main" role="main">
+		
+		<div id="container">
+						
+		<h1>Climate Change</h1>
+		
+		
+			
+		
+<p>Human driven climate change poses an urgent threat to the very delicate balance that enables us, and the nature we rely on, to thrive. We still have time to act, but that window is quickly closing and requires us to drastically reduce our emissions and restore nature.</p>
+
+<p>Moray Council recognises this urgency and is committed to:</p>
+
+<p>• reducing its own emissions<br />
+• supporting the wider Moray community to do the same<br />
+• enhancing biodiversity<br />
+• adapting to unavoidable impacts</p>
+
+<p><strong>You can read the full Climate Change Strategy 2020-2030 </strong><a href="/downloads/file136442.pdf"><strong>here</strong></a><strong>.</strong></p>
+
+<h2>Journey to Net Zero&#160;</h2>
+
+<p>Moray Council aims to reduce its carbon emissions to net zero by 2030.<br />
+<br />
+<strong>You can read the full Route Map to Net Zero </strong><a href="/downloads/file141432.pdf"><strong>here</strong></a><strong>.</strong></p>
+
+<h2>How are we doing so far?</h2>
+
+<p>A 17% decrease of greenhouse gas emissions was recorded between 2019/20 and 2020/21. Some of the key areas the council is working on to further reduce emissions are summarised below.</p>
+
+<p>To view the council’s full annual climate change reports, please visit the <a href="https://sustainablescotlandnetwork.org/reports/moray-council">Sustainable Scotland Network</a>.</p>
+
+<div class="drop_down_box">
+<div class="drop_down_box_head" tabindex="0" id="box1">Action to reduce council emissions&#160;
+
+<div class="glyphicon drop_down-collapse glyphicon-triangle-bottom"></div>
+</div>
+
+<div class="drop_down_box_info" id="box1b" style=" display: none;">
+<p><strong><span style=" color: #4E5D30;">Waste &#160;&#160;&#160;&#160; </span></strong>Moray has excellent recycling rates. Changes to <a href="http://www.moray.gov.uk/moray_section/section_104437.html">waste management</a> arrangements have recently seen a further increase in recycling and reduction of waste going to landfill. Gases emitted from landfill account for a large proportion of the council’s total emissions so diverting waste from landfill is a key priority. Progressive capping at the landfill site captures the gasses it produces which are then fed into the grid.&#160;</p>
+
+<p><strong><span style=" color: #4E5D30;">Heat and energy &#160;&#160;&#160;&#160; </span></strong>Electricity, gas and oil used in council buildings (including schools) combine to make up the majority of council emissions. The council is working to improve <a href="http://www.moray.gov.uk/moray_standard/page_62383.html">energy efficiency</a> in existing buildings and to ensure that construction of new buildings has minimal carbon impact. &#160;</p>
+
+<p><span style=" color: #4E5D30;"><strong>Transport &#160;&#160;&#160;&#160; </strong></span>Emissions from the council’s vehicle fleet mainly come from diesel fuel, the replacement of which for our HGV and large bus fleet presents a challenge. At the start of 2022, 8% of the council’s fleet has already been changed to electric, this and a programme to implement supporting infrastructure will continue. Other zero carbon emission alternatives are also being explored.</p>
+
+<p><strong><span style=" color: #4E5D30;">Food &#160;</span></strong>Moray Council signed the <a href="https://www.glasgowdeclaration.org/the-glasgow-declaration">Glasgow Food and Climate Declaration</a> in September 2021, committing us to developing sustainable food policies and strategies that will tackle the climate and nature emergency. The council’s award winning school catering team have ensured that all primary school meals now benefit pupil health, the environment and the local economy.</p>
+</div>
+</div>
+
+<div class="drop_down_box">
+<div class="drop_down_box_head" tabindex="0" id="box2">Supporting Moray to reduce its emissions&#160;
+
+<div class="glyphicon drop_down-collapse glyphicon-triangle-bottom"></div>
+</div>
+
+<div class="drop_down_box_info" id="box2b" style=" display: none;">
+<p><strong><span style=" color: #4E5D30;">Local Development &#160;&#160;&#160;&#160; </span></strong>A core aim of <a href="http://www.moray.gov.uk/moray_standard/page_133431.html">Moray’s Local Development Plan 2020</a> is to encourage efficient use of land and promote low carbon and sustainable development. Specific principles are in place requiring developers to design for low and zero carbon emissions and to avoid development on carbon rich soils.</p>
+
+<p><span style=" color: #4E5D30;"><strong>Local Heat and Energy Efficiency Strategy (LHEES)</strong></span> &#160;&#160;&#160;&#160; The Scottish Government’s <a href="https://www.gov.scot/policies/energy-efficiency/the-heat-in-buildings-programme/">LHEES</a> concept aims for area based plans to be developed in order to systematically improve the energy efficiency of buildings and decarbonise heat. Moray Council has participated in a pilot project to test the LHEES concept and build a knowledge base with baseline data and costing which would inform future work if LHEES becomes a statutory duty of local authorities.<br />
+<br />
+<strong><span style=" color: #4E5D30;">Education &#160;&#160;&#160;&#160; </span></strong>Moray schools deliver Learning for Sustainability as an important part of the curriculum, supporting understanding of climate change within our communities. Improvements to school buildings and grounds to further support <a href="http://www.moray.gov.uk/moray_standard/page_49488.html">outdoor learning</a> are ongoing across Moray.</p>
+
+<p><strong><span style=" color: #4E5D30;">Sustainable Travel &#160;&#160;&#160;&#160; </span></strong>The council promotes active and <a href="http://www.moray.gov.uk/moray_standard/page_57100.html">sustainable travel</a> through a number of initiatives. The transition to zero and low carbon forms of transport are being supported through infrastructure improvements as well as working with schools and communities to encourage behaviour change. &#160;&#160;</p>
+
+<p><span style=" color: #4E5D30;"><strong>Local Economy </strong></span>&#160;&#160;&#160; The council recognises the importance of vibrant and resilient local businesses in building a sustainable, low carbon economy for Moray. Our <a href="http://www.moray.gov.uk/moray_standard/page_52186.html">procurement strategy</a> reflects the Council’s commitment to community wealth building and increasing the opportunity for local suppliers to secure or participate in public contracts. Improved engagement with local businesses and enhanced supplier development initiatives are being progressed to support these objectives.</p>
+</div>
+</div>
+
+<div class="drop_down_box">
+<div class="drop_down_box_head" tabindex="0" id="box3">Action to restore biodiversity
+
+<div class="glyphicon drop_down-collapse glyphicon-triangle-bottom"></div>
+</div>
+
+<div class="drop_down_box_info" id="box3b" style=" display: none;">
+<p>The Council recognises its duty to protect and enhance biodiversity. Examples of projects aiming to enhance biodiversity include the creation of living lawns and wildflower meadows, plans for renewed management of valuable nature sites and to investigate carbon offsetting through new, biodiverse, woodland creation.</p>
+
+<p>The <a href="http://www.moray.gov.uk/moray_standard/page_133431.html">Moray Local Development Plan 2020</a> (MLDP 2020) includes a biodiversity policy which requires developers to support biodiversity. The Scottish Government’s draft National Planning Framework 4 aims to place nature and climate at the heart of decision making.</p>
+</div>
+</div>
+
+<div class="drop_down_box">
+<div class="drop_down_box_head" tabindex="0" id="box4">Adapting to climate change impacts
+
+<div class="glyphicon drop_down-collapse glyphicon-triangle-bottom"></div>
+</div>
+
+<div class="drop_down_box_info" id="box4b" style=" display: none;">
+<p>Massive investment in flood alleviation has been made by the council since 2014. This has already prevented damage from flooding and will continue to do so as extreme weather events increase as a result of climate change.</p>
+
+<p>Supplementary guidance for developers within the MLDP 2020 restricts development on land which is at significant risk of flooding, including that by erosion and sea level rise in coastal areas. The policy requires sustainable management of surface water to be built in to new developments, enhancing biodiversity and carbon sequestration as well as mitigating flood risk.</p>
+</div>
+</div>
+		
+			            					
+		</div>
+<!-- Social Network Section Starts here -->
+
+
+
+
+	   
+<!-- Social Network Section  ends here -->
+
+
+
+<!-- main section ends here -->
+
+
+
+                                      
+	<div class="more-serv">
+		<p class="main-title">Contact Us</p>
+		
+		
+			<p>Climate Change Strategy Officer<br>
+				The Moray Council<br>				Council Office, High Street<br>				Elgin<br>				IV30 1BX<br>			</p>
+															  
+			   
+					   
+		<p><span class='glyphicon glyphicon-envelope'></span><a href='mailto:climatechange@moray.gov.uk'> climatechange@moray.gov.uk</a></p>			   
+		
+			
+	</div>
+				                
+		<div class="more-serv">
+			<nav aria-label="Related Content">
+				<p><strong>Related Content</strong></p>	
+													
+	<a href="/moray_standard/page_57100.html">
+	  Sustainable Travel	</a>
+   | 
+	<a href="/moray_section/section_104437.html">Recycling and Waste</a>
+   | 
+	<a href="/moray_standard/page_62383.html">
+	  Energy Conservation	</a>
+   | 
+	<a href="/moray_standard/page_39861.html">
+	  Countryside	</a>
+   | 
+	<a href="/moray_standard/page_1861.html">
+	  Conservation Area Appraisals	</a>
+   | 
+	<a href="/moray_standard/page_80332.html">
+	  Flood Prevention	</a>
+   | 
+	<a href="/moray_standard/page_133431.html">
+	  Moray Local Development Plan 2020	</a>
+   | 
+	<a href="/moray_standard/page_49488.html">
+	  Outdoor Learning	</a>
+   | 										</nav></div>
+				                
+		<div class="more-serv">
+			<nav aria-label="External Links">
+				<p><strong>External Links</strong></p>	
+													
+	<a href="https://www.netzeronation.scot/" target="_blank">
+	  Net Zero Nation	</a>
+   | 
+	<a href="https://www.adaptationscotland.org.uk/" target="_blank">
+	  Adaptation Scotland	</a>
+   | 
+	<a href="https://www.ipcc.ch/" target="_blank">
+	  IPCC	</a>
+   | 
+	<a href="https://www.audit-scotland.gov.uk/publications/addressing-climate-change-in-scotland" target="_blank">
+	  Audit Scotland 2022 report	</a>
+   | 
+	<a href="https://www.nature.scot/" target="_blank">
+	  Nature Scot Link	</a>
+   | 
+	<a href="https://www.nature.scot/doc/garden-life" target="_blank">
+	  Garden for life	</a>
+   | 
+	<a href="http://www.nesbrec.org.uk/" target="_blank">
+	  Biological recording (NESBReC)	</a>
+   | 										</nav></div>
+				 		  		  		   
+
+
+	          		            
+		<div class="more-serv">
+			<nav aria-label="Online Services">
+				<p><strong>Online Services</strong></p>	
+													
+	<a href="/moray_standard/page_73842.html">A-Z of Online Forms</a>
+   | 
+	<a href="/moray_standard/page_75569.html">Data Protection Statement - Schools</a>
+   | 										</nav></div>
+				 		   	
+
+
+
+
+
+
+
+
+<!-- Contact Us begins -->
+
+	<h2>Rate this Page</h2>
+	
+	<div class="feedback_box">
+	  <ul>
+          <li><a class="good" id="feedback_good" rel="nofollow" href="#">Good</a></li>
+          <li><a class="average" id="feedback_average" rel="nofollow" href="#">Average</a></li>
+          <li><a class="poor" id="feedback_poor" rel="nofollow" href="#">Poor</a></li>
+        </ul>
+	</div>
+	
+	</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+<!-- main holding div end -->
+
+
+
+<!-- footer section begins here -->
+
+
+<!-- Footer Starts Here -->
+
+			
+			
+	
+
+
+ <footer class="footer">
+ 
+ 
+ <!-- Social Media start -->
+	<div id="social_med_lvl" class="row col-xs-12 no-gutters">
+		<div id="fb_logo" class="col-xs-offset-3 col-xs-2 txt_cent"> <a href="https://www.facebook.com/MorayCouncil/" title="Go to Facebook"> <span class="fa fa-facebook-square soc_med_logos" role="img" aria-label="Facebook"></span> <span class="sr-only">Facebook</span></a></div>
+		<div id="twit_logo" class="col-xs-2 col-sm-2 txt_cent"> <a href="https://twitter.com/MorayCouncil" title="Go to Twitter"> <span class="fa fa-twitter-square soc_med_logos" role="img" aria-label="Twitter"></span> <span class="sr-only">Twitter</span></a></div>
+		<div id="yt_logo" class="col-xs-2  col-sm-2 txt_cent"> <a href="https://www.youtube.com/user/TheMorayCouncil" title="Go to You Tube"><span class="fa fa-youtube-square soc_med_logos" role="img" aria-label="You Tube"></span> <span class="sr-only">You Tube</span></a></div>
+	</div>
+<!-- Social Media End -->
+
+
+ <!-- Foot level one start -->
+	<div id="foot_lvl_one" class="row col-xs-12 no-gutters">
+		<div>
+		<a href="http://www.moray.gov.uk/moray_standard/page_125766.html">Accessibility</a> | <a href="http://www.moray.gov.uk/moray_standard/page_41071.html">Legal Notices</a> | <a href="http://www.moray.gov.uk/moray_standard/page_43714.html">Translation</a>
+		</div>
+	</div>
+<!-- Foot level one End -->
+
+
+<!-- Foot level two start -->
+<div id="foot_lvl_two" class="row col-xs-12 no-gutters">
+<a  href="/index.html" title="Moray Council website">
+	<img src="/images/mc_white_logo.png" alt="Moray Council">
+</a>
+		
+	<p>Moray Council Office, High Street, Elgin, Moray, IV30 1BX, Scotland, United Kingdom</p>	
+</div>
+<!-- Foot level two start -->
+ 
+	
+	
+    
+    </footer>		
+
+
+
+
+	 <!-- End Footer -->
+ <!-- Cookie Control Triangle Start -->
+<script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.5.min.js"></script>
+<script src="/js/cookieconfig.js" type="text/javascript"></script>
+<!-- Cookie Control Triangle End -->
+
+<!-- footer section ends here -->
+<script type="text/javascript" src="/js/bottom.js"></script>
+
+<script src="/js/navi.js"></script>  
+<script type="text/javascript">
+$(document).ready(blueHeaderResize);
+$(window).on('resize',blueHeaderResize);
+//$(window).trigger('resize');
+$(document).ready(blueBoxResize);
+$(window).on('resize',blueBoxResize);
+
+function blueBoxResize() {
+    var maxHeight = -1;
+
+    $('#main_area .box_cont_home ul').each(function() {
+      maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+    });
+
+	
+	
+    $('#main_area .box_cont_home').each(function() {
+      $(this).height(maxHeight + 10);
+    });
+}
+
+
+function blueHeaderResize() {
+    var maxHeighttitle = -1;
+
+    $('#main_area .box_head_home a').each(function() {
+     maxHeighttitle = maxHeighttitle > $(this).height() ? maxHeighttitle : $(this).height();
+    });
+
+	    $('#main_area .box_head_home').each(function() {
+      $(this).height(maxHeighttitle + 3);
+    });
+}
+
+
+//THIS IS FOR SCROLL TO TOP
+// Only enable if the document has a long scroll bar
+		// Note the window height + offset
+	//	if ( ($(window).height() + 100) < $(document).height() ) {
+		if ( ($(window).height() + 300) < ($(document).height()) ) {
+			$('#top-link-block').removeClass('hidden').affix({
+				// how far to scroll down before link "slides" into view
+			//	offset: {top:100}
+				offset: {top:300}
+			});
+		}
+
+
+// this is for font-size 		
+
+
+  $('#increase').click(function() {
+     $('#main_sh').css("font-size", function() {
+            return parseInt($(this).css('font-size')) + 1 + 'px';
+        });
+		});
+		
+	 $('#default_size').click(function() {
+     $('#main_sh').css("font-size", function() {
+	 //alert(parseInt($(this).css('font-size')));
+         //   return parseInt($(this).css('font-size')) + 'px';
+		
+	// return $(this).css('font-size:initial');
+	return $(this).css('font-size:initial');
+	 });
+		});	
+		
+
+  $('#decrease').click(function() {
+     $('#main_sh').css("font-size", function() {
+            return parseInt($(this).css('font-size')) - 1 + 'px';
+        });
+		});
+
+		
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
