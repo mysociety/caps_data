@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+
+
+<html xml:lang="en-gb" lang="en-gb">
+
+<head>
+    <!-- Google tag (gtag.js) --> 
+    <script async src=https://www.googletagmanager.com/gtag/js?id=G-0T0BMF6FWY></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-0T0BMF6FWY'); </script>
+
+    <base href="https://www.worcester.gov.uk/climate-emergency/reducing-carbon-emissions" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="Worcester City Council" />
+	<title>Reducing carbon emissions - Worcester City Council</title>
+	<link href="https://www.worcester.gov.uk/climate-emergency/reducing-carbon-emissions" rel="canonical" />
+	<link href="/media/com_fileman/css/site.css?4809ffb0" rel="stylesheet" type="text/css" />
+	<link href="/media/modals/css/bootstrap.min.css?v=11.11.0.p" rel="stylesheet" type="text/css" />
+	<link href="/media/jui/css/chosen.css?787e51281eb31c1901f3da9f4baa37f6" rel="stylesheet" type="text/css" />
+	<link href="/media/com_finder/css/finder.css?787e51281eb31c1901f3da9f4baa37f6" rel="stylesheet" type="text/css" />
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"af52d660eafe11377d159df60fd812ec","system.paths":{"root":"","base":""},"rl_modals":{"class":"modal_link","defaults":{"opacity":"0.8","maxWidth":"95%","maxHeight":"95%","current":"{current} \/ {total}","previous":"previous","next":"next","close":"close","xhrError":"This content failed to load.","imgError":"This image failed to load."},"auto_correct_size":1,"auto_correct_size_delay":0,"disable_background_scrolling":0,"disable_on_mobile":0,"disable_on_mobile_splash":0,"mobile_max_width":767,"open_by_url":null}}</script>
+	<script src="/media/jui/js/jquery.min.js?787e51281eb31c1901f3da9f4baa37f6" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery-noconflict.js?787e51281eb31c1901f3da9f4baa37f6" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery-migrate.min.js?787e51281eb31c1901f3da9f4baa37f6" type="text/javascript"></script>
+	<script src="/media/koowa/framework/js/koowa.kquery.js?8f88f7e2" type="text/javascript"></script>
+	<script src="/media/system/js/caption.js?787e51281eb31c1901f3da9f4baa37f6" type="text/javascript"></script>
+	<script src="/media/system/js/core.js?787e51281eb31c1901f3da9f4baa37f6" type="text/javascript"></script>
+	<script src="/media/modals/js/jquery.touchSwipe.min.js" type="text/javascript"></script>
+	<script src="/media/modals/js/jquery.modals.min.js?v=11.11.0.p" type="text/javascript"></script>
+	<script src="/media/modals/js/script.min.js?v=11.11.0.p" type="text/javascript"></script>
+	<script src="//cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js" type="text/javascript"></script>
+	<script src="/media/jui/js/chosen.jquery.min.js?787e51281eb31c1901f3da9f4baa37f6" type="text/javascript"></script>
+	<script src="/media/jui/js/bootstrap.min.js?787e51281eb31c1901f3da9f4baa37f6" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery.autocomplete.min.js?787e51281eb31c1901f3da9f4baa37f6" type="text/javascript"></script>
+	<script type="text/javascript">
+kQuery(function($) {
+                $('.fileman_track_download').on('click', function() {
+                    var el = $(this);
+
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'Download', {
+                            'event_category': 'FILEman',
+                            'event_label': el.data('title'),
+                            'name': el.data('title'),
+                            'value': parseInt(el.data('id'), 10)
+                        });
+                    }
+                    else if (typeof window.GoogleAnalyticsObject !== 'undefined' && typeof window[window.GoogleAnalyticsObject] !== 'undefined') {
+                        window[window.GoogleAnalyticsObject]('send', 'event', 'FILEman', 'Download', el.data('title'), parseInt(el.data('id'), 10));
+                    } 
+                    else if (typeof _gaq !== 'undefined' && typeof _gat !== 'undefined') {
+                        if (_gat._getTrackers().length) {
+                            _gaq.push(function() {
+                                var tracker = _gat._getTrackers()[0];
+                                tracker._trackEvent('FILEman', 'Download', el.data('title'), parseInt(el.data('id'), 10));
+                            });
+                        }
+                    }
+                });
+
+                if (typeof _paq !== 'undefined') {
+                    _paq.push(['setDownloadClasses', 'fileman_track_download']);
+                    _paq.push(['trackPageView']);
+                }
+            });jQuery(window).on('load',  function() {
+				new JCaption('img.caption');
+			});
+	jQuery(function ($) {
+		initChosen();
+		$("body").on("subform-row-add", initChosen);
+
+		function initChosen(event, container)
+		{
+			container = container || document;
+			$(container).find(".advancedSelect").chosen({"disable_search_threshold":10,"search_contains":true,"allow_single_deselect":true,"placeholder_text_multiple":"Type or select some options","placeholder_text_single":"Select an option","no_results_text":"No results match"});
+		}
+	});
+	jQuery(function($){ initTooltips(); $("body").on("subform-row-add", initTooltips); function initTooltips (event, container) { container = container || document;$(container).find(".hasTooltip").tooltip({"html": true,"container": "body"});} });
+jQuery(document).ready(function() {
+	var value, searchword = jQuery('#mod-finder-searchword107');
+
+		// Get the current value.
+		value = searchword.val();
+
+		// If the current value equals the default value, clear it.
+		searchword.on('focus', function ()
+		{
+			var el = jQuery(this);
+
+			if (el.val() === 'Search ...')
+			{
+				el.val('');
+			}
+		});
+
+		// If the current value is empty, set the previous value.
+		searchword.on('blur', function ()
+		{
+			var el = jQuery(this);
+
+			if (!el.val())
+			{
+				el.val(value);
+			}
+		});
+
+		jQuery('#mod-finder-searchform107').on('submit', function (e)
+		{
+			e.stopPropagation();
+			var advanced = jQuery('#mod-finder-advanced107');
+
+			// Disable select boxes with no value selected.
+			if (advanced.length)
+			{
+				advanced.find('select').each(function (index, el)
+				{
+					var el = jQuery(el);
+
+					if (!el.val())
+					{
+						el.attr('disabled', 'disabled');
+					}
+				});
+			}
+		});
+	var suggest = jQuery('#mod-finder-searchword107').devbridgeAutocomplete({
+		serviceUrl: '/component/finder/?task=suggestions.suggest&amp;format=json&amp;tmpl=component',
+		paramName: 'q',
+		minChars: 1,
+		maxHeight: 400,
+		zIndex: 9999,
+		deferRequestBy: 500,
+        triggerSelectOnValidInput: false,
+        onSelect: function (suggestion) {
+       		jQuery('#mod-finder-searchform107').submit();
+   		}	
+	});});
+	</script>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Shortcut Icon" href="/templates/wcc_theme/images/logo/wcc-favicon.ico" />
+    <link rel="apple-touch-icon" href="/templates/wcc_theme/images/logo/apple-touch-icon.png">
+    <link href="/templates/wcc_theme/template.css" type="text/css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+            <script src="/templates/wcc_theme/js/html5shiv.js"></script>
+            <script src="/templates/wcc_theme/js/respond.min.js"></script>
+        <![endif]-->
+    <script data-ad-client="ca-pub-6396821782604850" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
+    </script>
+    
+</head>
+
+<body class="static">
+    <div class="holder">
+        <header id="header" class="block">
+                        <div class="skipnav"><a href="https://www.worcester.gov.uk/climate-emergency/reducing-carbon-emissions#content">Skip to main content</a></div>
+            <div class="header-background span12 max-height-banner">
+                <div class="container">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nopadding">
+                        <a href="/"> <img class="main-logo" src="/templates/wcc_theme/images/logo/wcc-logo.png" alt="Worcester City Council logo"> </a>
+                    </div>
+                </div>
+            </div>
+            <div id="main-nav-wrapper" class="nav-wrapper ">
+                <nav aria-label="Primary" id="nav" class="nav-primary navbar navbar-default z-index-5 " style="top:0px;">
+                    <div class="container">
+                        <button type="button" id="mobile-menu-button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!---DESKTOP NAV -->
+                                                        <div id="mob-menu" class="collapse navbar-collapse navbar-ex1-collapse">
+                                        
+  <ul id="navbar" class="nav  mod-list navbar-nav navbar-left">
+  <li class="item-101 default"><a href="/" ><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li><li class="item-113"><a href="/council" class="hidden-md hidden-sm">About your Council</a></li><li class="item-114"><a href="/pay-it" >Pay It</a></li><li class="item-576"><a href="/report-it" >Report It</a></li><li class="item-625"><a href="/request-it" >Request It</a></li><li class="item-905"><a href="/news" >News</a></li><li class="item-583"><a href="/contact-us" >Contact Us</a></li><li class="item-628 dropdown parent"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Services <span class="caret more-caret-icon"></span></a><ul class="dropdown-menu"><li class="item-630"><a href="http://maps.worcester.gov.uk/mylocalarea_wcc/mylocalarea.html#/search" >My Local Area</a></li><li class="item-633"><a href="/council" >About your Council</a></li><li class="item-636"><a href="/advice-benefits" >Advice &amp; Benefits</a></li><li class="item-640"><a href="/bereavement" >Bereavement Services</a></li><li class="item-1223"><a href="https://www.worcester.gov.uk/preparing-for-brexit" >Brexit: Preparing for Brexit</a></li><li class="item-647"><a href="/business" >Business</a></li><li class="item-1375"><a href="https://www.worcester.gov.uk/climate-emergency" >Climate Emergency</a></li><li class="item-650"><a href="/community-centres-development" >Community Development and Centres</a></li><li class="item-652"><a href="/community-safety" >Community Safety</a></li><li class="item-655"><a href="/council-tax" >Council Tax</a></li><li class="item-659"><a href="/councillors-democracy" >Councillors &amp; Democracy</a></li><li class="item-660"><a href="http://www.worcestershire.gov.uk/info/20006/schools_education_and_learning" >Education</a></li><li class="item-661"><a href="/environmental-health" >Environmental Health</a></li><li class="item-662"><a href="https://www.worcesterguildhall.co.uk/" >Guildhall Worcester</a></li><li class="item-663"><a href="https://www.worcestershire.gov.uk/info/20324/advice_care_health_and_support" >Health &amp; Social Care</a></li><li class="item-664"><a href="/housing" >Housing</a></li><li class="item-665"><a href="/jobs-careers" >Jobs &amp; Careers</a></li><li class="item-666"><a href="/parking" >Parking</a></li><li class="item-667"><a href="/planning" >Planning</a></li><li class="item-668"><a href="/leisure-parks-allotments" >Leisure, Parks &amp; Allotments</a></li><li class="item-669"><a href="/recycling-waste" >Recycling &amp; Waste</a></li><li class="item-670"><a href="/street-care-cleansing" >Street Care &amp; Cleansing</a></li><li class="item-671"><a href="https://www.worcestershire.gov.uk/info/20007/travel_and_roads" >Travel &amp; Roads</a></li><li class="item-672 parent"><a href="/notices" >Notices</a></li></ul></li></ul>
+
+
+
+                                </div>
+                                                <!---MOBILE NAV/ SOCIAL -->
+                        <div class="navbar-header">
+                                                                <div id="top-social-mobile-con">
+                                        
+<div class="finder pull-right navbar-search">
+	<form id="mod-finder-searchform107" action="/search?f=1" method="get" class="form-search clearfix" role="search">
+  		<div class="input-group">
+          <label for="mod-finder-searchword107" class="hiddensearchlabel">Search:</label><input type="text" class="form-control" name="q" id="mod-finder-searchword107" value="" placeholder="Search ..."/><span class="input-group-btn"><button class="btn btn-success finder" type="submit" title="Go"><span class="glyphicon glyphicon-search"></span><span class="sr-only">Search</span></button></span>        </div>
+
+						<input type="hidden" name="f" value="1" />	</form>
+</div>
+
+                                    </div>
+                                                    </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="block push">
+            <div class="container app_holder">            <div class="col-md-9 col-md-push-3 main-col-right">
+                
+
+<div class="custom"  >
+	<div class="adunit visible-md visible-lg visible-sm" style="display: none !important;">
+<div class="row"><small><a href="/notices/website-advertising">Advertisement</a></small></div>
+<!-- Desktop/tablet ad unit --> <ins class="adsbygoogle" style="display: inline-block; width: 728px; height: 90px;" data-ad-client="ca-pub-6396821782604850" data-ad-slot="6600235974"></ins>
+<script>// <![CDATA[
+(adsbygoogle = window.adsbygoogle || []).push({});
+// ]]></script>
+</div>
+<div class="adunit visible-xs">
+<div class="row"><small>Advertisement</small></div>
+<!-- Mobile/square ad unit --> <ins class="adsbygoogle" style="display: inline-block; width: 250px; height: 250px;" data-ad-client="ca-pub-6396821782604850" data-ad-slot="3311565955"></ins>
+<script>// <![CDATA[
+(adsbygoogle = window.adsbygoogle || []).push({});
+// ]]></script>
+</div></div>
+
+                <nav aria-label="breadcrumb">
+	<ul itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
+					<li>
+				You are here: &#160;
+			</li>
+		
+						<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+											<a itemprop="item" href="/" class="pathway"><span itemprop="name">Worcester City Council</span></a>
+					
+											<span class="divider" aria-hidden="true"></span>
+										<meta itemprop="position" content="1">
+				</li>
+							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+											<a itemprop="item" href="/climate-emergency" class="pathway"><span itemprop="name">Climate Emergency</span></a>
+					
+											<span class="divider" aria-hidden="true"></span>
+										<meta itemprop="position" content="2">
+				</li>
+							<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="active">
+					<span itemprop="name">
+						Reducing carbon emissions					</span>
+					<meta itemprop="position" content="3">
+				</li>
+			</ul>
+</nav>
+                <div id="system-message-container">
+	</div>
+
+                <main id="content">
+                    <div class="item-page" itemscope itemtype="https://schema.org/Article">
+	<meta itemprop="inLanguage" content="en-GB" />
+	
+		
+			<div class="page-header">
+					<h1 itemprop="headline">
+				Reducing carbon emissions			</h1>
+									</div>
+					
+		
+	
+	
+		
+			        <!--  -->
+		<div itemprop="articleBody" id="itemtext">
+		<p>Worcester City Council&rsquo;s <a href="/component/fileman/file/PDF%20Documents/Sustainability/Environmental%20Sustainability%20Strategy.pdf?routed=1&amp;container=fileman-files">environmental sustainability strategy</a> is supported by an action plan.</p>
+<p>This includes actions and timescales to:</p>
+<ul>
+<li><strong>Decarbonise buildings owned by Worcester City Council</strong> &ndash; including the Commandery, Guildhall and Museum and Art Gallery</li>
+<li><strong>Reduce emissions from Council vehicles &ndash; </strong>in particular, its refuse collection fleet</li>
+<li><strong>Encourage active travel &ndash; </strong>making it easier and safer for people to walk and cycle around the city</li>
+<li><strong>Improve energy efficiency of Worcester homes</strong> &ndash;&nbsp;<a href="/housing/home-energy-advice">Advice and information on grants</a></li>
+<li><strong>Install more electric charging points in Worcester</strong>- backed by a &pound;200K investment in 2022-3</li>
+<li><strong><a href="/community-centres-development/environmental-community-grant">Fund more environmental initiatives</a> &ndash; </strong>grants of up to &pound;1,000 are available.</li>
+<li><strong>Plant more trees &ndash; </strong>Worcester City Council has supported the planting of well over 10,000 trees since 2017.</li>
+<li><strong><a href="https://www.worcestershire.gov.uk/info/20684/lets_waste_less">Reduce waste and recycle and re-use more</a></strong></li>
+<li><strong>Eliminate single-use plastic </strong>in partnership with <a href="https://www.facebook.com/plasticfreeworcester">Plastic Free Worcester</a></li>
+</ul>
+<p><a href="/component/fileman/file/PDF%20Documents/Climate%20Emergency/Appendix%201%20Action%20Plan.pdf?routed=1&amp;container=fileman-files" type="application/pdf" data-processed="data-processed" class=" fileman_track_download k-ui-namespace">
+
+
+    
+<span class="k-icon-document-pdf  " aria-hidden="true"></span>
+<span class="k-visually-hidden">pdf</span>
+
+
+View the full action plan
+
+<span>(<!--
+-->204 KB<!--
+-->)</span>
+
+
+</a>.</p> 	</div>
+          
+	
+							</div>
+                </main>
+                
+
+<div class="custom"  >
+	<div class="adunit visible-md visible-lg visible-sm" style="display: none !important;">
+<div class="row"><small><a href="/notices/website-advertising">Advertisement</a></small></div>
+<!-- Desktop/tablet ad unit --> <ins class="adsbygoogle" style="display: inline-block; width: 728px; height: 90px;" data-ad-client="ca-pub-6396821782604850" data-ad-slot="6600235974"></ins>
+<script>// <![CDATA[
+(adsbygoogle = window.adsbygoogle || []).push({});
+// ]]></script>
+</div>
+<div class="adunit visible-xs">
+<div class="row"><small>Advertisement</small></div>
+<!-- Mobile/square ad unit --> <ins class="adsbygoogle" style="display: inline-block; width: 250px; height: 250px;" data-ad-client="ca-pub-6396821782604850" data-ad-slot="3311565955"></ins>
+<script>// <![CDATA[
+(adsbygoogle = window.adsbygoogle || []).push({});
+// ]]></script>
+</div></div>
+
+            </div>
+            <aside class="col-md-3 col-md-pull-9 main-col-left">
+                <div class="sidenav-panel panel-group">
+	<div class="panel panel-default">
+		<div id="sidenav-panel-heading" class="panel-heading">
+			<h2 class="panel-title">
+				Climate Emergency</span>
+			</h2>
+		</div>
+
+		<div id="collapseSideMenu" class="">
+			<nav aria-label="Secondary" class="panel-body">
+				<ul id="sidenav" class="nav menu mod-list" >
+					<li class="item-1373 current active"><a href="/climate-emergency/reducing-carbon-emissions" >Reducing carbon emissions</a></li><li class="item-1374"><a href="/climate-emergency/enhancing-biodiversity" >Enhancing biodiversity</a></li>				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+                
+
+<div class="custom"  >
+	<div class="adunit visible-md visible-lg" style="display: none !important;">
+<div class="row"><small><a href="/notices/website-advertising">Advertisement</a></small></div>
+<!-- Mobile/square ad unit --> <ins class="adsbygoogle" style="display: inline-block; width: 250px; height: 250px;" data-ad-client="ca-pub-6396821782604850" data-ad-slot="3311565955"></ins>
+<script>// <![CDATA[
+(adsbygoogle = window.adsbygoogle || []).push({});
+// ]]></script>
+</div></div>
+
+            </aside>
+
+				</div>
+			</div>
+			<footer id="footer" class="block">
+				<div class="span12 footer-background1">
+					<div class="container">
+						<div class="visible-xs">
+							    
+  <ul id="social-bottom-nav" class="nav  mod-list ">
+  <li class="item-103"><a href="https://www.facebook.com/worcester" title="Worcester City Council's Facebook page" target="_blank" rel="noopener noreferrer"><img src="/files/_Other/facebook-logo.png" alt="Facebook" class="social-logos-navbar" /></a></li><li class="item-104"><a href="https://twitter.com/myworcester" title="Worcester City Council's Twitter page" target="_blank" rel="noopener noreferrer"><img src="/files/_Other/twitter-logo.png" alt="Twitter" class="social-logos-navbar" /></a></li><li class="item-105"><a href="https://www.instagram.com/myworcester" title="Worcester City Council's Instagram page" target="_blank" rel="noopener noreferrer"><img src="/files/_Other/instagram-logo.png" alt="Instagram" class="social-logos-navbar" /></a></li></ul>
+
+
+ 
+						</div>
+						<div id="footer-info-module">
+                        	
+
+<div class="custom"  >
+	<p><span style="color: #000000;"><strong>The Guildhall, High Street, Worcester, WR1 2EY -&nbsp;</strong><a class="black-link" href="/contact-us/driving-directions">Directions to Council Offices</a></span></p>
+<p><a class="black-link" href="https://www.gov.uk" target="_blank" rel="noopener noreferrer">GOV.UK - For more Government Services and information</a></p></div>
+ 
+                        </div>
+					</div>
+				</div>
+				<div class="span12 footer-background2">
+					<div class="container">
+						<script type="text/javascript">
+	var config = {
+	apiKey: 'a22cecf22700324c67f5e718639b19e320e3db16',
+	product: 'PRO_MULTISITE',
+	logConsent : false,
+	encodeCookie : true,
+	subDomains : true,
+	sameSiteCookie : true,
+	sameSiteValue : 'Strict',
+  mode : 'GDPR',
+
+	setInnerHTML: true,
+	initialState: 'OPEN',
+	position: 'LEFT',
+	rejectButton: false,
+	theme: 'DARK',
+	layout: 'SLIDEOUT',
+	toggleType: 'slider',
+	closeStyle: 'labelled',
+	notifyDismissButton: true,
+	settingsStyle: 'button',
+	consentCookieExpiry: 90,
+	acceptBehaviour: 'all',
+	closeOnGlobalChange: true,
+
+	accessibility : {
+		accessKey: 'C',
+		highlightFocus: true,
+		overlay: true,
+		outline: false,
+	},
+
+  onLoad: function () {},
+
+	text : {
+		title: 'This site uses cookies',
+		intro:  '<p>Some of these cookies are essential, while others help us to serve you relevant content and improve your experience by providing insights into how the site is being used. Select \'Accept all cookies\' to allow all cookies on this site. Alternatively, choose your preferences below and then click \'Close\'.</p><p><a href="/notices/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy policy</a></p><p><a href="/notices/website-advertising" target="_blank" rel="noopener noreferrer">Learn more about website advertising</a></p>',
+		necessaryTitle : 'Necessary cookies',
+		necessaryDescription : '<p>Necessary cookies enable core functionality. The website cannot function properly without these cookies, and can only be disabled by changing your browser preferences.</p>',
+		thirdPartyTitle : 'Warning: Some cookies require your attention',
+		thirdPartyDescription : '<p>Consent for the following cookies could not be automatically revoked. Please follow the link(s) below to opt out manually.</p>',
+		accept : 'Accept',
+		settings : 'Cookie Preferences',
+		acceptSettings : 'Accept all cookies',
+		acceptRecommended : 'Accept recommended settings',
+		rejectSettings : 'Reject all non-essential cookies',
+		reject : 'I Do Not Accept',
+		notifyTitle : 'Your choice regarding cookies on this site',
+		notifyDescription : '<p>We use cookies to optimise site functionality and give you the best possible experience.</p>',
+		closeLabel : 'Close',
+		accessibilityAlert : 'This site uses cookies to store information. Press accesskey C to learn more about your options.',
+		cornerButton : 'Set cookie preferences.',
+		landmark : 'Cookie preferences.',
+		on : 'On',
+		off : 'Off',
+		showVendors : '',
+		thirdPartyCookies : '',
+		readMore : '',
+		},
+		branding : {
+		fontColor: '',
+		fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif;',
+		fontSizeTitle: '1.2em',
+		fontSizeHeaders: '1em',
+		fontSize: '1em',
+		backgroundColor: '',
+		toggleText: '',
+		toggleColor: '',
+		toggleBackground: '',
+		alertText: '',
+		alertBackground: '',
+		acceptText: '',
+		acceptBackground: '',
+		rejectText: '',
+		rejectBackground: '',
+		closeText: '',
+		closeBackground: '',
+		notifyFontColor: '',
+		notifyBackgroundColor: '',
+
+				buttonIcon: null,
+					buttonIconWidth: '64px',
+		buttonIconHeight: '64px',
+		removeIcon: true,
+		removeAbout: true	},
+		 
+
+	    
+		necessaryCookies: [ 'JSESSIONID','joomla_user_state' ],
+				optionalCookies: [
+					{
+			name: 'analytics',
+			label: 'Analytics cookies',
+			description: 'Analytics cookies help us to collect useful data including how you use and interact with our site and which pages you visit. We use this information for reporting, to identify website usage trends and understand how we can improve the site to better meet your needs.',
+			cookies: [ '_ga','_gid','_gat','__utma' ],
+			onAccept : function(){
+				 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-603591-1', 'auto');
+                ga('send', 'pageview');			},
+			onRevoke : function(){
+				window['ga-disable-UA-603591-1'] = true;			},
+				 
+			recommendedState : 'off',
+			lawfulBasis : 'consent',
+							},
+							{
+			name: 'advertising',
+			label: 'Advertising cookies',
+			description: 'Advertising cookies help us to show ads that are relevant to you. ',
+			cookies: [ '_gad', 'NID', 'ANID' ],
+			onAccept : function(){
+				(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0;
+var elements = document.getElementsByClassName('adunit');
+
+i=0;
+
+while(i != elements.length) {
+	elements[i].style.display = 'block';
+	i++
+}			},
+			onRevoke : function(){
+				(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=1;
+var elements = document.getElementsByClassName('adunit');
+
+i=0;
+
+while(i != elements.length) {
+	elements[i].style.display = 'none';
+	i++
+}			},
+				 
+			recommendedState : 'off',
+			lawfulBasis : 'consent',
+							},
+					],
+				statement:  {
+		description: '',
+		name: '',
+		url: '',
+		updated: ''
+	},
+	  iabCMP: false,
+  iabConfig: {
+		publisherCC: 'GB',
+		fullLegalDescriptions: true,
+		dropDowns: false,
+		saveOnlyOnClose: false,
+  },
+			};
+
+	CookieControl.load( config );
+</script>
+	    
+  <ul id="footer-nav" class="spaced-text list-inline mobile-inline-menu no-left-margin ">
+  <li class="item-102"><a href="/notices/copyright" >Copyright</a></li><li class="item-106"><a href="/notices/privacy-policy" >Privacy Policy</a></li><li class="item-1150"><a href="#" class="cookiechoice ">Cookies</a></li><li class="item-1151"><a href="/notices/accessibility" >Accessibility</a></li><li class="item-107"><a href="/notices/disclaimer" >Disclaimer</a></li><li class="item-763"><a href="/contact-us" >Contact Us</a></li><li class="item-760"><a href="/sitemap" >Sitemap</a></li><li class="item-108 divider"><span class="separator "><!-- START: Modals --><a href="#modal-login" class="modal_link" data-modal-inline="true" data-modal-class-name="no_title">Login</a><!-- END: Modals --> <!-- START: Modals --><div style="display:none;"><div id="modal-login"> <!-- START: Modules Anywhere --><form action="/climate-emergency/reducing-carbon-emissions" method="post" id="login-form" class="form-inline">
+		<div class="userdata">
+		<div id="form-login-username" class="control-group">
+			<div class="controls">
+									<div class="input-prepend">
+						<span class="add-on">
+							<span class="icon-user hasTooltip" title="Username"></span>
+							<label for="modlgn-username" class="element-invisible">Username</label>
+						</span>
+						<input id="modlgn-username" type="text" name="username" class="input-small" tabindex="0" size="18" placeholder="Username" autocomplete="username" />
+					</div>
+							</div>
+		</div>
+		<div id="form-login-password" class="control-group">
+			<div class="controls">
+									<div class="input-prepend">
+						<span class="add-on">
+							<span class="icon-lock hasTooltip" title="Password">
+							</span>
+								<label for="modlgn-passwd" class="element-invisible">Password							</label>
+						</span>
+						<input id="modlgn-passwd" type="password" name="password" class="input-small" tabindex="0" size="18" placeholder="Password" autocomplete="current-password" />
+					</div>
+							</div>
+		</div>
+						<div id="form-login-remember" class="control-group checkbox">
+			<label for="modlgn-remember" class="control-label">Remember Me</label> <input id="modlgn-remember" type="checkbox" name="remember" class="inputbox" value="yes"/>
+		</div>
+				<div id="form-login-submit" class="control-group">
+			<div class="controls">
+				<button type="submit" tabindex="0" name="Submit" class="btn btn-primary login-button">Log in</button>
+			</div>
+		</div>
+					<ul class="unstyled">
+						</ul>
+		<input type="hidden" name="option" value="com_users" />
+		<input type="hidden" name="task" value="user.login" />
+		<input type="hidden" name="return" value="aHR0cHM6Ly93d3cud29yY2VzdGVyLmdvdi51ay9jbGltYXRlLWVtZXJnZW5jeS9yZWR1Y2luZy1jYXJib24tZW1pc3Npb25z" />
+		<input type="hidden" name="af52d660eafe11377d159df60fd812ec" value="1" />	</div>
+	</form>
+<!-- END: Modules Anywhere --> </div></div><!-- END: Modals --></span>
+</li></ul>
+
+
+ 
+					</div>
+				</div>
+			</footer>
+		</div>
+        <script src="/templates/wcc_theme/js/jquery-ui.min.js"></script>
+        <script src="/templates/wcc_theme/js/custom.js"></script>
+                      <script type="text/javascript" src="/templates/wcc_theme/js/side_menu.js"></script>
+          
+	<script type="text/javascript">/*joomlatools job scheduler*/
+!function(){function e(e,t,n,o){try{o=new(this.XMLHttpRequest||ActiveXObject)("MSXML2.XMLHTTP.3.0"),o.open("POST",e,1),o.setRequestHeader("X-Requested-With","XMLHttpRequest"),o.setRequestHeader("Content-type","application/x-www-form-urlencoded"),o.onreadystatechange=function(){o.readyState>3&&t&&t(o.responseText,o)},o.send(n)}catch(c){}}function t(n){e(n,function(e,o){try{if(200==o.status){var c=JSON.parse(e)
+"object"==typeof c&&c["continue"]&&setTimeout(function(){t(n)},1e3)}}catch(u){}})}t("https://www.worcester.gov.uk/index.php?option=com_joomlatools&controller=scheduler")}()</script></body>
+</html>
